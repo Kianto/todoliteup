@@ -43,12 +43,12 @@ class HomeController extends GetxController {
     );
 
     _isLoading.value = true;
-    await saveNewTask(task);
+    await _saveNewTask(task);
     Get.back();
     _isLoading.value = false;
   }
 
-  Future saveNewTask(MTask newTask) {
+  Future _saveNewTask(MTask newTask) {
     return createTask(newTask);
   }
 

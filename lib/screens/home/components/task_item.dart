@@ -79,16 +79,17 @@ class TaskItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
-                  child: ElevatedButton.icon(
-                    onPressed: _onPressed,
-                    label: const Text(
-                      StringRes.done,
+                if (task.status == MTask.ST_DOING)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
+                    child: ElevatedButton.icon(
+                      onPressed: _onPressed,
+                      label: const Text(
+                        StringRes.done,
+                      ),
+                      icon: const Icon(Icons.check_box),
                     ),
-                    icon: const Icon(Icons.check_box),
                   ),
-                ),
               ],
             ),
           ],

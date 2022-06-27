@@ -27,6 +27,14 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: Routes.HOME,
       debugShowCheckedModeBanner: false,
+      builder: (context, child) {
+        return Banner(
+          location: BannerLocation.topStart,
+          message: 'Kianto',
+          color: Colors.black,
+          child: child,
+        );
+      },
     );
   }
 }

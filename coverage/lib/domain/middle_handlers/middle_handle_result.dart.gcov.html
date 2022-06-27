@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-06-27 21:20:04</td>
+            <td class="headerValue">2022-06-27 23:13:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -66,7 +66,7 @@
 <a name="4"><span class="lineNum">       4 </span>            : import '../../core/error/failures.dart';</a>
 <a name="5"><span class="lineNum">       5 </span>            : </a>
 <a name="6"><span class="lineNum">       6 </span>            : abstract class MiddleHandleResult {</a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          1 :   static Future&lt;Either&lt;Failure, T&gt;&gt; checkResult&lt;T&gt;(Function function, {</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          2 :   static Future&lt;Either&lt;Failure, T&gt;&gt; checkResult&lt;T&gt;(Function function, {</span></a>
 <a name="8"><span class="lineNum">       8 </span>            :     bool checkAuth = true,</a>
 <a name="9"><span class="lineNum">       9 </span>            :     bool checkInvalid = true,</a>
 <a name="10"><span class="lineNum">      10 </span>            :     bool checkDuplicated = true,</a>
@@ -74,8 +74,8 @@
 <a name="12"><span class="lineNum">      12 </span>            :     bool checkNotFound = true,</a>
 <a name="13"><span class="lineNum">      13 </span>            :   }) async {</a>
 <a name="14"><span class="lineNum">      14 </span>            :       try {</a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          2 :         final data = await function.call();</span></a>
-<a name="16"><span class="lineNum">      16 </span><span class="lineCov">          1 :         return Right(data);</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          4 :         final data = await function.call();</span></a>
+<a name="16"><span class="lineNum">      16 </span><span class="lineCov">          2 :         return Right(data);</span></a>
 <a name="17"><span class="lineNum">      17 </span><span class="lineCov">          1 :       } on ServerException {</span></a>
 <a name="18"><span class="lineNum">      18 </span><span class="lineCov">          2 :         return Left(ServerFailure());</span></a>
 <a name="19"><span class="lineNum">      19 </span>            :       }</a>

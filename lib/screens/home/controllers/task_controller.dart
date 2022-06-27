@@ -33,7 +33,8 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
         tasks = data.fold((l) => null, (r) => r) ?? [];
         break;
     }
-    change(tasks, status: RxStatus.success());
+    if (tasks.isEmpty) change(tasks, status: RxStatus.empty());
+    else change(tasks, status: RxStatus.success());
   }
 
   deleteTask(MTask task) async {

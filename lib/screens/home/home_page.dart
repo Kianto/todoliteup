@@ -13,30 +13,25 @@ class HomePage extends GetWidget<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Banner(
-      location: BannerLocation.topStart,
-      message: 'Kianto',
-      color: Colors.black,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(StringRes.appName),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Card(
-                elevation: 0,
-                color: Colors.white38,
-                child: IconButton(
-                  onPressed: () => _addTask(context),
-                  icon: const Icon(Icons.add),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(StringRes.appName),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Card(
+              elevation: 0,
+              color: Colors.white38,
+              child: IconButton(
+                onPressed: () => _addTask(context),
+                icon: const Icon(Icons.add),
               ),
             ),
-          ],
-        ),
-        body: _buildBody(),
-        bottomNavigationBar: _buildBottomBar(),
+          ),
+        ],
       ),
+      body: _buildBody(),
+      bottomNavigationBar: _buildBottomBar(),
     );
   }
 
@@ -101,6 +96,7 @@ class HomePage extends GetWidget<HomeController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextFormField(
+                key: ValueKey(0),
                 decoration: const InputDecoration(
                   labelText: StringRes.title,
                 ),
@@ -111,6 +107,7 @@ class HomePage extends GetWidget<HomeController> {
                 validator: _validateRequired,
               ),
               TextFormField(
+                key: ValueKey(1),
                 decoration: const InputDecoration(
                   labelText: StringRes.description,
                 ),
