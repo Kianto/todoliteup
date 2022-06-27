@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todoliteup/common/loading_widget.dart';
+import 'package:todoliteup/common/no_data_widget.dart';
 import 'package:todoliteup/models/task.dart';
 import 'package:todoliteup/screens/home/controllers/task_controller.dart';
 
@@ -7,9 +9,9 @@ import 'task_item.dart';
 
 class TaskListTab extends StatelessWidget {
 
-  TaskListTab.all() : status = null;
-  TaskListTab.doing() : status = Task.DOING_STATUS;
-  TaskListTab.done() : status = Task.DONE_STATUS;
+  const TaskListTab.all({super.key}) : status = null;
+  const TaskListTab.doing({super.key}) : status = MTask.ST_DOING;
+  const TaskListTab.done({super.key}) : status = MTask.ST_DONE;
 
   final int? status;
   TaskController get controller => Get.find<TaskController>(tag: status?.toString());
@@ -18,24 +20,23 @@ class TaskListTab extends StatelessWidget {
   Widget build(BuildContext context) {
     controller.getList();
 
-    return Obx(() {
-      if (controller.isLoading) {
-        return Center(
-          child: CircularProgressIndicator(),
-        );
-      }
-
+    return controller.obx((state) {
       return ListView.separated(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-        itemCount: controller.tasks.length,
+        itemCount: state?.length ?? 0,
         itemBuilder: (c, i) => TaskItem(
-          task: controller.tasks[i],
+          task: state![i],
           onStatusChanged: (status) => controller.changeStatus(
-              controller.tasks[i], status,
+            state[i], status,
           ),
+          onDelete: () => controller.deleteTask(state[i]),
         ),
-        separatorBuilder: (c, i) => Divider(),
+        separatorBuilder: (c, i) => const Divider(),
       );
-    });
+    },
+      onLoading: const LoadingWidget(),
+      onEmpty: const NoDataWidget(),
+      onError: (error) => const NoDataWidget(),
+    );
   }
 }

@@ -1,23 +1,26 @@
 abstract class StringRes {
 
-  static final appName = "Todo Lite";
+  static const appName = "Todo LiteUp";
 
-  static final ok = "OK";
-  static final close = "Đóng";
-  static final cancel = "Huỷ";
-  static final save = "Lưu";
-  static final delete = "Xoá";
-  static final edit = "Thay đổi";
-  static final update = "Cập nhật";
-  static final failed = "Thất bại";
-  static final success = "Thành công";
-  static final error = "Lỗi";
+  static const ok = "OK";
+  static const close = "Đóng";
+  static const cancel = "Huỷ";
+  static const save = "Lưu";
+  static const delete = "Xoá";
+  static const edit = "Thay đổi";
+  static const update = "Cập nhật";
+  static const failed = "Thất bại";
+  static const success = "Thành công";
+  static const error = "Lỗi";
 
-  static final all = 'Tất cả';
-  static final doing = 'Cần làm';
-  static final done = 'Hoàn tất';
+  static const all = 'Tất cả';
+  static const doing = 'Cần làm';
+  static const done = 'Hoàn tất';
 
-  static final description = 'Mô tả';
-  static final title = 'Tiêu đề';
+  static const description = 'Mô tả';
+  static const title = 'Tiêu đề';
+  static const noData = "Không có dữ liệu";
+
+  static const error_required = "Trường này không được trống";
 
 }

@@ -1,32 +1,30 @@
 import 'entity.dart';
 
-class Task extends Entity {
-  static const DOING_STATUS = 0;
-  static const DONE_STATUS = 1;
+class MTask extends Entity {
+  static const ST_DOING = 0;
+  static const ST_DONE = 1;
 
-  Task({
-    this.title,
-    this.description,
-    this.status = DOING_STATUS,
+  const MTask({
+    super.id,
+    super.created,
+    super.updated,
+    super.deleted,
+    required this.title,
+    required this.description,
+    this.status = ST_DOING,
   });
 
   @override
-  Task.fromJson(Map<String, dynamic> json) : super.fromJson(json) {
-    this.title = json['title'];
-    this.description = json['description'];
-    this.status = json['status'] ?? DOING_STATUS;
-  }
+  MTask.fromJson(Map<String, dynamic> json) :
+        title = json['title'] ?? "",
+        description = json['description'] ?? "",
+        status = json['status'] ?? ST_DOING,
+        super.fromJson(json);
 
-  @override
-  Task.copy(Task temp) : super.copy(temp) {
-    this.title = temp.title;
-    this.description = temp.description;
-    this.status = temp.status;
-  }
 
-  String? title;
-  String? description;
-  int? status;
+  final String title;
+  final String description;
+  final int status;
 
   @override
   dynamic getValueOfKey(String key) {
@@ -39,4 +37,16 @@ class Task extends Entity {
         return status;
     }
   }
+
+  @override
+  List<Object?> get props => [id, title, status];
+
+  @override
+  Map<String, dynamic> toJson() => {
+    ...super.toJson(),
+    "title": title,
+    "description": description,
+    "status": status,
+  };
+
 }

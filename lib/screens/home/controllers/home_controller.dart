@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todoliteup/domain/usecases/ts_create_task.dart';
+import 'package:todoliteup/injection_container.dart';
 import 'package:todoliteup/models/task.dart';
-import 'package:todoliteup/repos/dynamic_repo.dart';
-import 'package:todoliteup/res/strings.dart';
 
-class HomeController extends GetxController{
+class HomeController extends GetxController {
+  CreateTask get createTask => sl();
 
-  final DynamicRepo<Task> repo;
-
-  HomeController({required this.repo});
-
-  var _isLoading = false.obs;
+  final _isLoading = false.obs;
   get isLoading => _isLoading.value;
 
-  var _currentIndex = 0.obs;
+  final _currentIndex = 0.obs;
   get currentIndex => _currentIndex.value;
   PageController pageController = PageController();
-
-
-  @override
-  onInit() {
-    super.onInit();
-  }
 
   @override
   onClose() {
@@ -34,54 +25,13 @@ class HomeController extends GetxController{
     pageController.jumpToPage(value);
   }
 
-  Future<void> addTask() async {
-    final formKey = GlobalKey<FormState>();
-    final newTask = Task();
-    Get.dialog(
-      AlertDialog(
-        title: Text(StringRes.doing),
-        content: Form(
-          key: formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: StringRes.title,
-                ),
-                onSaved: (val) => newTask.title = val ?? '',
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: StringRes.description,
-                ),
-                onSaved: (val) => newTask.description = val ?? '',
-              ),
-            ],
-            mainAxisSize: MainAxisSize.min,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: Get.back,
-            child: Text(StringRes.cancel),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Get.back(result: true);
-
-              formKey.currentState!.save();
-              _onSaveTap(newTask);
-            },
-            child: Text(StringRes.ok),
-          ),
-        ],
-      ),
-    );
+  Future<void> addTask(String title, String detail) async {
+    return _onSaveTap(MTask(title: title, description: detail));
   }
 
-  _onSaveTap(Task task) async {
+  Future _onSaveTap(MTask task) async {
     Get.dialog(
-      SimpleDialog(
+      const SimpleDialog(
         children: [
           SizedBox(
             height: 100,
@@ -98,8 +48,8 @@ class HomeController extends GetxController{
     _isLoading.value = false;
   }
 
-  Future saveNewTask(Task newTask) {
-    return repo.saveData(newTask);
+  Future saveNewTask(MTask newTask) {
+    return createTask(newTask);
   }
 
 }

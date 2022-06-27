@@ -1,33 +1,29 @@
+import 'package:equatable/equatable.dart';
+
 ///
 /// abstract model class for all model data containers to follow
 ///
 
-abstract class Entity {
+abstract class Entity extends Equatable {
 
-  Entity({this.id});
+  const Entity({this.id = 0, this.created, this.deleted = false, this.updated});
 
-  Entity.fromJson(Map<String, dynamic> json) {
-    this.id = json['id'];
+  Entity.fromJson(Map<String, dynamic> json) :
+        id = json['id'] ?? 0,
+        deleted = json['deleted'] ?? false,
+        created = json['created'],
+        updated = json['updated'];
 
-    this.isDeleted = json['isDeleted'];
-    this.createTime = json['createTime'];
-    this.updateTime = json['updateTime'];
-  }
+  final int id;
 
-  Entity.copy(Entity temp) {
-    this.id = temp.id;
-
-    this.isDeleted = temp.isDeleted;
-    this.createTime = temp.createTime;
-    this.updateTime = temp.updateTime;
-  }
-
-  int? id;
-
-  bool? isDeleted;
-  DateTime? createTime;
-  DateTime? updateTime;
+  final bool deleted;
+  final DateTime? created;
+  final DateTime? updated;
 
   dynamic getValueOfKey(String key) => null;
-
+  Map<String, dynamic> toJson() => {
+    "deleted": deleted,
+    "created": created,
+    "updated": updated,
+  };
 }

@@ -11,17 +11,28 @@ dependencies:
   flutter:
     sdk: flutter
 
+  intl: ^0.17.0
+  hive: ^2.2.2
+  get_it: ^7.2.0
+  equatable: ^2.0.3
+  dartz: ^0.10.1
+  path_provider: ^2.0.11
 
-  cupertino_icons: ^1.0.5
   get: ^4.6.5
 
+  cupertino_icons: ^1.0.5
   expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  mockito: ^5.2.0
+  hive_test: ^1.0.1
   flutter_lints: ^2.0.1
+
+  # dart run build_runner build
+  build_runner: any
 
 flutter:
 

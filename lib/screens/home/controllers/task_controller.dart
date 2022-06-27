@@ -1,64 +1,58 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todoliteup/domain/usecases/ts_delete_task.dart';
+import 'package:todoliteup/domain/usecases/ts_get_tasks.dart';
+import 'package:todoliteup/domain/usecases/ts_update_task.dart';
+import 'package:todoliteup/injection_container.dart';
 import 'package:todoliteup/models/task.dart';
-import 'package:todoliteup/repos/dynamic_repo.dart';
 
-class TaskController extends GetxController{
+class TaskController extends GetxController with StateMixin<List<MTask>> {
+  final int? type;
 
-  final DynamicRepo<Task> repo;
-  final int? status;
+  TaskController.all() : type = null;
+  TaskController.doing() : type = MTask.ST_DOING;
+  TaskController.done() : type = MTask.ST_DONE;
 
-  TaskController.all({required this.repo}) : status = null;
-  TaskController.doing({required this.repo}) : status = Task.DOING_STATUS;
-  TaskController.done({required this.repo}) : status = Task.DONE_STATUS;
-
-  var _tasks = <Task>[].obs;
-  set tasks(value) => _tasks.assignAll(value);
-  List<Task> get tasks => _tasks;
-
-  var _isLoading = false.obs;
-  get isLoading => _isLoading.value;
-
-
-  @override
-  onInit() {
-    super.onInit();
-  }
+  GetTasks get _getTasks => sl();
+  UpdateTask get _updateTask => sl();
+  DeleteTask get _deleteTask => sl();
 
   getList() async {
-    _isLoading.value = true;
-    switch(status) {
+    change(null, status: RxStatus.loading());
+    List<MTask> tasks = [];
+    switch(type) {
       case null:
-        tasks = await repo.getList();
+        final data = await _getTasks(null);
+        tasks = data.fold((l) => null, (r) => r) ?? [];
         break;
-      case Task.DOING_STATUS:
-        tasks = await repo.getListBy("status", Task.DOING_STATUS);
+      case MTask.ST_DOING:
+        final data = await _getTasks(MTask.ST_DOING);
+        tasks = data.fold((l) => null, (r) => r) ?? [];
         break;
-      case Task.DONE_STATUS:
-        tasks = await repo.getListBy("status", Task.DONE_STATUS);
+      case MTask.ST_DONE:
+        final data = await _getTasks(MTask.ST_DONE);
+        tasks = data.fold((l) => null, (r) => r) ?? [];
         break;
     }
-    _isLoading.value = false;
+    change(tasks, status: RxStatus.success());
   }
 
-  updateTask(Task task) async {
-    await repo.update(task);
-
-    // check if cur screen is not all then change
-    if (status != null) {
-      _tasks.remove(task);
-    }
-    _tasks.refresh();
+  deleteTask(MTask task) async {
+    await _deleteTask(task.id);
+    getList();
   }
 
-  changeStatus(Task task, int status) async {
-    await repo.update(task..status = status);
+  updateTask(MTask task) async {
+    await _updateTask(task);
+    getList();
+  }
 
-    // check if cur screen is not all then change
-    if (null != this.status && this.status != status) {
-      _tasks.remove(task);
-    }
-    _tasks.refresh();
+  changeStatus(MTask task, int status) async {
+    updateTask(MTask(
+      id: task.id,
+      title: task.title,
+      description: task.description,
+      status: status,
+    ));
   }
 
 }
