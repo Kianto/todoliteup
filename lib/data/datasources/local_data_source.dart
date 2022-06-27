@@ -60,7 +60,7 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
   @override
   Future<bool> updateData(int id, T data) async {
     try {
-      deleteData(id);
+      await deleteData(id);
       await taskBox.put(id, data.toJson()..addAll({"id" : id}));
       return true;
     } catch(e) {

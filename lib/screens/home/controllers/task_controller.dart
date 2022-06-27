@@ -1,11 +1,16 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:todoliteup/domain/usecases/ts_delete_task.dart';
 import 'package:todoliteup/domain/usecases/ts_get_tasks.dart';
 import 'package:todoliteup/domain/usecases/ts_update_task.dart';
 import 'package:todoliteup/injection_container.dart';
 import 'package:todoliteup/models/task.dart';
+import 'package:todoliteup/res/strings.dart';
 
 class TaskController extends GetxController with StateMixin<List<MTask>> {
+  bool get kTestMode => Platform.environment.containsKey('FLUTTER_TEST');
+
   final int? type;
 
   TaskController.all() : type = null;
@@ -38,12 +43,30 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
   }
 
   deleteTask(MTask task) async {
-    await _deleteTask(task.id);
+    final res = await _deleteTask(task.id).then((value) {
+      return value.isRight();
+    });
+    if (!kTestMode) {
+      if (res) {
+        Get.snackbar(StringRes.success, StringRes.successMsg);
+      } else {
+        Get.snackbar(StringRes.failed, StringRes.failedMsg);
+      }
+    }
     getList();
   }
 
   updateTask(MTask task) async {
-    await _updateTask(task);
+    final res = await _updateTask(task).then((value) {
+      return value.isRight();
+    });
+    if (!kTestMode) {
+      if (res) {
+        Get.snackbar(StringRes.success, StringRes.successMsg);
+      } else {
+        Get.snackbar(StringRes.failed, StringRes.failedMsg);
+      }
+    }
     getList();
   }
 

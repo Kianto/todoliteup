@@ -1,10 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todoliteup/domain/usecases/ts_create_task.dart';
 import 'package:todoliteup/injection_container.dart';
 import 'package:todoliteup/models/task.dart';
+import 'package:todoliteup/res/strings.dart';
 
 class HomeController extends GetxController {
+  bool get kTestMode => Platform.environment.containsKey('FLUTTER_TEST');
+
   CreateTask get createTask => sl();
 
   final _isLoading = false.obs;
@@ -43,13 +48,22 @@ class HomeController extends GetxController {
     );
 
     _isLoading.value = true;
-    await _saveNewTask(task);
+    final resId = await _saveNewTask(task);
     Get.back();
+    if (!kTestMode) {
+      if (resId == null) {
+        Get.snackbar(StringRes.failed, StringRes.failedMsg);
+      } else {
+        Get.snackbar(StringRes.success, StringRes.successMsg);
+      }
+    }
     _isLoading.value = false;
   }
 
-  Future _saveNewTask(MTask newTask) {
-    return createTask(newTask);
+  Future<int?> _saveNewTask(MTask newTask) {
+    return createTask(newTask).then((value) {
+      return value.fold((l) => null, (r) => r);
+    });
   }
 
 }

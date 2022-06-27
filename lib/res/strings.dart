@@ -12,6 +12,8 @@ abstract class StringRes {
   static const failed = "Thất bại";
   static const success = "Thành công";
   static const error = "Lỗi";
+  static const failedMsg = "Có lỗi xảy ra khi lưu dữ liệu.";
+  static const successMsg = "Thay đổi được lưu thành công!";
 
   static const all = 'Tất cả';
   static const doing = 'Cần làm';

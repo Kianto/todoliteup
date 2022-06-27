@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_test/hive_test.dart';
+import 'package:todoliteup/core/error/exceptions.dart';
 import 'package:todoliteup/data/data_injection_container.dart' as DataDI;
 import 'package:todoliteup/data/repositories/repository.dart';
 import 'package:todoliteup/models/task.dart';
@@ -42,6 +43,11 @@ void main() {
         final list = await dataSource.localDataSource.getList();
         // assert
         expect(list.length, 2);
+
+        // arrange
+        box.close();
+        // assert
+        expect(dataSource.localDataSource.getList(), throwsA(isA<CacheException>()));
       },
     );
 
@@ -61,6 +67,12 @@ void main() {
         final item2 = await dataSource.localDataSource.getDetail(id);
         // assert
         expect(item2?.title, "title2");
+
+        // arrange
+        box.close();
+        // assert
+        expect(dataSource.localDataSource.saveData(data), throwsA(isA<CacheException>()));
+        expect(dataSource.localDataSource.updateData(id, newData), throwsA(isA<CacheException>()));
       },
     );
 
@@ -77,6 +89,11 @@ void main() {
             await dataSource.localDataSource.deleteData(id);
             // assert
             expect(box.length, 0);
+
+            // arrange
+            box.close();
+            // assert
+            expect(dataSource.localDataSource.deleteData(id), throwsA(isA<CacheException>()));
       },
     );
 
@@ -100,6 +117,11 @@ void main() {
         final list1 = await dataSource.localDataSource.getListBy("status", MTask.ST_DONE);
         // assert
         expect(list1.length, 1);
+
+        // arrange
+        box.close();
+        // assert
+        expect(dataSource.localDataSource.getListBy("status", MTask.ST_DONE), throwsA(isA<CacheException>()));
       },
     );
   });
