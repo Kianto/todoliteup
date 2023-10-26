@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_test/hive_test.dart';
 import 'package:todoliteup/injection_container.dart' as di;
-import 'package:todoliteup/main.dart';
+import 'package:todoliteup/main.dart' as main_app;
 import 'package:todoliteup/res/const.dart';
 
 void main() {
@@ -18,7 +18,16 @@ void main() {
 
   testWidgets('Run App', (WidgetTester tester) async {
     // arrange
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const main_app.MyApp());
     await tester.pump();
+  });
+
+  testWidgets('Run main', (WidgetTester tester) async {
+    // arrange
+    tester.binding.defaultBinaryMessenger.checkMockMessageHandler(
+      'plugins.flutter.io/path_provider',
+      (methodCall) => '.',
+    );
+    await main_app.main();
   });
 }
