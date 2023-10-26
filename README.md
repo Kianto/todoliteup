@@ -53,7 +53,7 @@ There are some updates should be added on in the following versions so that the 
 
 Coverage: 92.7 %
 ```bash
-flutter test --coverage --pub test/*
+flutter test --coverage
 genhtml -o coverage coverage/lcov.info
 open coverage/index.html
 ```
