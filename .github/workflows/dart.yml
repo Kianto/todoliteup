@@ -41,10 +41,10 @@ jobs:
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed.
       - name: Run tests
-        run: flutter test .
+        run: flutter test --coverage
         
       - name: Run coverage
-        run: flutter test --coverage --pub test/* && genhtml -o coverage coverage/lcov.info
+        run: genhtml -o coverage coverage/lcov.info
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
