@@ -44,7 +44,7 @@ jobs:
         run: flutter test .
         
       - name: Run coverage
-        run: flutter test --coverage --pub test/*
+        run: flutter test --coverage --pub test/* && genhtml -o coverage coverage/lcov.info
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
