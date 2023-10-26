@@ -20,6 +20,13 @@ jobs:
 
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v1
+
+      - uses: hrishikesh-kadam/setup-lcov@v1
+      - uses: zgosalvez/github-actions-report-lcov@v3
+        with:
+          coverage-files: coverage/lcov.*.info
+          minimum-coverage: 90
+          update-comment: true
     
       # Note: This workflow uses the latest stable version of the Dart SDK.
       # You can specify other versions if desired, see documentation here:
