@@ -41,8 +41,7 @@ jobs:
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed.
       - name: Run tests
-        # run: flutter test --coverage
-        run: flutter test
+        run: flutter test --coverage
         
       # - name: Run coverage
       #   run: genhtml -o coverage coverage/lcov.info
