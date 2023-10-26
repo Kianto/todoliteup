@@ -14,7 +14,7 @@ class UpdateTask extends UseCase<bool, MTask> {
   @override
   Future<Either<Failure, bool>> call(MTask params) {
     return MiddleHandleResult.checkResult<bool>(
-          () async => await repo.localDataSource.updateData(params.id, params),
+      () async => await repo.localDataSource.updateData(params.id, params),
     );
   }
 }

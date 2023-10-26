@@ -1,5 +1,4 @@
 abstract class StringRes {
-
   static const appName = "Todo LiteUp";
 
   static const ok = "OK";
@@ -23,6 +22,5 @@ abstract class StringRes {
   static const title = 'Tiêu đề';
   static const noData = "Không có dữ liệu";
 
-  static const error_required = "Trường này không được trống";
-
+  static const errorRequired = "Trường này không được trống";
 }

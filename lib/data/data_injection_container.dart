@@ -10,11 +10,13 @@ final sl = GetIt.instance;
 Future<void> init() async {
   // Data sources
   sl.registerLazySingleton<LocalDataSource<MTask>>(
-          () => LocalDataSourceImpl<MTask>(sl())
+    () => LocalDataSourceImpl<MTask>(sl()),
   );
 
   // Repo
-  sl.registerLazySingleton<DataRepo>(() => DataRepo(
-    localDataSource: sl(),
-  ));
+  sl.registerLazySingleton<DataRepo>(
+    () => DataRepo(
+      localDataSource: sl(),
+    ),
+  );
 }

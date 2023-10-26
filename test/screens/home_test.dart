@@ -43,43 +43,57 @@ void main() {
   });
 
   setUpGet() {
-    when(getTasks.call(null)).thenAnswer((_) async => Right([
-      MTask(title: "title0", description: "description", status: 0),
-      MTask(title: "title1", description: "description", status: 1),
-      MTask(title: "title2", description: "description", status: 1),
-    ]));
-    when(getTasks.call(MTask.ST_DONE)).thenAnswer((_) async => Right([
-      MTask(title: "title1", description: "description", status: 1),
-      MTask(title: "title2", description: "description", status: 1),
-    ]));
-    when(getTasks.call(MTask.ST_DOING)).thenAnswer((_) async => Right([
-      MTask(title: "title0", description: "description", status: 0),
-    ]));
+    when(getTasks.call(null)).thenAnswer(
+      (_) async => const Right([
+        MTask(title: "title0", description: "description", status: 0),
+        MTask(title: "title1", description: "description", status: 1),
+        MTask(title: "title2", description: "description", status: 1),
+      ]),
+    );
+    when(getTasks.call(MTask.stDone)).thenAnswer(
+      (_) async => const Right([
+        MTask(title: "title1", description: "description", status: 1),
+        MTask(title: "title2", description: "description", status: 1),
+      ]),
+    );
+    when(getTasks.call(MTask.stDoing)).thenAnswer(
+      (_) async => const Right([
+        MTask(title: "title0", description: "description", status: 0),
+      ]),
+    );
   }
 
   setUpGetSingle() {
-    when(getTasks.call(null)).thenAnswer((_) async => Right([
-      MTask(title: "title0", description: "description", status: 0),
-    ]));
-    when(getTasks.call(MTask.ST_DONE)).thenAnswer((_) async => Right([]));
-    when(getTasks.call(MTask.ST_DOING)).thenAnswer((_) async => Right([
-      MTask(title: "title0", description: "description", status: 0),
-    ]));
+    when(getTasks.call(null)).thenAnswer(
+      (_) async => const Right([
+        MTask(title: "title0", description: "description", status: 0),
+      ]),
+    );
+    when(getTasks.call(MTask.stDone)).thenAnswer((_) async => const Right([]));
+    when(getTasks.call(MTask.stDoing)).thenAnswer(
+      (_) async => const Right([
+        MTask(title: "title0", description: "description", status: 0),
+      ]),
+    );
   }
 
   setUpNone() {
     when(getTasks.call(null)).thenAnswer((_) async => Left(CacheFailure()));
-    when(getTasks.call(MTask.ST_DONE)).thenAnswer((_) async => Left(CacheFailure()));
-    when(getTasks.call(MTask.ST_DOING)).thenAnswer((_) async => Left(CacheFailure()));
+    when(getTasks.call(MTask.stDone))
+        .thenAnswer((_) async => Left(CacheFailure()));
+    when(getTasks.call(MTask.stDoing))
+        .thenAnswer((_) async => Left(CacheFailure()));
   }
 
   group('UI home testing', () {
     testWidgets('Home page changing', (WidgetTester tester) async {
       // arrange
       setUpGet();
-      await tester.pumpWidget(GetMaterialApp(
-        home: const HomePage(),
-      ));
+      await tester.pumpWidget(
+        const GetMaterialApp(
+          home: HomePage(),
+        ),
+      );
       await tester.pump();
 
       // assert
@@ -89,10 +103,7 @@ void main() {
       await tester.pump();
       await tester.pump();
       // assert
-      expect(Get
-          .find<HomeController>()
-          .pageController
-          .page, 2);
+      expect(Get.find<HomeController>().pageController.page, 2);
       expect(find.text("title0"), findsNothing);
 
       // act
@@ -106,12 +117,14 @@ void main() {
     testWidgets('UI change status task testing', (WidgetTester tester) async {
       // arrange
       setUpGetSingle();
-      final data = MTask(
-          title: "title0", description: "description", status: 1);
-      when(updateTask.call(data)).thenAnswer((_) async => Right(true));
-      await tester.pumpWidget(GetMaterialApp(
-        home: const HomePage(),
-      ));
+      const data =
+          MTask(title: "title0", description: "description", status: 1);
+      when(updateTask.call(data)).thenAnswer((_) async => const Right(true));
+      await tester.pumpWidget(
+        const GetMaterialApp(
+          home: HomePage(),
+        ),
+      );
       await tester.pump();
       // act
       await tester.tap(find.byType(ExpandablePanel));
@@ -125,10 +138,12 @@ void main() {
     testWidgets('UI delete task testing', (WidgetTester tester) async {
       // arrange
       setUpGetSingle();
-      when(deleteTask.call(0)).thenAnswer((_) async => Right(true));
-      await tester.pumpWidget(GetMaterialApp(
-        home: const HomePage(),
-      ));
+      when(deleteTask.call(0)).thenAnswer((_) async => const Right(true));
+      await tester.pumpWidget(
+        const GetMaterialApp(
+          home: HomePage(),
+        ),
+      );
       await tester.pump();
       // act
       await tester.tap(find.byType(ExpandablePanel));
@@ -142,17 +157,19 @@ void main() {
     testWidgets('UI create task testing', (WidgetTester tester) async {
       // arrange
       setUpNone();
-      final data = MTask(title: "title0", description: "description");
-      when(createTask.call(data)).thenAnswer((_) async => Right(24));
-      await tester.pumpWidget(GetMaterialApp(
-        home: const HomePage(),
-      ));
+      const data = MTask(title: "title0", description: "description");
+      when(createTask.call(data)).thenAnswer((_) async => const Right(24));
+      await tester.pumpWidget(
+        const GetMaterialApp(
+          home: HomePage(),
+        ),
+      );
       await tester.pump();
       // act
       await tester.tap(find.byIcon(Icons.add));
       await tester.pumpAndSettle();
-      await tester.enterText(find.byKey(ValueKey(0)), "title0");
-      await tester.enterText(find.byKey(ValueKey(1)), "description");
+      await tester.enterText(find.byKey(const ValueKey(0)), "title0");
+      await tester.enterText(find.byKey(const ValueKey(1)), "description");
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
       // assert

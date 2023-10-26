@@ -16,7 +16,7 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
     try {
       await taskBox.delete(id);
       return true;
-    } catch(e) {
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
@@ -27,7 +27,7 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
     try {
       final json = taskBox.get(id, defaultValue: null);
       return EntityFactory.getEntity(T, json) as T;
-    } catch(e) {
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
@@ -36,10 +36,14 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
   @override
   Future<List<T>> getList() async {
     try {
-      return taskBox.values.map(
-              (json) => EntityFactory.getEntity(T, Map<String, dynamic>.from(json)) as T
-      ).toList();
-    } catch(e) {
+      return taskBox.values
+          .map(
+            (json) =>
+                EntityFactory.getEntity(T, Map<String, dynamic>.from(json))
+                    as T,
+          )
+          .toList();
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
@@ -48,10 +52,10 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
   @override
   Future<List<T>> getListBy(String key, dynamic value) async {
     try {
-      return (
-          await getList()).where((e) => e.getValueOfKey(key) == value
-      ).toList();
-    } catch(e) {
+      return (await getList())
+          .where((e) => e.getValueOfKey(key) == value)
+          .toList();
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
@@ -61,9 +65,9 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
   Future<bool> updateData(int id, T data) async {
     try {
       await deleteData(id);
-      await taskBox.put(id, data.toJson()..addAll({"id" : id}));
+      await taskBox.put(id, data.toJson()..addAll({"id": id}));
       return true;
-    } catch(e) {
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
@@ -74,15 +78,14 @@ class LocalDataSourceImpl<T extends Entity> extends LocalDataSource<T> {
     try {
       int id = taskBox.length + 1;
       while (taskBox.get(id, defaultValue: null) != null) {
-        id ++;
+        id++;
       }
 
       await taskBox.put(id, data.toJson()..addAll({"id": id}));
       return id;
-    } catch(e) {
+    } catch (e) {
       debugPrint(e.toString());
       throw CacheException();
     }
   }
-
 }

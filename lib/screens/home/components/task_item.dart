@@ -24,14 +24,12 @@ class TaskItem extends StatelessWidget {
           leading: Container(
             width: 4,
             height: 24,
-            color: task.status == MTask.ST_DOING
-                ? Colors.grey
-                : Colors.green,
+            color: task.status == MTask.stDoing ? Colors.grey : Colors.green,
           ),
           title: Text(
             task.title,
             style: TextStyle(
-              decoration: task.status == MTask.ST_DONE
+              decoration: task.status == MTask.stDone
                   ? TextDecoration.lineThrough
                   : null,
             ),
@@ -43,29 +41,26 @@ class TaskItem extends StatelessWidget {
             ListTile(
               title: Text(
                 task.description,
-                style: Theme.of(context).textTheme.caption?.copyWith(
-                  fontSize: 14,
-                  decoration: task.status == MTask.ST_DONE
-                      ? TextDecoration.lineThrough
-                      : null,
-                ),
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontSize: 14,
+                      decoration: task.status == MTask.stDone
+                          ? TextDecoration.lineThrough
+                          : null,
+                    ),
               ),
               trailing: IconButton(
                 icon: Icon(
-                  task.status == MTask.ST_DOING
+                  task.status == MTask.stDoing
                       ? Icons.check_circle_outline
                       : Icons.check_circle,
                 ),
-                color: task.status == MTask.ST_DOING
-                    ? Colors.grey
-                    : Colors.green,
+                color:
+                    task.status == MTask.stDoing ? Colors.grey : Colors.green,
                 onPressed: _onPressed,
               ),
             ),
             Divider(
-              color: task.status == MTask.ST_DOING
-                  ? Colors.grey
-                  : Colors.green,
+              color: task.status == MTask.stDoing ? Colors.grey : Colors.green,
             ),
             Row(
               children: [
@@ -79,7 +74,7 @@ class TaskItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (task.status == MTask.ST_DOING)
+                if (task.status == MTask.stDoing)
                   Padding(
                     padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
                     child: ElevatedButton.icon(
@@ -98,12 +93,11 @@ class TaskItem extends StatelessWidget {
     );
   }
 
-  _onPressed() {
+  void _onPressed() {
     if (null != onStatusChanged) {
       onStatusChanged!(
-          task.status == MTask.ST_DOING ? MTask.ST_DONE : MTask.ST_DOING
+        task.status == MTask.stDoing ? MTask.stDone : MTask.stDoing,
       );
     }
   }
-
 }

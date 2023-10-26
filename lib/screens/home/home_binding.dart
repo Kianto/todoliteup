@@ -9,7 +9,7 @@ class HomeBinding implements Bindings {
   void dependencies() {
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => TaskController.all());
-    Get.lazyPut(() => TaskController.doing(), tag: MTask.ST_DOING.toString());
-    Get.lazyPut(() => TaskController.done(), tag: MTask.ST_DONE.toString());
+    Get.lazyPut(() => TaskController.doing(), tag: MTask.stDoing.toString());
+    Get.lazyPut(() => TaskController.done(), tag: MTask.stDone.toString());
   }
 }

@@ -65,5 +65,4 @@ class HomeController extends GetxController {
       return value.fold((l) => null, (r) => r);
     });
   }
-
 }

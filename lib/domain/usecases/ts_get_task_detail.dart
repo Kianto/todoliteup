@@ -14,7 +14,7 @@ class GetTaskDetail extends UseCase<MTask, int> {
   @override
   Future<Either<Failure, MTask>> call(int params) {
     return MiddleHandleResult.checkResult<MTask>(
-          () async => await repo.localDataSource.getDetail(params),
+      () async => await repo.localDataSource.getDetail(params),
     );
   }
 }

@@ -100,9 +100,10 @@ class MockGetTasks extends _i1.Mock implements _i10.GetTasks {
   @override
   _i5.Future<_i3.Either<_i6.Failure, List<_i7.MTask>>> call(int? params) =>
       (super.noSuchMethod(Invocation.method(#call, [params]),
-          returnValue: Future<_i3.Either<_i6.Failure, List<_i7.MTask>>>.value(
-              _FakeEither_1<_i6.Failure, List<_i7.MTask>>())) as _i5
-          .Future<_i3.Either<_i6.Failure, List<_i7.MTask>>>);
+              returnValue:
+                  Future<_i3.Either<_i6.Failure, List<_i7.MTask>>>.value(
+                      _FakeEither_1<_i6.Failure, List<_i7.MTask>>()))
+          as _i5.Future<_i3.Either<_i6.Failure, List<_i7.MTask>>>);
 }
 
 /// A class which mocks [GetTaskDetail].

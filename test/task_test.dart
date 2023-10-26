@@ -18,7 +18,7 @@ void main() {
 
   testWidgets('Run App', (WidgetTester tester) async {
     // arrange
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
     await tester.pump();
   });
 }

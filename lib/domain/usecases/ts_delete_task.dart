@@ -13,7 +13,7 @@ class DeleteTask extends UseCase<bool, int> {
   @override
   Future<Either<Failure, bool>> call(int params) {
     return MiddleHandleResult.checkResult<bool>(
-          () async => await repo.localDataSource.deleteData(params),
+      () async => await repo.localDataSource.deleteData(params),
     );
   }
 }

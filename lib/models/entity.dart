@@ -5,11 +5,10 @@ import 'package:equatable/equatable.dart';
 ///
 
 abstract class Entity extends Equatable {
-
   const Entity({this.id = 0, this.created, this.deleted = false, this.updated});
 
-  Entity.fromJson(Map<String, dynamic> json) :
-        id = json['id'] ?? 0,
+  Entity.fromJson(Map<String, dynamic> json)
+      : id = json['id'] ?? 0,
         deleted = json['deleted'] ?? false,
         created = json['created'],
         updated = json['updated'];
@@ -22,8 +21,8 @@ abstract class Entity extends Equatable {
 
   dynamic getValueOfKey(String key) => null;
   Map<String, dynamic> toJson() => {
-    "deleted": deleted,
-    "created": created,
-    "updated": updated,
-  };
+        "deleted": deleted,
+        "created": created,
+        "updated": updated,
+      };
 }

@@ -76,14 +76,16 @@ class HomePage extends GetWidget<HomeController> {
       ),
     ];
 
-    return Obx(() => BottomNavigationBar(
-      currentIndex: controller.currentIndex,
-      onTap: controller.pageChange,
-      items: itemList,
-    ));
+    return Obx(
+      () => BottomNavigationBar(
+        currentIndex: controller.currentIndex,
+        onTap: controller.pageChange,
+        items: itemList,
+      ),
+    );
   }
 
-  _addTask(BuildContext context) {
+  void _addTask(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     final titleCtrler = TextEditingController();
     final detailCtrler = TextEditingController();
@@ -96,7 +98,7 @@ class HomePage extends GetWidget<HomeController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextFormField(
-                key: ValueKey(0),
+                key: const ValueKey(0),
                 decoration: const InputDecoration(
                   labelText: StringRes.title,
                 ),
@@ -107,7 +109,7 @@ class HomePage extends GetWidget<HomeController> {
                 validator: _validateRequired,
               ),
               TextFormField(
-                key: ValueKey(1),
+                key: const ValueKey(1),
                 decoration: const InputDecoration(
                   labelText: StringRes.description,
                 ),
@@ -132,12 +134,14 @@ class HomePage extends GetWidget<HomeController> {
               formKey.currentState!.save();
               Get.back(result: true);
 
-              controller.addTask(
+              controller
+                  .addTask(
                 titleCtrler.text.trim(),
                 detailCtrler.text.trim(),
-              ).then((_) {
+              )
+                  .then((_) {
                 Get.find<TaskController>().getList();
-                Get.find<TaskController>(tag: '${MTask.ST_DOING}').getList();
+                Get.find<TaskController>(tag: '${MTask.stDoing}').getList();
               });
             },
             child: const Text(StringRes.ok),
@@ -148,8 +152,8 @@ class HomePage extends GetWidget<HomeController> {
   }
 
   String? _validateRequired(String? val) {
-    if (val == null) return StringRes.error_required;
-    if (val.trim().isEmpty) return StringRes.error_required;
+    if (val == null) return StringRes.errorRequired;
+    if (val.trim().isEmpty) return StringRes.errorRequired;
     return null;
   }
 }

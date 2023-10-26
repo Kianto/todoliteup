@@ -15,11 +15,11 @@ class GetTasks extends UseCase<List<MTask>, int?> {
   Future<Either<Failure, List<MTask>>> call(int? params) {
     if (params == null) {
       return MiddleHandleResult.checkResult<List<MTask>>(
-            () async => await repo.localDataSource.getList(),
+        () async => await repo.localDataSource.getList(),
       );
     } else {
       return MiddleHandleResult.checkResult<List<MTask>>(
-            () async => await repo.localDataSource.getListBy("status", params),
+        () async => await repo.localDataSource.getListBy("status", params),
       );
     }
   }

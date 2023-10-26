@@ -1,8 +1,8 @@
 import 'entity.dart';
 
 class MTask extends Entity {
-  static const ST_DOING = 0;
-  static const ST_DONE = 1;
+  static const stDoing = 0;
+  static const stDone = 1;
 
   const MTask({
     super.id,
@@ -11,16 +11,15 @@ class MTask extends Entity {
     super.deleted,
     required this.title,
     required this.description,
-    this.status = ST_DOING,
+    this.status = stDoing,
   });
 
   @override
-  MTask.fromJson(Map<String, dynamic> json) :
-        title = json['title'] ?? "",
+  MTask.fromJson(Map<String, dynamic> json)
+      : title = json['title'] ?? "",
         description = json['description'] ?? "",
-        status = json['status'] ?? ST_DOING,
+        status = json['status'] ?? stDoing,
         super.fromJson(json);
-
 
   final String title;
   final String description;
@@ -43,10 +42,9 @@ class MTask extends Entity {
 
   @override
   Map<String, dynamic> toJson() => {
-    ...super.toJson(),
-    "title": title,
-    "description": description,
-    "status": status,
-  };
-
+        ...super.toJson(),
+        "title": title,
+        "description": description,
+        "status": status,
+      };
 }

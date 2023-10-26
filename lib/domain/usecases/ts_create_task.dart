@@ -14,7 +14,7 @@ class CreateTask extends UseCase<int, MTask> {
   @override
   Future<Either<Failure, int>> call(MTask params) {
     return MiddleHandleResult.checkResult<int>(
-          () async => await repo.localDataSource.saveData(params),
+      () async => await repo.localDataSource.saveData(params),
     );
   }
 }
