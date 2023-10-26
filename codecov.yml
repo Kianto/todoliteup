@@ -1,3 +1,18 @@
+# Setting coverage targets per flag
+coverage:
+  status:
+    project:
+      default:
+        target: 70% # overall project/ repo coverage
+      todo-1:
+        target: 90%
+        flags:
+          - todo-1
+      todo-2:
+        target: 60%
+        flags:
+          - todo-2
+
 comment:
   behavior: default
   hide_project_coverage: false   # [true :: only show coverage on the git diff]
@@ -6,3 +21,16 @@ comment:
   require_changes: false         # if true: only post the comment if coverage changes
   require_head: false            # [true :: must have a head report to post]
 
+# New root YAML section = `flags:`
+# This is where you would define every flag from your
+# uploader, and update when new Flags added
+
+flags:
+  todo-1:
+    paths: #note, accepts globs, not regexes
+      - todoliteup_1/
+    carryforward: false
+  todo-2:
+    paths: #note, accepts globs, not regexes
+      - todoliteup_2/
+    carryforward: true
