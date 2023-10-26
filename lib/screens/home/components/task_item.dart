@@ -37,6 +37,7 @@ class TaskItem extends StatelessWidget {
         ),
         collapsed: const SizedBox(),
         expanded: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListTile(
               title: Text(
@@ -62,8 +63,19 @@ class TaskItem extends StatelessWidget {
             Divider(
               color: task.status == MTask.stDoing ? Colors.grey : Colors.green,
             ),
-            Row(
+            Wrap(
               children: [
+                if (task.image != null)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
+                    child: ClipOval(
+                      child: Image.network(
+                        task.image!,
+                        width: 48,
+                        height: 48,
+                      ),
+                    ),
+                  ),
                 Padding(
                   padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
                   child: OutlinedButton(

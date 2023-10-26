@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,9 @@ class HomeController extends GetxController {
   }
 
   Future<void> addTask(String title, String detail) async {
-    return _onSaveTap(MTask(title: title, description: detail));
+    final index = Random().nextInt(69) + 1;
+    final image = "https://i.pravatar.cc/500?img=$index";
+    return _onSaveTap(MTask(title: title, description: detail, image: image));
   }
 
   Future _onSaveTap(MTask task) async {

@@ -11,6 +11,7 @@ class MTask extends Entity {
     super.deleted,
     required this.title,
     required this.description,
+    this.image,
     this.status = stDoing,
   });
 
@@ -18,11 +19,13 @@ class MTask extends Entity {
   MTask.fromJson(Map<String, dynamic> json)
       : title = json['title'] ?? "",
         description = json['description'] ?? "",
+        image = json['image'],
         status = json['status'] ?? stDoing,
         super.fromJson(json);
 
   final String title;
   final String description;
+  final String? image;
   final int status;
 
   @override
@@ -32,6 +35,8 @@ class MTask extends Entity {
         return title;
       case "description":
         return description;
+      case "image":
+        return image;
       case "status":
         return status;
     }
@@ -45,6 +50,7 @@ class MTask extends Entity {
         ...super.toJson(),
         "title": title,
         "description": description,
+        "image": image,
         "status": status,
       };
 }

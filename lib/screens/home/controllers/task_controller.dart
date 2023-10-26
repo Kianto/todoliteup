@@ -21,7 +21,7 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
   UpdateTask get _updateTask => sl();
   DeleteTask get _deleteTask => sl();
 
-  getList() async {
+  void getList() async {
     change(null, status: RxStatus.loading());
     List<MTask> tasks = [];
     switch (type) {
@@ -45,7 +45,7 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
     }
   }
 
-  deleteTask(MTask task) async {
+  void deleteTask(MTask task) async {
     final res = await _deleteTask(task.id).then((value) {
       return value.isRight();
     });
@@ -59,7 +59,7 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
     getList();
   }
 
-  updateTask(MTask task) async {
+  void updateTask(MTask task) async {
     final res = await _updateTask(task).then((value) {
       return value.isRight();
     });
@@ -73,12 +73,13 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
     getList();
   }
 
-  changeStatus(MTask task, int status) async {
+  void changeStatus(MTask task, int status) async {
     updateTask(
       MTask(
         id: task.id,
         title: task.title,
         description: task.description,
+        image: task.image,
         status: status,
       ),
     );
