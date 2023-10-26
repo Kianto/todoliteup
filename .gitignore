@@ -45,3 +45,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Obfuscation related
+**.freezed.dart
+**.g.dart
+**.mocks.dart
+/assets/langs/**.json
+
+# Lcov report
+/coverage/
