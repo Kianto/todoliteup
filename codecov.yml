@@ -29,7 +29,7 @@ flags:
   todo-1:
     paths: #note, accepts globs, not regexes
       - todoliteup_1/
-    carryforward: false
+    carryforward: true
   todo-2:
     paths: #note, accepts globs, not regexes
       - todoliteup_2/
