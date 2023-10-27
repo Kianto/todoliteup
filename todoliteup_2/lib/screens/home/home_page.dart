@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:todoliteup/models/task.dart';
 import 'package:todoliteup/res/strings.dart';
+import 'package:todoliteup/screens/account/account_binding.dart';
 import 'package:todoliteup/screens/account/account_page.dart';
 import 'package:todoliteup/screens/home/components/list_tab.dart';
 
@@ -21,7 +22,10 @@ class HomePage extends GetWidget<HomeController> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: IconButton(
-              onPressed: () => Get.to(() => const AccountPage()),
+              onPressed: () => Get.to(
+                () => const AccountPage(),
+                binding: AccountBinding(),
+              ),
               icon: const Icon(Icons.account_circle),
             ),
           ),
