@@ -52,15 +52,9 @@ There are some updates should be added on in the following versions so that the 
 |         |                                                 |
 
 Coverage: 92.7 %
-
 ```bash
 flutter test --coverage
 genhtml -o coverage coverage/lcov.info
 open coverage/index.html
 ```
 
-### Clean format
-
-```bash
-cd todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
-```

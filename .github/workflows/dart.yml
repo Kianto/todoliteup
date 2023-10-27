@@ -33,30 +33,54 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       # - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          cd todoliteup_2
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
-      - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
-
       # Consider passing '--fatal-infos' for slightly stricter analysis.
-      - name: Analyze project source
-        run: flutter analyze .
 
-      # Your project will need to have tests in test/ and a dependency on
-      # package:test for this step to succeed.
+      - name: Verify formatting & Analyze
+        run: |
+          cd todoliteup_2
+          dart format --output=none --set-exit-if-changed .
+          flutter analyze .
       - name: Run tests
-        run: flutter test --coverage && lcov --list coverage/lcov.info
-        
-      # - name: Run coverage
-      #   run: genhtml -o coverage coverage/lcov.info
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        run: |
+          cd todoliteup_2
+          flutter test --coverage
+          lcov --list coverage/lcov.info
+          genhtml -o coverage coverage/lcov.info
+      - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo2
+
+      - name: Install dependencies
+        run: |
+          cd todoliteup_1
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Verify formatting & Analyze
+        run: |
+          cd todoliteup_1
+          dart format --output=none --set-exit-if-changed .
+          flutter analyze .
+      - name: Run tests
+        run: |
+          cd todoliteup_1
+          flutter test --coverage
+          lcov --list coverage/lcov.info
+          genhtml -o coverage coverage/lcov.info
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo1
 
       # Build apk.
       # - run: flutter build apk
