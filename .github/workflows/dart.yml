@@ -35,7 +35,7 @@ jobs:
       # - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
       - name: Install dependencies
         run: |
-          cd todoliteup_1
+          cd todoliteup_2
           flutter pub run build_runner build --delete-conflicting-outputs
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
@@ -43,7 +43,6 @@ jobs:
 
       - name: Verify formatting & Analyze
         run: |
-          cd todoliteup_2
           dart format --output=none --set-exit-if-changed . && flutter analyze .
       - name: Run tests
         run: |
@@ -63,7 +62,6 @@ jobs:
 
       - name: Verify formatting & Analyze
         run: |
-          cd ../todoliteup_1
           dart format --output=none --set-exit-if-changed . && flutter analyze .
       - name: Run tests
         run: |
