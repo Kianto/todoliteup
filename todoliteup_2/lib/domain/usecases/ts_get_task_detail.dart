@@ -1,4 +1,4 @@
-import 'package:either_dart/either.dart';
+import 'package:dartz/dartz.dart';
 import 'package:todoliteup/models/task.dart';
 
 import '../../core/error/failures.dart';

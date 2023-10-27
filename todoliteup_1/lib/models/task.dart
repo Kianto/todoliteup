@@ -1,5 +1,3 @@
-import 'package:fast_equatable/fast_equatable.dart';
-
 import 'entity.dart';
 
 class MTask extends Entity {

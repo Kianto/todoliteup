@@ -56,7 +56,7 @@ void main() {
         final listAll = await domain.sl<GetTasks>().call(null);
         // assert
         verify(local.getList());
-        expect(listAll.right, true);
+        expect(listAll.isRight(), true);
 
         // arrange
         when(local.getListBy("status", MTask.stDone)).thenAnswer(
@@ -77,7 +77,7 @@ void main() {
         final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
         // assert
         verify(local.getListBy("status", MTask.stDone));
-        expect(listDone.right, true);
+        expect(listDone.isRight(), true);
         expect(listDone.fold((l) => null, (r) => r)?.length, 2);
 
         // arrange
@@ -94,7 +94,7 @@ void main() {
         final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
         // assert
         verify(local.getListBy("status", MTask.stDoing));
-        expect(listDoing.right, true);
+        expect(listDoing.isRight(), true);
         expect(listDoing.fold((l) => null, (r) => r)?.length, 1);
       },
     );
@@ -108,7 +108,7 @@ void main() {
         final listAll = await domain.sl<GetTasks>().call(null);
         // assert
         verify(local.getList());
-        expect(listAll.left, true);
+        expect(listAll.isLeft(), true);
 
         // arrange
         when(local.getListBy("status", MTask.stDone))
@@ -117,7 +117,7 @@ void main() {
         final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
         // assert
         verify(local.getListBy("status", MTask.stDone));
-        expect(listDone.left, true);
+        expect(listDone.isLeft(), true);
 
         // arrange
         when(local.getListBy("status", MTask.stDoing))
@@ -126,7 +126,7 @@ void main() {
         final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
         // assert
         verify(local.getListBy("status", MTask.stDoing));
-        expect(listDoing.left, true);
+        expect(listDoing.isLeft(), true);
       },
     );
   });
@@ -142,7 +142,7 @@ void main() {
         final val = await domain.sl<GetTaskDetail>().call(10);
         // assert
         verify(local.getDetail(10));
-        expect(val.right, true);
+        expect(val.isRight(), true);
       },
     );
 
@@ -156,7 +156,7 @@ void main() {
         final val = await domain.sl<GetTaskDetail>().call(10);
         // assert
         verify(local.getDetail(10));
-        expect(val.left, true);
+        expect(val.isLeft(), true);
       },
     );
 
@@ -170,7 +170,7 @@ void main() {
         final listAll = await domain.sl<CreateTask>().call(data);
         // assert
         verify(local.saveData(data));
-        expect(listAll.right, true);
+        expect(listAll.isRight(), true);
       },
     );
 
@@ -185,7 +185,7 @@ void main() {
         final listAll = await domain.sl<CreateTask>().call(data);
         // assert
         verify(local.saveData(data));
-        expect(listAll.left, true);
+        expect(listAll.isLeft(), true);
       },
     );
 
@@ -199,7 +199,7 @@ void main() {
         final listAll = await domain.sl<UpdateTask>().call(data);
         // assert
         verify(local.updateData(10, data));
-        expect(listAll.right, true);
+        expect(listAll.isRight(), true);
       },
     );
 
@@ -214,7 +214,7 @@ void main() {
         final listAll = await domain.sl<UpdateTask>().call(data);
         // assert
         verify(local.updateData(10, data));
-        expect(listAll.left, true);
+        expect(listAll.isLeft(), true);
       },
     );
 
@@ -227,7 +227,7 @@ void main() {
         final listAll = await domain.sl<DeleteTask>().call(10);
         // assert
         verify(local.deleteData(10));
-        expect(listAll.right, true);
+        expect(listAll.isRight(), true);
       },
     );
 
@@ -241,7 +241,7 @@ void main() {
         final listAll = await domain.sl<DeleteTask>().call(10);
         // assert
         verify(local.deleteData(10));
-        expect(listAll.left, true);
+        expect(listAll.isLeft(), true);
       },
     );
   });
