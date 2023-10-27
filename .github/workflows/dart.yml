@@ -33,16 +33,19 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       # - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-
+      - name: Install dependencies
+        run: |
+          cd todoliteup_1
+          flutter pub get
+          cd ../todoliteup_1
+          flutter pub get
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # Consider passing '--fatal-infos' for slightly stricter analysis.
-      - name: Install dependencies
-        run: |
-          cd todoliteup_2
-          flutter pub get
+
       - name: Verify formatting & Analyze
         run: |
+          cd todoliteup_2
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
       - name: Run tests
@@ -56,12 +59,9 @@ jobs:
         with:
           flags: todo2
 
-      - name: Install dependencies
-        run: |
-          cd ../todoliteup_1
-          flutter pub get
       - name: Verify formatting & Analyze
         run: |
+          cd ../todoliteup_1
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
       - name: Run tests
