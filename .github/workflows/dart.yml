@@ -44,13 +44,12 @@ jobs:
 
       - name: Verify formatting & Analyze
         run: |
-          ls
           cd todoliteup_2
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
       - name: Run tests
         run: |
-          ls 
+          cd todoliteup_2
           flutter test --coverage
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
@@ -62,15 +61,18 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ../todoliteup_1
+          cd todoliteup_1
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Verify formatting & Analyze
         run: |
-          dart format --output=none --set-exit-if-changed . && flutter analyze .
+          cd todoliteup_1
+          dart format --output=none --set-exit-if-changed .
+          flutter analyze .
       - name: Run tests
         run: |
+          cd todoliteup_1
           flutter test --coverage
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
