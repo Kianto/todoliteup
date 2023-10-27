@@ -36,6 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd todoliteup_2
+          flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
@@ -58,6 +59,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd ../todoliteup_1
+          flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Verify formatting & Analyze
