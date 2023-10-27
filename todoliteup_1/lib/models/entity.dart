@@ -1,11 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'package:fast_equatable/fast_equatable.dart';
 
 ///
 /// abstract model class for all model data containers to follow
 ///
 
-abstract class Entity extends Equatable {
-  const Entity({this.id = 0, this.created, this.deleted = false, this.updated});
+abstract class Entity with FastEquatable {
+  Entity({this.id = 0, this.created, this.deleted = false, this.updated});
 
   Entity.fromJson(Map<String, dynamic> json)
       : id = json['id'] ?? 0,

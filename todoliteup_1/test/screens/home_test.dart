@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:either_dart/either.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -44,20 +44,20 @@ void main() {
 
   setUpGet() {
     when(getTasks.call(null)).thenAnswer(
-      (_) async => const Right([
+      (_) async => Right([
         MTask(title: "title0", description: "description", status: 0),
         MTask(title: "title1", description: "description", status: 1),
         MTask(title: "title2", description: "description", status: 1),
       ]),
     );
     when(getTasks.call(MTask.stDone)).thenAnswer(
-      (_) async => const Right([
+      (_) async => Right([
         MTask(title: "title1", description: "description", status: 1),
         MTask(title: "title2", description: "description", status: 1),
       ]),
     );
     when(getTasks.call(MTask.stDoing)).thenAnswer(
-      (_) async => const Right([
+      (_) async => Right([
         MTask(title: "title0", description: "description", status: 0),
       ]),
     );
@@ -65,13 +65,13 @@ void main() {
 
   setUpGetSingle() {
     when(getTasks.call(null)).thenAnswer(
-      (_) async => const Right([
+      (_) async => Right([
         MTask(title: "title0", description: "description", status: 0),
       ]),
     );
     when(getTasks.call(MTask.stDone)).thenAnswer((_) async => const Right([]));
     when(getTasks.call(MTask.stDoing)).thenAnswer(
-      (_) async => const Right([
+      (_) async => Right([
         MTask(title: "title0", description: "description", status: 0),
       ]),
     );
@@ -117,7 +117,7 @@ void main() {
     testWidgets('UI change status task testing', (WidgetTester tester) async {
       // arrange
       setUpGetSingle();
-      const data =
+      final data =
           MTask(title: "title0", description: "description", status: 1);
       when(updateTask.call(data)).thenAnswer((_) async => const Right(true));
       await tester.pumpWidget(
@@ -157,7 +157,7 @@ void main() {
     testWidgets('UI create task testing', (WidgetTester tester) async {
       // arrange
       setUpNone();
-      const data = MTask(title: "title0", description: "description");
+      final data = MTask(title: "title0", description: "description");
       when(createTask.call(data)).thenAnswer((_) async => const Right(24));
       await tester.pumpWidget(
         const GetMaterialApp(

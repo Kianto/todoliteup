@@ -28,7 +28,7 @@ void main() {
       '''blank local box must have some items''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description");
+        final data = MTask(title: "title", description: "description");
         // act
         int id = await dataSource.localDataSource.saveData(data);
         // assert
@@ -58,8 +58,8 @@ void main() {
       '''get saved data and update''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description1");
-        const newData = MTask(title: "title2", description: "description");
+        final data = MTask(title: "title", description: "description1");
+        final newData = MTask(title: "title2", description: "description");
         int id = await dataSource.localDataSource.saveData(data);
         // act
         final item = await dataSource.localDataSource.getDetail(id);
@@ -89,7 +89,7 @@ void main() {
       '''remove a item''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description");
+        final data = MTask(title: "title", description: "description");
         // act
         int id = await dataSource.localDataSource.saveData(data);
         // assert
@@ -113,12 +113,12 @@ void main() {
       '''filter task by status''',
       () async {
         // arrange
-        const data1 = MTask(
+        final data1 = MTask(
           title: "title",
           description: "description",
           status: MTask.stDoing,
         );
-        const data2 = MTask(
+        final data2 = MTask(
           title: "title",
           description: "description",
           status: MTask.stDone,

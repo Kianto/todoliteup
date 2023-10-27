@@ -47,7 +47,7 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
 
   void deleteTask(MTask task) async {
     final res = await _deleteTask(task.id).then((value) {
-      return value.isRight();
+      return value.right;
     });
     if (!kTestMode) {
       if (res) {
@@ -61,7 +61,7 @@ class TaskController extends GetxController with StateMixin<List<MTask>> {
 
   void updateTask(MTask task) async {
     final res = await _updateTask(task).then((value) {
-      return value.isRight();
+      return value.right;
     });
     if (!kTestMode) {
       if (res) {

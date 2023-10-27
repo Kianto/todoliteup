@@ -35,17 +35,17 @@ void main() {
         // arrange
         when(local.getList()).thenAnswer(
           (_) async => [
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 1,
             ),
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 1,
             ),
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 0,
@@ -56,17 +56,17 @@ void main() {
         final listAll = await domain.sl<GetTasks>().call(null);
         // assert
         verify(local.getList());
-        expect(listAll.isRight(), true);
+        expect(listAll.right, true);
 
         // arrange
         when(local.getListBy("status", MTask.stDone)).thenAnswer(
           (_) async => [
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 1,
             ),
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 1,
@@ -77,13 +77,13 @@ void main() {
         final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
         // assert
         verify(local.getListBy("status", MTask.stDone));
-        expect(listDone.isRight(), true);
+        expect(listDone.right, true);
         expect(listDone.fold((l) => null, (r) => r)?.length, 2);
 
         // arrange
         when(local.getListBy("status", MTask.stDoing)).thenAnswer(
           (_) async => [
-            const MTask(
+            MTask(
               title: "title",
               description: "description",
               status: 0,
@@ -94,7 +94,7 @@ void main() {
         final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
         // assert
         verify(local.getListBy("status", MTask.stDoing));
-        expect(listDoing.isRight(), true);
+        expect(listDoing.right, true);
         expect(listDoing.fold((l) => null, (r) => r)?.length, 1);
       },
     );
@@ -108,7 +108,7 @@ void main() {
         final listAll = await domain.sl<GetTasks>().call(null);
         // assert
         verify(local.getList());
-        expect(listAll.isLeft(), true);
+        expect(listAll.left, true);
 
         // arrange
         when(local.getListBy("status", MTask.stDone))
@@ -117,7 +117,7 @@ void main() {
         final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
         // assert
         verify(local.getListBy("status", MTask.stDone));
-        expect(listDone.isLeft(), true);
+        expect(listDone.left, true);
 
         // arrange
         when(local.getListBy("status", MTask.stDoing))
@@ -126,7 +126,7 @@ void main() {
         final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
         // assert
         verify(local.getListBy("status", MTask.stDoing));
-        expect(listDoing.isLeft(), true);
+        expect(listDoing.left, true);
       },
     );
   });
@@ -136,13 +136,13 @@ void main() {
       '''function called get ok''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description");
+        final data = MTask(title: "title", description: "description");
         when(local.getDetail(10)).thenAnswer((_) async => data);
         // act
         final val = await domain.sl<GetTaskDetail>().call(10);
         // assert
         verify(local.getDetail(10));
-        expect(val.isRight(), true);
+        expect(val.right, true);
       },
     );
 
@@ -156,7 +156,7 @@ void main() {
         final val = await domain.sl<GetTaskDetail>().call(10);
         // assert
         verify(local.getDetail(10));
-        expect(val.isLeft(), true);
+        expect(val.left, true);
       },
     );
 
@@ -164,13 +164,13 @@ void main() {
       '''function called create ok''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description");
+        final data = MTask(title: "title", description: "description");
         when(local.saveData(data)).thenAnswer((_) async => 1002);
         // act
         final listAll = await domain.sl<CreateTask>().call(data);
         // assert
         verify(local.saveData(data));
-        expect(listAll.isRight(), true);
+        expect(listAll.right, true);
       },
     );
 
@@ -178,14 +178,14 @@ void main() {
       '''function called create error''',
       () async {
         // arrange
-        const data = MTask(title: "title", description: "description");
+        final data = MTask(title: "title", description: "description");
         when(local.saveData(data))
             .thenAnswer((_) async => throw CacheException());
         // act
         final listAll = await domain.sl<CreateTask>().call(data);
         // assert
         verify(local.saveData(data));
-        expect(listAll.isLeft(), true);
+        expect(listAll.left, true);
       },
     );
 
@@ -193,13 +193,13 @@ void main() {
       '''function called update ok''',
       () async {
         // arrange
-        const data = MTask(id: 10, title: "title", description: "description");
+        final data = MTask(id: 10, title: "title", description: "description");
         when(local.updateData(10, data)).thenAnswer((_) async => true);
         // act
         final listAll = await domain.sl<UpdateTask>().call(data);
         // assert
         verify(local.updateData(10, data));
-        expect(listAll.isRight(), true);
+        expect(listAll.right, true);
       },
     );
 
@@ -207,14 +207,14 @@ void main() {
       '''function called update error''',
       () async {
         // arrange
-        const data = MTask(id: 10, title: "title", description: "description");
+        final data = MTask(id: 10, title: "title", description: "description");
         when(local.updateData(10, data))
             .thenAnswer((_) async => throw CacheException());
         // act
         final listAll = await domain.sl<UpdateTask>().call(data);
         // assert
         verify(local.updateData(10, data));
-        expect(listAll.isLeft(), true);
+        expect(listAll.left, true);
       },
     );
 
@@ -227,7 +227,7 @@ void main() {
         final listAll = await domain.sl<DeleteTask>().call(10);
         // assert
         verify(local.deleteData(10));
-        expect(listAll.isRight(), true);
+        expect(listAll.right, true);
       },
     );
 
@@ -241,7 +241,7 @@ void main() {
         final listAll = await domain.sl<DeleteTask>().call(10);
         // assert
         verify(local.deleteData(10));
-        expect(listAll.isLeft(), true);
+        expect(listAll.left, true);
       },
     );
   });

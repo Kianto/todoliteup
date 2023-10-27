@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
+import 'package:either_dart/either.dart';
+import 'package:fast_equatable/fast_equatable.dart';
 
 import '../error/failures.dart';
 
@@ -7,7 +7,10 @@ abstract class UseCase<Type, Params> {
   Future<Either<Failure, Type>> call(Params params);
 }
 
-class NoParams extends Equatable {
+class NoParams with FastEquatable {
   @override
-  List<Object> get props => [];
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters => [];
 }

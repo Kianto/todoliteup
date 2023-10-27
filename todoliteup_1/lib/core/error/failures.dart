@@ -1,8 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'package:fast_equatable/fast_equatable.dart';
 
-abstract class Failure extends Equatable {
+abstract class Failure with FastEquatable {
   @override
-  List<Object> get props => [];
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters => [];
 }
 
 // General failures

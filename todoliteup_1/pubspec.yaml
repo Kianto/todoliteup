@@ -14,8 +14,8 @@ dependencies:
   intl: ^0.18.1
   hive: ^2.2.3
   get_it: ^7.6.4
-  equatable: ^2.0.5
-  dartz: ^0.10.1
+  fast_equatable: ^1.0.0
+  either_dart: ^1.0.0
   path_provider: ^2.1.1
 
   get: ^4.6.6

@@ -1,10 +1,12 @@
+import 'package:fast_equatable/fast_equatable.dart';
+
 import 'entity.dart';
 
 class MTask extends Entity {
   static const stDoing = 0;
   static const stDone = 1;
 
-  const MTask({
+  MTask({
     super.id,
     super.created,
     super.updated,
@@ -43,9 +45,6 @@ class MTask extends Entity {
   }
 
   @override
-  List<Object?> get props => [id, title, status];
-
-  @override
   Map<String, dynamic> toJson() => {
         ...super.toJson(),
         "title": title,
@@ -53,4 +52,10 @@ class MTask extends Entity {
         "image": image,
         "status": status,
       };
+
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters => [id, title, status];
 }
