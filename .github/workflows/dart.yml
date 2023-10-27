@@ -46,8 +46,7 @@ jobs:
       - name: Verify formatting & Analyze
         run: |
           cd todoliteup_2
-          dart format --output=none --set-exit-if-changed .
-          flutter analyze .
+          dart format --output=none --set-exit-if-changed . && flutter analyze .
       - name: Run tests
         run: |
           flutter test --coverage
@@ -62,8 +61,7 @@ jobs:
       - name: Verify formatting & Analyze
         run: |
           cd ../todoliteup_1
-          dart format --output=none --set-exit-if-changed .
-          flutter analyze .
+          dart format --output=none --set-exit-if-changed . && flutter analyze .
       - name: Run tests
         run: |
           flutter test --coverage
