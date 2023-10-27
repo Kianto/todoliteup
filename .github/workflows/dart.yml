@@ -36,9 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd todoliteup_1
-          flutter pub get
-          cd ../todoliteup_1
-          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # Consider passing '--fatal-infos' for slightly stricter analysis.
@@ -57,6 +55,11 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo2
+
+      - name: Install dependencies
+        run: |
+          cd ../todoliteup_1
+          flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Verify formatting & Analyze
         run: |
