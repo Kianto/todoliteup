@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todoliteup/screens/account/animation_bg.dart';
 
-class AccountPage extends StatelessWidget {
+import 'controllers/account_controller.dart';
+
+class AccountPage extends GetWidget<AccountController> {
   const AccountPage({super.key});
 
   @override
@@ -12,7 +15,9 @@ class AccountPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          const AnimationBgView(49),
+          Obx(
+            () => AnimationBgView(controller.randNum.value),
+          ),
           Container(color: Colors.white70),
           ListView(
             padding: const EdgeInsets.all(16),
@@ -32,6 +37,10 @@ class AccountPage extends StatelessWidget {
                   '047589040',
                   textAlign: TextAlign.center,
                 ),
+              ),
+              OutlinedButton(
+                onPressed: () => controller.getRandomNumber(),
+                child: const Text('Roll'),
               ),
             ],
           ),
