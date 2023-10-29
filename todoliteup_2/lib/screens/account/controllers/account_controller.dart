@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:get/get.dart';
+import 'package:todoliteup/screens/friends/friends_binding.dart';
+import 'package:todoliteup/screens/friends/friends_page.dart';
 import 'package:todoliteup/screens/login/login_binding.dart';
 import 'package:todoliteup/screens/login/login_page.dart';
 import 'package:todoliteup/screens/message/message_binding.dart';
@@ -35,5 +37,9 @@ class AccountController extends GetxController {
 
   void settings() {
     Get.to(() => const SettingsPage(), binding: SettingsBinding());
+  }
+
+  void friends() {
+    Get.to(() => const FriendsPage(), binding: FriendsBinding());
   }
 }
