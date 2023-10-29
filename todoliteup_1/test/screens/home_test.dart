@@ -1,7 +1,7 @@
 // import 'package:dartz/dartz.dart';
 // import 'package:expandable/expandable.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_test/flutter_test.dart';
 // import 'package:get/get.dart';
 // import 'package:get_it/get_it.dart';
 // import 'package:mockito/annotations.dart';
@@ -22,7 +22,7 @@
 // import 'home_test.mocks.dart';
 //
 // @GenerateMocks([CreateTask, UpdateTask, DeleteTask, GetTasks, GetTaskDetail])
-// void main() {
+void main() {
 //   final createTask = MockCreateTask();
 //   final updateTask = MockUpdateTask();
 //   final deleteTask = MockDeleteTask();
@@ -154,7 +154,7 @@
 //       verify(deleteTask.call(0));
 //     });
 //
-//     testWidgets('UI create task testing', (WidgetTester tester) async {
+    testWidgets('UI create task testing', (WidgetTester tester) async {
 //       // arrange
 //       setUpNone();
 //       final data = MTask(title: "title0", description: "description");
@@ -175,5 +175,5 @@
 //       // assert
 //       verify(createTask.call(data));
 //     });
-//   });
-// }
+  });
+}
