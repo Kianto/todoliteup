@@ -42,6 +42,16 @@ class AccountPage extends GetWidget<AccountController> {
                 onPressed: () => controller.getRandomNumber(),
                 child: const Text('Roll'),
               ),
+              const Divider(),
+              TextButton(
+                onPressed: () => controller.getRandomNumber(),
+                child: Text(
+                  'Đăng xuất',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
+              ),
             ],
           ),
         ],
