@@ -52,6 +52,15 @@ class AccountPage extends GetWidget<AccountController> {
                   ),
                 ),
               ),
+              OutlinedButton(
+                onPressed: () => controller.message(),
+                child: Text(
+                  'Tin nhắn',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
+              ),
               const Divider(),
               TextButton(
                 onPressed: () => controller.logout(),
