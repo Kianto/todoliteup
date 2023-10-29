@@ -51,7 +51,8 @@ jobs:
         run: |
           cd todoliteup_2
           flutter test --coverage
-          genhtml -o coverage coverage/lcov.info
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -73,7 +74,8 @@ jobs:
         run: |
           cd todoliteup_1
           flutter test --coverage
-          genhtml -o coverage coverage/lcov.info
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
