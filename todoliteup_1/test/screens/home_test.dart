@@ -19,7 +19,7 @@ import 'package:todoliteup/screens/home/controllers/home_controller.dart';
 import 'package:todoliteup/screens/home/home_binding.dart';
 import 'package:todoliteup/screens/home/home_page.dart';
 
-import 'home_example.mocks.dart';
+import 'home_test.mocks.dart';
 
 @GenerateMocks([CreateTask, UpdateTask, DeleteTask, GetTasks, GetTaskDetail])
 void main() {
