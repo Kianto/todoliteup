@@ -5,6 +5,8 @@ import 'package:todoliteup/screens/login/login_binding.dart';
 import 'package:todoliteup/screens/login/login_page.dart';
 import 'package:todoliteup/screens/message/message_binding.dart';
 import 'package:todoliteup/screens/message/message_page.dart';
+import 'package:todoliteup/screens/settings/settings_binding.dart';
+import 'package:todoliteup/screens/settings/settings_page.dart';
 import 'package:todoliteup/screens/support/support_binding.dart';
 import 'package:todoliteup/screens/support/support_page.dart';
 
@@ -29,5 +31,9 @@ class AccountController extends GetxController {
 
   void message() {
     Get.to(() => const MessagePage(), binding: MessageBinding());
+  }
+
+  void settings() {
+    Get.to(() => const SettingsPage(), binding: SettingsBinding());
   }
 }
