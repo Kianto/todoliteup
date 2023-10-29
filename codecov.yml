@@ -13,17 +13,6 @@ coverage:
         flags:
           - todo-2
 
-component_management:
-  individual_components:
-    - component_id: todo-1
-      name: todo-1
-      paths:
-        - todoliteup_1/
-    - component_id: todo-2
-      name: todo-2
-      paths:
-        - todoliteup_2/
-
 comment:
   behavior: default
   hide_project_coverage: false   # [true :: only show coverage on the git diff]
@@ -36,12 +25,23 @@ comment:
 # This is where you would define every flag from your
 # uploader, and update when new Flags added
 
+component_management:
+  individual_components:
+    - component_id: todo-1
+      name: todo-1
+      paths:
+        - todoliteup_1/
+    - component_id: todo-2
+      name: todo-2
+      paths:
+        - todoliteup_2/
+
 flags:
   todo-1:
     paths: #note, accepts globs, not regexes
       - todoliteup_1/
-    carryforward: false
+    carryforward: true
   todo-2:
     paths: #note, accepts globs, not regexes
       - todoliteup_2/
-    carryforward: false
+    carryforward: true
