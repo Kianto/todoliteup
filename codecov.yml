@@ -16,7 +16,7 @@
 comment:
   behavior: default
   hide_project_coverage: false   # [true :: only show coverage on the git diff]
-  layout: ' diff, flags, files'
+  layout: ' diff, flags, files, components'
   require_base: false            # [true :: must have a base report to post]
   require_changes: false         # if true: only post the comment if coverage changes
   require_head: false            # [true :: must have a head report to post]
