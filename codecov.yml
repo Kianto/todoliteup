@@ -1,17 +1,17 @@
 # Setting coverage targets per flag
-coverage:
-  status:
-    project:
-      default:
-        target: 70% # overall project/ repo coverage
-      todo-1:
-        target: 90%
-        flags:
-          - todo-1
-      todo-2:
-        target: 60%
-        flags:
-          - todo-2
+#coverage:
+#  status:
+#    project:
+#      default:
+#        target: 70% # overall project/ repo coverage
+#      todo-1:
+#        target: 90%
+#        flags:
+#          - todo-1
+#      todo-2:
+#        target: 60%
+#        flags:
+#          - todo-2
 
 comment:
   behavior: default
@@ -34,45 +34,45 @@ component_management:
           - "!main"
   individual_components:
     - component_id: todo-1
-      name: todo-1
+      name: todo-c-1
       paths:
         - todoliteup_1/
       statuses:
         - type: project
           target: auto
     - component_id: todo-2
-      name: todo-2
+      name: todo-c-2
       paths:
         - todoliteup_2/
       statuses:
         - type: project
           target: auto
 
-flag_management:
-  default_rules:
-    carryforward: true
-    statuses:
-      - type: project
-        target: auto
-        threshold: 1%
-      - type: patch
-        target: 70%
-  individual_flags:
-    - name: todo-1
-      paths:
-        - todoliteup_1/
-      carryforward: true
-      statuses:
-        - type: project
-          target: 80%
-        - type: patch
-          target: 100%
-    - name: todo-2
-      paths:
-        - todoliteup_2/
-      carryforward: true
-      statuses:
-        - type: project
-          target: 40%
-        - type: patch
-          target: 100%
+#flag_management:
+#  default_rules:
+#    carryforward: true
+#    statuses:
+#      - type: project
+#        target: auto
+#        threshold: 1%
+#      - type: patch
+#        target: 70%
+#  individual_flags:
+#    - name: todo-1
+#      paths:
+#        - todoliteup_1/
+#      carryforward: true
+#      statuses:
+#        - type: project
+#          target: 80%
+#        - type: patch
+#          target: 100%
+#    - name: todo-2
+#      paths:
+#        - todoliteup_2/
+#      carryforward: true
+#      statuses:
+#        - type: project
+#          target: 40%
+#        - type: patch
+#          target: 100%
