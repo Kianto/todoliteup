@@ -58,6 +58,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo2
+          components: todo-c-2
 
       - name: Install dependencies
         run: |
@@ -81,6 +82,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo1
+          components: todo-c-1
 
       # Build apk.
       # - run: flutter build apk
