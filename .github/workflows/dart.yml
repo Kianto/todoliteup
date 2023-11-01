@@ -33,36 +33,10 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       # - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-     
-      # - name: Install dependencies
-      #   run: |
-      #     cd todoliteup_2
-      #     flutter pub get
-      #     flutter pub run build_runner build --delete-conflicting-outputs
 
-      # # Uncomment this step to verify the use of 'dart format' on each commit.
-      # # Consider passing '--fatal-infos' for slightly stricter analysis.
-
-      # - name: Verify formatting & Analyze
-      #   run: |
-      #     cd todoliteup_2
-      #     dart format --output=none --set-exit-if-changed .
-      #     flutter analyze .
-      # - name: Run tests
-      #   run: |
-      #     cd todoliteup_2
-      #     flutter test --coverage
-      #     lcov --list coverage/lcov.info
-      #     genhtml -o coverage coverage/lcov.info
-      # - uses: codecov/codecov-action@v3
-      #   env:
-      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      #   with:
-      #     flags: todo2
-      #     components: todo-c-2
       - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
         run: |
-          cd todoliteup_1
+          cd todoliteup_2
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
           dart format --output=none --set-exit-if-changed .
@@ -73,9 +47,26 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        # with:
-        #   flags: todo1
-        #   components: todo-c-1
+        with:
+          flags: todo2
+          components: todo-c-2
+
+#      - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
+#        run: |
+#          cd todoliteup_1
+#          flutter pub get
+#          flutter pub run build_runner build --delete-conflicting-outputs
+#          dart format --output=none --set-exit-if-changed .
+#          flutter analyze .
+#          flutter test --coverage
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
+#      - uses: codecov/codecov-action@v3
+#        env:
+#          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+#        with:
+#          flags: todo1
+#          components: todo-c-1
 
       # Build apk.
       # - run: flutter build apk
