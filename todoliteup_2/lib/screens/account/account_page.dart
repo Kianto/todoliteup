@@ -44,6 +44,16 @@ class AccountPage extends GetWidget<AccountController> {
               ),
               const Divider(),
               OutlinedButton(
+                onPressed: () => controller.friends(),
+                child: Text(
+                  'Bạn bè',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
+              ),
+              const Divider(),
+              OutlinedButton(
                 onPressed: () => controller.support(),
                 child: Text(
                   'Hỗ trợ',

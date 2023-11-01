@@ -51,13 +51,14 @@ jobs:
         run: |
           cd todoliteup_2
           flutter test --coverage
-          lcov --list coverage/lcov.info
-          genhtml -o coverage coverage/lcov.info
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo2
+          components: todo-c-2
 
       - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
         run: |
@@ -67,13 +68,14 @@ jobs:
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
           flutter test --coverage
-          lcov --list coverage/lcov.info
-          genhtml -o coverage coverage/lcov.info
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo1
+          components: todo-c-1
 
       # Build apk.
       # - run: flutter build apk
