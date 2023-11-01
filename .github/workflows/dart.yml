@@ -59,20 +59,17 @@ jobs:
         with:
           flags: todo2
 
-      - name: Install dependencies & Verify formatting & Analyze Todo_1
+      - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
         run: |
           cd todoliteup_1
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
-      - name: Run tests
-        run: |
-          cd todoliteup_1
           flutter test --coverage
-          lcov --list todoliteup_1/coverage/lcov.info
+          lcov --list coverage/lcov.info
           cd ..
-          genhtml -o coverage coverage/lcov.info
+          genhtml -o coverage todoliteup_1/coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
