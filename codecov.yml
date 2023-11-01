@@ -47,32 +47,32 @@ comment:
 #      statuses:
 #        - type: project
 #          target: auto
-#
-#flag_management:
-#  default_rules:
-#    carryforward: true
-#    statuses:
-#      - type: project
-#        target: auto
-#        threshold: 1%
-#      - type: patch
-#        target: 70%
-#  individual_flags:
-#    - name: todo-1
-#      paths:
-#        - todoliteup_1/
-#      carryforward: true
-#      statuses:
-#        - type: project
-#          target: 80%
-#        - type: patch
-#          target: 100%
-#    - name: todo-2
-#      paths:
-#        - todoliteup_2/
-#      carryforward: true
-#      statuses:
-#        - type: project
-#          target: 40%
-#        - type: patch
-#          target: 100%
+
+flag_management:
+  default_rules:
+    carryforward: true
+    statuses:
+      - type: project
+        target: auto
+        threshold: 1%
+      - type: patch
+        target: 70%
+  individual_flags:
+    - name: todo-1
+      paths:
+        - todoliteup_1/
+      carryforward: true
+      statuses:
+        - type: project
+          target: 80%
+        - type: patch
+          target: 100%
+    - name: todo-2
+      paths:
+        - todoliteup_2/
+      carryforward: true
+      statuses:
+        - type: project
+          target: 40%
+        - type: patch
+          target: 100%
