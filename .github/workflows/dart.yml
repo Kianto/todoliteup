@@ -68,8 +68,7 @@ jobs:
           flutter analyze .
           flutter test --coverage
           lcov --list coverage/lcov.info
-          cd ..
-          genhtml -o coverage todoliteup_1/coverage/lcov.info
+          genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
