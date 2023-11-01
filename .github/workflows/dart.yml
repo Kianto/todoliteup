@@ -21,7 +21,7 @@ jobs:
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v1
 
-      - uses: hrishikesh-kadam/setup-lcov@v1
+#      - uses: hrishikesh-kadam/setup-lcov@v1
       # - uses: zgosalvez/github-actions-report-lcov@v3
       #   with:
       #     coverage-files: coverage/lcov.*.info
@@ -50,7 +50,6 @@ jobs:
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
 
-      - name: Report codecov
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
