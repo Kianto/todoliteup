@@ -21,7 +21,7 @@ jobs:
       # Setup the flutter environment.
       - uses: subosito/flutter-action@v1
 
-#      - uses: hrishikesh-kadam/setup-lcov@v1
+      - uses: hrishikesh-kadam/setup-lcov@v1
       # - uses: zgosalvez/github-actions-report-lcov@v3
       #   with:
       #     coverage-files: coverage/lcov.*.info
@@ -53,11 +53,6 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      # - uses: zgosalvez/github-actions-report-lcov@v3
-      #   with:
-      #     coverage-files: coverage/lcov.*.info
-      #     minimum-coverage: 90
-      #     update-comment: true
 
       # Build apk.
       # - run: flutter build apk
