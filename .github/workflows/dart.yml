@@ -74,7 +74,7 @@ jobs:
         run: |
           cd todoliteup_1
           flutter test --coverage
-          lcov --list ../coverage/lcov.info
+          lcov --list todoliteup_1/coverage/lcov.info
           cd ..
           genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
