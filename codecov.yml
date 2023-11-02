@@ -4,22 +4,14 @@ coverage:
     project:
       default:
         target: 70% # overall project/ repo coverage
-      todo-1:
+      todo_1:
         target: 90%
         flags:
           - todo_1
-      todo-2:
+      todo_2:
         target: 60%
         flags:
           - todo_2
-
-flags:
-  todo_1:
-    paths:
-      - todoliteup_1/
-  todo_2:
-    paths:
-      - todoliteup_2/
 
 comment:
   behavior: default
@@ -28,6 +20,14 @@ comment:
   require_base: true            # [true :: must have a base report to post]
   require_changes: false         # if true: only post the comment if coverage changes
   require_head: true            # [true :: must have a head report to post]
+
+flags:
+  todo_1:
+    paths:
+      - todoliteup_1/
+  todo_2:
+    paths:
+      - todoliteup_2/
 
 component_management:
   default_rules: # default rules that will be inherited by all components
