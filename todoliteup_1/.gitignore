@@ -55,6 +55,5 @@ app.*.map.json
 # Lcov report
 /coverage/
 /test/
-/lib/
 /.github/
 codecov.yml
