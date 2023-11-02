@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/res/strings.dart';
-import 'package:todolite/screens/todo_home/components/list_tab.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/res/strings.dart';
+import 'package:todo0/screens/task/components/list_tab.dart';
 
 import 'controllers/todo_controller.dart';
 import 'controllers/task_controller.dart';

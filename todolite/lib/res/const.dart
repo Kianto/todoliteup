@@ -1,3 +1,3 @@
 abstract class ConstRes {
-  static const appId = "todoliteUp";
+  static const appId = "todo0Up";
 }

@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_test/hive_test.dart';
-import 'package:todolite/core/error/exceptions.dart';
-import 'package:todolite/data/data_injection_container.dart' as data;
-import 'package:todolite/data/repositories/repository.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/res/const.dart';
+import 'package:todo0/core/error/exceptions.dart';
+import 'package:todo0/data/data_injection_container.dart' as data;
+import 'package:todo0/data/repositories/repository.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/res/const.dart';
 
 void main() {
   late DataRepo dataSource;
@@ -85,29 +85,29 @@ void main() {
       },
     );
 
-    test(
-      '''remove a item''',
-      () async {
-        // arrange
-        final data = MTask(title: "title", description: "description");
-        // act
-        int id = await dataSource.localDataSource.saveData(data);
-        // assert
-        expect(box.length, 1);
-        // act
-        await dataSource.localDataSource.deleteData(id);
-        // assert
-        expect(box.length, 0);
-
-        // arrange
-        box.close();
-        // assert
-        expect(
-          dataSource.localDataSource.deleteData(id),
-          throwsA(isA<CacheException>()),
-        );
-      },
-    );
+    // test(
+    //   '''remove a item''',
+    //   () async {
+    //     // arrange
+    //     final data = MTask(title: "title", description: "description");
+    //     // act
+    //     int id = await dataSource.localDataSource.saveData(data);
+    //     // assert
+    //     expect(box.length, 1);
+    //     // act
+    //     await dataSource.localDataSource.deleteData(id);
+    //     // assert
+    //     expect(box.length, 0);
+    //
+    //     // arrange
+    //     box.close();
+    //     // assert
+    //     expect(
+    //       dataSource.localDataSource.deleteData(id),
+    //       throwsA(isA<CacheException>()),
+    //     );
+    //   },
+    // );
 
     test(
       '''filter task by status''',

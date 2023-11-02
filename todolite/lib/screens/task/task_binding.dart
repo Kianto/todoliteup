@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/screens/todo_home/controllers/task_controller.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/screens/task/controllers/task_controller.dart';
 
 import 'controllers/todo_controller.dart';
 
-class TodoBinding implements Bindings {
+class TaskBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => TodoController());

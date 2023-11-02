@@ -9,9 +9,12 @@ class SplashController extends GetxController {
   void onInit() {
     super.onInit();
 
-    Future.delayed(const Duration(milliseconds: 300)).then((_) {
-      Get.offAll(() => const HomePage(), binding: TodoBinding());
-      return isLoading.value = false;
-    });
+    init();
+  }
+
+  void init() async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    Get.offAll(() => const HomePage(), binding: TodoBinding());
+    isLoading.value = false;
   }
 }

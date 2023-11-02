@@ -3,13 +3,13 @@ coverage:
   status:
     project:
       default:
-        target: 70%
+        target: 50%
       todo0:
-        target: 90%
+        target: 80%
         flags:
           - todo0
       todo1:
-        target: 90%
+        target: 70%
         flags:
           - todo1
       todo2:

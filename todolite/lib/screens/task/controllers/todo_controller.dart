@@ -3,10 +3,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todolite/domain/usecases/ts_create_task.dart';
-import 'package:todolite/injection_container.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/res/strings.dart';
+import 'package:todo0/domain/usecases/ts_create_task.dart';
+import 'package:todo0/injection_container.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/res/strings.dart';
 
 class TodoController extends GetxController {
   bool get kTestMode => Platform.environment.containsKey('FLUTTER_TEST');

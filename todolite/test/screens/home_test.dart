@@ -6,18 +6,18 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:todolite/core/error/failures.dart';
-import 'package:todolite/domain/usecases/ts_create_task.dart';
-import 'package:todolite/domain/usecases/ts_delete_task.dart';
-import 'package:todolite/domain/usecases/ts_get_task_detail.dart';
-import 'package:todolite/domain/usecases/ts_get_tasks.dart';
-import 'package:todolite/domain/usecases/ts_update_task.dart';
+import 'package:todo0/core/error/failures.dart';
+import 'package:todo0/domain/usecases/ts_create_task.dart';
+import 'package:todo0/domain/usecases/ts_delete_task.dart';
+import 'package:todo0/domain/usecases/ts_get_task_detail.dart';
+import 'package:todo0/domain/usecases/ts_get_tasks.dart';
+import 'package:todo0/domain/usecases/ts_update_task.dart';
 
-import 'package:todolite/injection_container.dart' as di;
-import 'package:todolite/models/task.dart';
-import 'package:todolite/screens/todo_home/controllers/todo_controller.dart';
-import 'package:todolite/screens/todo_home/home_binding.dart';
-import 'package:todolite/screens/todo_home/home_page.dart';
+import 'package:todo0/injection_container.dart' as di;
+import 'package:todo0/models/task.dart';
+import 'package:todo0/screens/task/controllers/todo_controller.dart';
+import 'package:todo0/screens/task/task_binding.dart';
+import 'package:todo0/screens/task/task_page.dart';
 
 import 'home_test.mocks.dart';
 
@@ -35,7 +35,7 @@ void main() {
     GetIt.instance.registerLazySingleton<DeleteTask>(() => deleteTask);
     GetIt.instance.registerLazySingleton<GetTasks>(() => getTasks);
     GetIt.instance.registerLazySingleton<GetTaskDetail>(() => getTaskDetail);
-    TodoBinding().dependencies();
+    TaskBinding().dependencies();
   });
   tearDown(() async {
     di.sl.reset();
