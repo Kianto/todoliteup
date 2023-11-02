@@ -4,14 +4,14 @@ coverage:
     project:
       default:
         target: 70%
-      todo_1:
+      todo1:
         target: 90%
         flags:
-          - todo_1
-      todo_2:
+          - todo1
+      todo2:
         target: 60%
         flags:
-          - todo_2
+          - todo2
 
 comment:
   behavior: default
@@ -22,10 +22,10 @@ comment:
   require_head: true            # [true :: must have a head report to post]
 
 flags:
-  todo_1:
+  todo1:
     paths:
       - todoliteup_1/
-  todo_2:
+  todo2:
     paths:
       - todoliteup_2/
 
