@@ -41,7 +41,6 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo2
-          components: todo-c-2
           files: todoliteup_2/coverage/lcov.info
 
       - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
@@ -58,7 +57,6 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo1
-          components: todo-c-1
           files: todoliteup_1/coverage/lcov.info
 
 
