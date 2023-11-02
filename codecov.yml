@@ -3,54 +3,61 @@ coverage:
   status:
     project:
       default:
-        target: 70% # overall project/ repo coverage
-      todo_1:
+        target: 70%
+      todo0:
         target: 90%
         flags:
-          - todo_1
-      todo_2:
-        target: 60%
+          - todo0
+      todo1:
+        target: 90%
         flags:
-          - todo_2
+          - todo1
+      todo2:
+        target: 50%
+        flags:
+          - todo2
 
 comment:
   behavior: default
   hide_project_coverage: false   # [true :: only show coverage on the git diff]
-  layout: ' diff, flags, files, components'
+  layout: ' diff, flags, files'
   require_base: true            # [true :: must have a base report to post]
   require_changes: false         # if true: only post the comment if coverage changes
   require_head: true            # [true :: must have a head report to post]
 
 flags:
-  todo_1:
+  todo0:
+    paths:
+      - todolite/
+  todo1:
     paths:
       - todoliteup_1/
-  todo_2:
+  todo2:
     paths:
       - todoliteup_2/
 
-component_management:
-  default_rules: # default rules that will be inherited by all components
-    statuses:
-      - type: project # in this case every component that doens't have a status defined will have a project type one
-        target: auto
-        branches:
-          - "!main"
-  individual_components:
-    - component_id: todo-1
-      name: todo-c-1
-      paths:
-        - todoliteup_1/**
-      statuses:
-        - type: project
-          target: auto
-    - component_id: todo-2
-      name: todo-c-2
-      paths:
-        - todoliteup_2/**
-      statuses:
-        - type: project
-          target: auto
+#component_management:
+#  default_rules: # default rules that will be inherited by all components
+#    statuses:
+#      - type: project # in this case every component that doens't have a status defined will have a project type one
+#        target: auto
+#        branches:
+#          - "!main"
+#  individual_components:
+#    - component_id: todo-1
+#      name: todo-c-1
+#      paths:
+#        - todoliteup_1/**
+#      statuses:
+#        - type: project
+#          target: auto
+#    - component_id: todo-2
+#      name: todo-c-2
+#      paths:
+#        - todoliteup_2/**
+#      statuses:
+#        - type: project
+#          target: auto
 
 #flag_management:
 #  default_rules:
