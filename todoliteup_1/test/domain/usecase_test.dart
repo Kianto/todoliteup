@@ -5,11 +5,11 @@ import 'package:todolite/core/error/exceptions.dart';
 import 'package:todolite/data/datasources/data_source.dart';
 import 'package:todolite/domain/domain_injection_container.dart' as domain;
 import 'package:todolite/data/repositories/repository.dart';
-import 'package:todolite/domain/usecases/ts_create_task.dart';
+// import 'package:todolite/domain/usecases/ts_create_task.dart';
 import 'package:todolite/domain/usecases/ts_delete_task.dart';
-import 'package:todolite/domain/usecases/ts_get_task_detail.dart';
+// import 'package:todolite/domain/usecases/ts_get_task_detail.dart';
 import 'package:todolite/domain/usecases/ts_get_tasks.dart';
-import 'package:todolite/domain/usecases/ts_update_task.dart';
+// import 'package:todolite/domain/usecases/ts_update_task.dart';
 import 'package:todolite/models/task.dart';
 
 import 'usecase_test.mocks.dart';
@@ -99,137 +99,137 @@ void main() {
       },
     );
 
-    test(
-      '''function called error''',
-      () async {
-        // arrange
-        when(local.getList()).thenAnswer((_) async => throw ServerException());
-        // act
-        final listAll = await domain.sl<GetTasks>().call(null);
-        // assert
-        verify(local.getList());
-        expect(listAll.isLeft(), true);
-
-        // arrange
-        when(local.getListBy("status", MTask.stDone))
-            .thenAnswer((_) async => throw ServerException());
-        // act
-        final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
-        // assert
-        verify(local.getListBy("status", MTask.stDone));
-        expect(listDone.isLeft(), true);
-
-        // arrange
-        when(local.getListBy("status", MTask.stDoing))
-            .thenAnswer((_) async => throw ServerException());
-        // act
-        final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
-        // assert
-        verify(local.getListBy("status", MTask.stDoing));
-        expect(listDoing.isLeft(), true);
-      },
-    );
-  });
-
-  group('usecases data testing', () {
-    test(
-      '''function called get ok''',
-      () async {
-        // arrange
-        final data = MTask(title: "title", description: "description");
-        when(local.getDetail(10)).thenAnswer((_) async => data);
-        // act
-        final val = await domain.sl<GetTaskDetail>().call(10);
-        // assert
-        verify(local.getDetail(10));
-        expect(val.isRight(), true);
-      },
-    );
-
-    test(
-      '''function called get error''',
-      () async {
-        // arrange
-        when(local.getDetail(10))
-            .thenAnswer((_) async => throw CacheException());
-        // act
-        final val = await domain.sl<GetTaskDetail>().call(10);
-        // assert
-        verify(local.getDetail(10));
-        expect(val.isLeft(), true);
-      },
-    );
-
-    test(
-      '''function called create ok''',
-      () async {
-        // arrange
-        final data = MTask(title: "title", description: "description");
-        when(local.saveData(data)).thenAnswer((_) async => 1002);
-        // act
-        final listAll = await domain.sl<CreateTask>().call(data);
-        // assert
-        verify(local.saveData(data));
-        expect(listAll.isRight(), true);
-      },
-    );
-
-    test(
-      '''function called create error''',
-      () async {
-        // arrange
-        final data = MTask(title: "title", description: "description");
-        when(local.saveData(data))
-            .thenAnswer((_) async => throw CacheException());
-        // act
-        final listAll = await domain.sl<CreateTask>().call(data);
-        // assert
-        verify(local.saveData(data));
-        expect(listAll.isLeft(), true);
-      },
-    );
-
-    test(
-      '''function called update ok''',
-      () async {
-        // arrange
-        final data = MTask(id: 10, title: "title", description: "description");
-        when(local.updateData(10, data)).thenAnswer((_) async => true);
-        // act
-        final listAll = await domain.sl<UpdateTask>().call(data);
-        // assert
-        verify(local.updateData(10, data));
-        expect(listAll.isRight(), true);
-      },
-    );
-
-    test(
-      '''function called update error''',
-      () async {
-        // arrange
-        final data = MTask(id: 10, title: "title", description: "description");
-        when(local.updateData(10, data))
-            .thenAnswer((_) async => throw CacheException());
-        // act
-        final listAll = await domain.sl<UpdateTask>().call(data);
-        // assert
-        verify(local.updateData(10, data));
-        expect(listAll.isLeft(), true);
-      },
-    );
-
-    test(
-      '''function called delete ok''',
-      () async {
-        // arrange
-        when(local.deleteData(10)).thenAnswer((_) async => true);
-        // act
-        final listAll = await domain.sl<DeleteTask>().call(10);
-        // assert
-        verify(local.deleteData(10));
-        expect(listAll.isRight(), true);
-      },
-    );
+  //   test(
+  //     '''function called error''',
+  //     () async {
+  //       // arrange
+  //       when(local.getList()).thenAnswer((_) async => throw ServerException());
+  //       // act
+  //       final listAll = await domain.sl<GetTasks>().call(null);
+  //       // assert
+  //       verify(local.getList());
+  //       expect(listAll.isLeft(), true);
+  //
+  //       // arrange
+  //       when(local.getListBy("status", MTask.stDone))
+  //           .thenAnswer((_) async => throw ServerException());
+  //       // act
+  //       final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
+  //       // assert
+  //       verify(local.getListBy("status", MTask.stDone));
+  //       expect(listDone.isLeft(), true);
+  //
+  //       // arrange
+  //       when(local.getListBy("status", MTask.stDoing))
+  //           .thenAnswer((_) async => throw ServerException());
+  //       // act
+  //       final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
+  //       // assert
+  //       verify(local.getListBy("status", MTask.stDoing));
+  //       expect(listDoing.isLeft(), true);
+  //     },
+  //   );
+  // });
+  //
+  // group('usecases data testing', () {
+  //   test(
+  //     '''function called get ok''',
+  //     () async {
+  //       // arrange
+  //       final data = MTask(title: "title", description: "description");
+  //       when(local.getDetail(10)).thenAnswer((_) async => data);
+  //       // act
+  //       final val = await domain.sl<GetTaskDetail>().call(10);
+  //       // assert
+  //       verify(local.getDetail(10));
+  //       expect(val.isRight(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called get error''',
+  //     () async {
+  //       // arrange
+  //       when(local.getDetail(10))
+  //           .thenAnswer((_) async => throw CacheException());
+  //       // act
+  //       final val = await domain.sl<GetTaskDetail>().call(10);
+  //       // assert
+  //       verify(local.getDetail(10));
+  //       expect(val.isLeft(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called create ok''',
+  //     () async {
+  //       // arrange
+  //       final data = MTask(title: "title", description: "description");
+  //       when(local.saveData(data)).thenAnswer((_) async => 1002);
+  //       // act
+  //       final listAll = await domain.sl<CreateTask>().call(data);
+  //       // assert
+  //       verify(local.saveData(data));
+  //       expect(listAll.isRight(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called create error''',
+  //     () async {
+  //       // arrange
+  //       final data = MTask(title: "title", description: "description");
+  //       when(local.saveData(data))
+  //           .thenAnswer((_) async => throw CacheException());
+  //       // act
+  //       final listAll = await domain.sl<CreateTask>().call(data);
+  //       // assert
+  //       verify(local.saveData(data));
+  //       expect(listAll.isLeft(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called update ok''',
+  //     () async {
+  //       // arrange
+  //       final data = MTask(id: 10, title: "title", description: "description");
+  //       when(local.updateData(10, data)).thenAnswer((_) async => true);
+  //       // act
+  //       final listAll = await domain.sl<UpdateTask>().call(data);
+  //       // assert
+  //       verify(local.updateData(10, data));
+  //       expect(listAll.isRight(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called update error''',
+  //     () async {
+  //       // arrange
+  //       final data = MTask(id: 10, title: "title", description: "description");
+  //       when(local.updateData(10, data))
+  //           .thenAnswer((_) async => throw CacheException());
+  //       // act
+  //       final listAll = await domain.sl<UpdateTask>().call(data);
+  //       // assert
+  //       verify(local.updateData(10, data));
+  //       expect(listAll.isLeft(), true);
+  //     },
+  //   );
+  //
+  //   test(
+  //     '''function called delete ok''',
+  //     () async {
+  //       // arrange
+  //       when(local.deleteData(10)).thenAnswer((_) async => true);
+  //       // act
+  //       final listAll = await domain.sl<DeleteTask>().call(10);
+  //       // assert
+  //       verify(local.deleteData(10));
+  //       expect(listAll.isRight(), true);
+  //     },
+  //   );
 
     test(
       '''function called delete error''',

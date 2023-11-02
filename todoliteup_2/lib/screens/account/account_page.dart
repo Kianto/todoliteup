@@ -43,43 +43,43 @@ class AccountPage extends GetWidget<AccountController> {
                 child: const Text('Roll'),
               ),
               const Divider(),
-              OutlinedButton(
-                onPressed: () => controller.friends(),
-                child: Text(
-                  'Bạn bè',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-              ),
-              const Divider(),
-              OutlinedButton(
-                onPressed: () => controller.support(),
-                child: Text(
-                  'Hỗ trợ',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-              ),
-              OutlinedButton(
-                onPressed: () => controller.message(),
-                child: Text(
-                  'Tin nhắn',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-              ),
-              OutlinedButton(
-                onPressed: () => controller.settings(),
-                child: Text(
-                  'Cài đặt',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-              ),
+              // OutlinedButton(
+              //   onPressed: () => controller.friends(),
+              //   child: Text(
+              //     'Bạn bè',
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.error,
+              //     ),
+              //   ),
+              // ),
+              // const Divider(),
+              // OutlinedButton(
+              //   onPressed: () => controller.support(),
+              //   child: Text(
+              //     'Hỗ trợ',
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.error,
+              //     ),
+              //   ),
+              // ),
+              // OutlinedButton(
+              //   onPressed: () => controller.message(),
+              //   child: Text(
+              //     'Tin nhắn',
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.error,
+              //     ),
+              //   ),
+              // ),
+              // OutlinedButton(
+              //   onPressed: () => controller.settings(),
+              //   child: Text(
+              //     'Cài đặt',
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.error,
+              //     ),
+              //   ),
+              // ),
               const Divider(),
               TextButton(
                 onPressed: () => controller.logout(),
