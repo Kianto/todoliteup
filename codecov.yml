@@ -19,7 +19,7 @@ flags:
       - todoliteup_1/
   todo_2:
     paths:
-      - todoliteup_1/
+      - todoliteup_2/
 
 comment:
   behavior: default
