@@ -15,7 +15,7 @@
 //
 // import 'package:todolite/injection_container.dart' as di;
 // import 'package:todolite/models/task.dart';
-// import 'package:todolite/screens/home/controllers/todo_controller.dart';
+// import 'package:todolite/screens/home/controllers/splash_controller.dart';
 // import 'package:todolite/screens/home/home_binding.dart';
 // import 'package:todolite/screens/home/home_page.dart';
 //
