@@ -15,9 +15,9 @@ import 'package:todolite/domain/usecases/ts_update_task.dart';
 
 import 'package:todolite/injection_container.dart' as di;
 import 'package:todolite/models/task.dart';
-import 'package:todolite/screens/home/controllers/splash_controller.dart';
-import 'package:todolite/screens/home/home_binding.dart';
-import 'package:todolite/screens/home/home_page.dart';
+import 'package:todolite/screens/todo_home/controllers/todo_controller.dart';
+import 'package:todolite/screens/todo_home/home_binding.dart';
+import 'package:todolite/screens/todo_home/home_page.dart';
 
 import 'home_test.mocks.dart';
 
@@ -35,7 +35,7 @@ void main() {
     GetIt.instance.registerLazySingleton<DeleteTask>(() => deleteTask);
     GetIt.instance.registerLazySingleton<GetTasks>(() => getTasks);
     GetIt.instance.registerLazySingleton<GetTaskDetail>(() => getTaskDetail);
-    HomeBinding().dependencies();
+    TodoBinding().dependencies();
   });
   tearDown(() async {
     di.sl.reset();
@@ -103,7 +103,7 @@ void main() {
       await tester.pump();
       await tester.pump();
       // assert
-      expect(Get.find<HomeController>().pageController.page, 2);
+      expect(Get.find<TodoController>().pageController.page, 2);
       expect(find.text("title0"), findsNothing);
 
       // act
