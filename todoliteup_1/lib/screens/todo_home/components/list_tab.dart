@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:todolite/common/loading_widget.dart';
 import 'package:todolite/common/no_data_widget.dart';
 import 'package:todolite/models/task.dart';
-import 'package:todolite/screens/home/controllers/task_controller.dart';
+import 'package:todolite/screens/todo_home/controllers/task_controller.dart';
 
 import 'task_item.dart';
 

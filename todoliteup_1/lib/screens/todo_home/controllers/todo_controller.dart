@@ -8,7 +8,7 @@ import 'package:todolite/injection_container.dart';
 import 'package:todolite/models/task.dart';
 import 'package:todolite/res/strings.dart';
 
-class HomeController extends GetxController {
+class TodoController extends GetxController {
   bool get kTestMode => Platform.environment.containsKey('FLUTTER_TEST');
 
   CreateTask get createTask => sl();

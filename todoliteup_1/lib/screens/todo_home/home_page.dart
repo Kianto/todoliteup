@@ -3,12 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:todolite/models/task.dart';
 import 'package:todolite/res/strings.dart';
-import 'package:todolite/screens/home/components/list_tab.dart';
+import 'package:todolite/screens/todo_home/components/list_tab.dart';
 
-import 'controllers/home_controller.dart';
+import 'controllers/todo_controller.dart';
 import 'controllers/task_controller.dart';
 
-class HomePage extends GetWidget<HomeController> {
+class HomePage extends GetWidget<TodoController> {
   const HomePage({Key? key}) : super(key: key);
 
   @override
