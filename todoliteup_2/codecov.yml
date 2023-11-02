@@ -1,17 +1,25 @@
 # Setting coverage targets per flag
-#coverage:
-# status:
-#   project:
-#     default:
-#       target: 70% # overall project/ repo coverage
-#     todo-1:
-#       target: 90%
-#       flags:
-#         - todo-1
-#     todo-2:
-#       target: 60%
-#       flags:
-#         - todo-2
+coverage:
+  status:
+    project:
+      default:
+        target: 70% # overall project/ repo coverage
+      todo-1:
+        target: 90%
+        flags:
+          - todo_1
+      todo-2:
+        target: 60%
+        flags:
+          - todo_2
+
+flags:
+  todo_1:
+    paths:
+      - todoliteup_1/
+  todo_2:
+    paths:
+      - todoliteup_1/
 
 comment:
   behavior: default
