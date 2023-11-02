@@ -85,29 +85,29 @@ void main() {
       },
     );
 
-    // test(
-    //   '''remove a item''',
-    //   () async {
-    //     // arrange
-    //     final data = MTask(title: "title", description: "description");
-    //     // act
-    //     int id = await dataSource.localDataSource.saveData(data);
-    //     // assert
-    //     expect(box.length, 1);
-    //     // act
-    //     await dataSource.localDataSource.deleteData(id);
-    //     // assert
-    //     expect(box.length, 0);
-    //
-    //     // arrange
-    //     box.close();
-    //     // assert
-    //     expect(
-    //       dataSource.localDataSource.deleteData(id),
-    //       throwsA(isA<CacheException>()),
-    //     );
-    //   },
-    // );
+    test(
+      '''remove a item''',
+      () async {
+        // arrange
+        final data = MTask(title: "title", description: "description");
+        // act
+        int id = await dataSource.localDataSource.saveData(data);
+        // assert
+        expect(box.length, 1);
+        // act
+        await dataSource.localDataSource.deleteData(id);
+        // assert
+        expect(box.length, 0);
+
+        // arrange
+        box.close();
+        // assert
+        expect(
+          dataSource.localDataSource.deleteData(id),
+          throwsA(isA<CacheException>()),
+        );
+      },
+    );
 
     test(
       '''filter task by status''',
