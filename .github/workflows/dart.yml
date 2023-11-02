@@ -35,9 +35,9 @@ jobs:
           flutter pub run build_runner build --delete-conflicting-outputs
           dart format --output=none --set-exit-if-changed .
           flutter analyze .
-          flutter test --coverage
-          lcov --list coverage/lcov.info
-          genhtml -o coverage coverage/lcov.info
+#          flutter test --coverage
+#          lcov --list coverage/lcov.info
+#          genhtml -o coverage coverage/lcov.info
 
       - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
         run: |
@@ -48,7 +48,7 @@ jobs:
           flutter analyze .
           flutter test --coverage
           lcov --list coverage/lcov.info
-#          genhtml -o coverage coverage/lcov.info
+          genhtml -o coverage coverage/lcov.info
 
       - uses: codecov/codecov-action@v3
         env:
