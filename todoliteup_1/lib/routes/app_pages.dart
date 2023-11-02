@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:todoliteup/screens/home/home_binding.dart';
-import 'package:todoliteup/screens/home/home_page.dart';
+import 'package:todolite/screens/home/home_binding.dart';
+import 'package:todolite/screens/home/home_page.dart';
 
 part 'app_routes.dart';
 

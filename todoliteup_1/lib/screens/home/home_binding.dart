@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:todoliteup/models/task.dart';
-import 'package:todoliteup/screens/home/controllers/task_controller.dart';
+import 'package:todolite/models/task.dart';
+import 'package:todolite/screens/home/controllers/task_controller.dart';
 
 import 'controllers/home_controller.dart';
 

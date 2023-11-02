@@ -1,4 +1,4 @@
-import 'package:todoliteup/models/task.dart';
+import 'package:todolite/models/task.dart';
 
 import '../datasources/data_source.dart';
 
