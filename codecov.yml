@@ -40,14 +40,14 @@ component_management:
     - component_id: todo-1
       name: todo-c-1
       paths:
-        - todoliteup_1/
+        - todoliteup_1/**
       statuses:
         - type: project
           target: auto
     - component_id: todo-2
       name: todo-c-2
       paths:
-        - todoliteup_2/
+        - todoliteup_2/**
       statuses:
         - type: project
           target: auto
