@@ -33,8 +33,6 @@ jobs:
           cd todoliteup_2
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
-#          dart format --output=none --set-exit-if-changed .
-#          flutter analyze .
           flutter test --coverage
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
@@ -51,8 +49,6 @@ jobs:
           cd todoliteup_1
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
-#          dart format --output=none --set-exit-if-changed .
-#          flutter analyze .
           flutter test --coverage
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
@@ -65,6 +61,10 @@ jobs:
           components: todo-c-1
           files: todoliteup_1/coverage/lcov.info
 
+
+          # dart format --output=none --set-exit-if-changed .
+          # flutter analyze .
+          
 #          directory: todoliteup_1/
 #          fail_ci_if_error: true
 #          name: codecov-umbrella
