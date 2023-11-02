@@ -1,7 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/res/strings.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/res/strings.dart';
 
 class TaskItem extends StatelessWidget {
   final MTask task;

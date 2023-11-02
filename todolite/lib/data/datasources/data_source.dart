@@ -1,4 +1,4 @@
-import 'package:todolite/models/entity.dart';
+import 'package:todo0/models/entity.dart';
 
 ///
 /// Store data in device local

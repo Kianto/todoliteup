@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:todolite/res/strings.dart';
+import 'package:todo0/res/strings.dart';
 
 import 'injection_container.dart' as di;
 import 'res/const.dart';

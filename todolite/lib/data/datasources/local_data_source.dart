@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
-import 'package:todolite/core/error/exceptions.dart';
-import 'package:todolite/models/entity_factory.dart';
+import 'package:todo0/core/error/exceptions.dart';
+import 'package:todo0/models/entity_factory.dart';
 
 import '../../models/entity.dart';
 import 'data_source.dart';

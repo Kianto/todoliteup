@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:get/get.dart';
-import 'package:todolite/domain/usecases/ts_delete_task.dart';
-import 'package:todolite/domain/usecases/ts_get_tasks.dart';
-import 'package:todolite/domain/usecases/ts_update_task.dart';
-import 'package:todolite/injection_container.dart';
-import 'package:todolite/models/task.dart';
-import 'package:todolite/res/strings.dart';
+import 'package:todo0/domain/usecases/ts_delete_task.dart';
+import 'package:todo0/domain/usecases/ts_get_tasks.dart';
+import 'package:todo0/domain/usecases/ts_update_task.dart';
+import 'package:todo0/injection_container.dart';
+import 'package:todo0/models/task.dart';
+import 'package:todo0/res/strings.dart';
 
 class TaskController extends GetxController with StateMixin<List<MTask>> {
   bool get kTestMode => Platform.environment.containsKey('FLUTTER_TEST');

@@ -16,8 +16,8 @@ import 'package:todolite/domain/usecases/ts_update_task.dart';
 import 'package:todolite/injection_container.dart' as di;
 import 'package:todolite/models/task.dart';
 import 'package:todolite/screens/todo_home/controllers/todo_controller.dart';
-import 'package:todolite/screens/todo_home/home_binding.dart';
-import 'package:todolite/screens/todo_home/home_page.dart';
+import 'package:todolite/screens/todo_home/task_binding.dart';
+import 'package:todolite/screens/todo_home/task_page.dart';
 
 import 'home_test.mocks.dart';
 
@@ -35,7 +35,7 @@ void main() {
     GetIt.instance.registerLazySingleton<DeleteTask>(() => deleteTask);
     GetIt.instance.registerLazySingleton<GetTasks>(() => getTasks);
     GetIt.instance.registerLazySingleton<GetTaskDetail>(() => getTaskDetail);
-    TodoBinding().dependencies();
+    TaskBinding().dependencies();
   });
   tearDown(() async {
     di.sl.reset();
