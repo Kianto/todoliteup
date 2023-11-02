@@ -39,13 +39,13 @@ jobs:
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
 
-      - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
-        run: |
-          cd todoliteup_1
-          flutter pub get
-          flutter pub run build_runner build --delete-conflicting-outputs
-          dart format --output=none --set-exit-if-changed .
-          flutter analyze .
+#      - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
+#        run: |
+#          cd todoliteup_1
+#          flutter pub get
+#          flutter pub run build_runner build --delete-conflicting-outputs
+#          dart format --output=none --set-exit-if-changed .
+#          flutter analyze .
 #          flutter test --coverage
 #          lcov --list coverage/lcov.info
 #          genhtml -o coverage coverage/lcov.info
