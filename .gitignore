@@ -53,4 +53,5 @@ app.*.map.json
 /assets/langs/**.json
 
 # Lcov report
-#/coverage/
+/coverage/
+/todoliteup_1/
