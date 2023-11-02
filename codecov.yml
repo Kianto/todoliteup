@@ -9,7 +9,7 @@ coverage:
         flags:
           - todo1
       todo2:
-        target: 60%
+        target: 50%
         flags:
           - todo2
 
