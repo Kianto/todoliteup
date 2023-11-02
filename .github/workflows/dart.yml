@@ -39,11 +39,12 @@ jobs:
           lcov --list coverage/lcov.info
           genhtml -o coverage coverage/lcov.info
       - uses: codecov/codecov-action@v3
-#        env:
-#          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-#        with:
-#          flags: todo2
-#          components: todo-c-2
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo2
+          components: todo-c-2
+          files: todoliteup_2/coverage/lcov.info
 
       - name: Install dependencies & Verify formatting & Analyze & Run tests for Todo_1
         run: |
@@ -59,13 +60,13 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-#        with:
-#          flags: todo1
-#          components: todo-c-1
+        with:
+          flags: todo1
+          components: todo-c-1
+          files: todoliteup_1/coverage/lcov.info
 
 #          directory: todoliteup_1/
 #          fail_ci_if_error: true
-#          files: coverage/lcov.info
 #          name: codecov-umbrella
 #          verbose: true
 
