@@ -53,9 +53,27 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-#        with:
-#          flags: todo1
-#          components: todo-c-1
+        with:
+          flags: todo1
+          components: todo-c-1
+          directory: todoliteup_1/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+          files: coverage/lcov.info
+          name: codecov-umbrella
+          verbose: true
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo2
+          components: todo-c-2
+          directory: todoliteup_2/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+          files: coverage/lcov.info
+          name: codecov-umbrella
+          verbose: true
 
       # Build apk.
       # - run: flutter build apk
