@@ -19,11 +19,13 @@ void main() {
     });
 
     testWidgets('Run App', (WidgetTester tester) async {
-      // arrange
-      await tester.pumpWidget(const main_app.MyApp());
-      await tester.pump();
-      // assert
-      expect(find.byType(main_app.MyApp), findsOneWidget);
+      await tester.runAsync(() async {
+        // arrange
+        await tester.pumpWidget(const main_app.MyApp());
+        await tester.pump();
+        // assert
+        expect(find.byType(main_app.MyApp), findsOneWidget);
+      });
     });
   });
 
@@ -38,13 +40,15 @@ void main() {
     });
 
     testWidgets('Run main', (WidgetTester tester) async {
-      // arrange
-      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-          .setMockMethodCallHandler(
-        const MethodChannel('plugins.flutter.io/path_provider'),
-        (methodCall) async => '.',
-      );
-      await main_app.main();
+      await tester.runAsync(() async {
+        // arrange
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(
+          const MethodChannel('plugins.flutter.io/path_provider'),
+          (methodCall) async => '.',
+        );
+        await main_app.main();
+      });
     });
   });
 }
