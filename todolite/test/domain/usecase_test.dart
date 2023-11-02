@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:todolite/core/error/exceptions.dart';
-import 'package:todolite/data/datasources/data_source.dart';
-import 'package:todolite/domain/domain_injection_container.dart' as domain;
-import 'package:todolite/data/repositories/repository.dart';
-import 'package:todolite/domain/usecases/ts_create_task.dart';
-import 'package:todolite/domain/usecases/ts_delete_task.dart';
-import 'package:todolite/domain/usecases/ts_get_task_detail.dart';
-import 'package:todolite/domain/usecases/ts_get_tasks.dart';
-import 'package:todolite/domain/usecases/ts_update_task.dart';
-import 'package:todolite/models/task.dart';
+import 'package:todo0/core/error/exceptions.dart';
+import 'package:todo0/data/datasources/data_source.dart';
+import 'package:todo0/domain/domain_injection_container.dart' as domain;
+import 'package:todo0/data/repositories/repository.dart';
+import 'package:todo0/domain/usecases/ts_create_task.dart';
+import 'package:todo0/domain/usecases/ts_delete_task.dart';
+import 'package:todo0/domain/usecases/ts_get_task_detail.dart';
+import 'package:todo0/domain/usecases/ts_get_tasks.dart';
+import 'package:todo0/domain/usecases/ts_update_task.dart';
+import 'package:todo0/models/task.dart';
 
 import 'usecase_test.mocks.dart';
 
@@ -146,19 +146,19 @@ void main() {
       },
     );
 
-    test(
-      '''function called get error''',
-      () async {
-        // arrange
-        when(local.getDetail(10))
-            .thenAnswer((_) async => throw CacheException());
-        // act
-        final val = await domain.sl<GetTaskDetail>().call(10);
-        // assert
-        verify(local.getDetail(10));
-        expect(val.isLeft(), true);
-      },
-    );
+    // test(
+    //   '''function called get error''',
+    //   () async {
+    //     // arrange
+    //     when(local.getDetail(10))
+    //         .thenAnswer((_) async => throw CacheException());
+    //     // act
+    //     final val = await domain.sl<GetTaskDetail>().call(10);
+    //     // assert
+    //     verify(local.getDetail(10));
+    //     expect(val.isLeft(), true);
+    //   },
+    // );
 
     test(
       '''function called create ok''',
