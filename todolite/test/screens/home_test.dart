@@ -15,9 +15,9 @@ import 'package:todo0/domain/usecases/ts_update_task.dart';
 
 import 'package:todo0/injection_container.dart' as di;
 import 'package:todo0/models/task.dart';
-import 'package:todo0/screens/todo_home/controllers/todo_controller.dart';
-import 'package:todo0/screens/todo_home/task_binding.dart';
-import 'package:todo0/screens/todo_home/task_page.dart';
+import 'package:todo0/screens/task/controllers/todo_controller.dart';
+import 'package:todo0/screens/task/task_binding.dart';
+import 'package:todo0/screens/task/task_page.dart';
 
 import 'home_test.mocks.dart';
 

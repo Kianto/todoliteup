@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:todo0/common/loading_widget.dart';
 import 'package:todo0/common/no_data_widget.dart';
 import 'package:todo0/models/task.dart';
-import 'package:todo0/screens/todo_home/controllers/task_controller.dart';
+import 'package:todo0/screens/task/controllers/task_controller.dart';
 
 import 'task_item.dart';
 

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:todo0/screens/todo_home/task_binding.dart';
-import 'package:todo0/screens/todo_home/task_page.dart';
+import 'package:todo0/screens/task/task_binding.dart';
+import 'package:todo0/screens/task/task_page.dart';
 
 part 'app_routes.dart';
 

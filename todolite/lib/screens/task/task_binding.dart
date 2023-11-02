@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:todo0/models/task.dart';
-import 'package:todo0/screens/todo_home/controllers/task_controller.dart';
+import 'package:todo0/screens/task/controllers/task_controller.dart';
 
 import 'controllers/todo_controller.dart';
 
