@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: .
+        working-directory: todoliteup_2
     steps:
       - uses: actions/checkout@v3
         with:
@@ -30,13 +30,13 @@ jobs:
           git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
 
       - name: Setup flutter environment
-        uses: ./.github/actions/setup-flutter
+        uses: ../.github/actions/setup-flutter
 
       - name: Setup lcov environment
-        uses: ./.github/actions/setup-lcov
+        uses: ../.github/actions/setup-lcov
 
       - name: Use yarn cache
-        uses: ./.github/actions/cache-yarn
+        uses: ../.github/actions/cache-yarn
 
       - name: Install yarn
         run: yarn install
