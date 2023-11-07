@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="" />
+    <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chores/testing_8" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,6 +37,14 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="chores/testing_10" />
+                    <option name="lastUsedInstant" value="1699361073" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1699361053" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="chores/testing_9" />
                     <option name="lastUsedInstant" value="1699352535" />
                   </RecentBranch>
@@ -45,14 +55,6 @@
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_7" />
                     <option name="lastUsedInstant" value="1699344936" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="chores/testing_6" />
-                    <option name="lastUsedInstant" value="1698948640" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1698948629" />
                   </RecentBranch>
                 </list>
               </option>
@@ -71,19 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github/workflows",
-    "settings.editor.selected.configurable": "dart.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github/workflows&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.github/workflows" />
@@ -145,11 +147,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
         <item itemvalue="Flutter Test.tests in task_test.dart" />
         <item itemvalue="Flutter Test.tests in usecase_test.dart" />
         <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
         <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+        <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
       </list>
     </recent_temporary>
   </component>
