@@ -39,6 +39,19 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
+        "command": "flutter test",
+        "cwd": "todolite"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "codecov": {
+      "executor": "nx:run-commands",
+      "options": {
         "command": "flutter test --coverage && genhtml -o coverage coverage/lcov.info",
         "cwd": "todolite"
       },
