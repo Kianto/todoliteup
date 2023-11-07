@@ -30,9 +30,6 @@ jobs:
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 
-      - name: Setup lcov environment
-        uses: ./.github/actions/setup-lcov
-
       - name: Use yarn cache
         uses: ./.github/actions/cache-yarn
 
@@ -68,6 +65,9 @@ jobs:
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 
+      - name: Setup lcov environment
+        uses: ./.github/actions/setup-lcov
+
       - name: Use yarn cache
         uses: ./.github/actions/cache-yarn
 
@@ -77,6 +77,11 @@ jobs:
       - name: Run Test
         run: |
           yarn nx affected:test
+          yarn nx affected:lcov
+
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   deploy-android:
     name: deploy-android

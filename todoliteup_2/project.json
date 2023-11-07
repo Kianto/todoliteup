@@ -49,7 +49,7 @@
         }
       ]
     },
-    "genLcov": {
+    "lcov": {
       "executor": "nx:run-commands",
       "options": {
         "command": "genhtml -o coverage coverage/lcov.info",
