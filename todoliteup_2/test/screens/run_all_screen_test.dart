@@ -9,6 +9,8 @@ import 'package:todoliteup/screens/login/login_binding.dart';
 import 'package:todoliteup/screens/login/login_page.dart';
 import 'package:todoliteup/screens/message/message_binding.dart';
 import 'package:todoliteup/screens/message/message_page.dart';
+import 'package:todoliteup/screens/register/register_binding.dart';
+import 'package:todoliteup/screens/register/register_page.dart';
 import 'package:todoliteup/screens/settings/settings_binding.dart';
 import 'package:todoliteup/screens/settings/settings_page.dart';
 import 'package:todoliteup/screens/support/support_binding.dart';
@@ -23,6 +25,7 @@ void main() {
       MessageBinding().dependencies();
       SupportBinding().dependencies();
       FriendsBinding().dependencies();
+      RegisterBinding().dependencies();
     });
     testWidgets('Run all screens', (tester) async {
       mockNetworkImagesFor(() async {
@@ -34,6 +37,7 @@ void main() {
           const MessagePage(),
           const SupportPage(),
           const FriendsPage(),
+          const RegisterPage(),
         ];
         for (final screen in screens) {
           await tester.pumpWidget(
