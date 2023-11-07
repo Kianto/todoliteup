@@ -1,9 +1,0 @@
-{
-  "version": 1,
-  "projects": {
-    "todolite": "flutter/todolite",
-    "todoliteup_1": "flutter/todoliteup_1",
-    "todoliteup_2": "flutter/todoliteup_2"
-  },
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
-}
