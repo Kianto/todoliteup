@@ -2,12 +2,13 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'todoliteup_1/**'
+      - 'todolite/**'
 
 jobs:
   codecov:
     name: codecov
     runs-on: ubuntu-latest
+    needs: test
     defaults:
       run:
         shell: bash
@@ -47,5 +48,5 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
-          flags: todo1
-          files: todoliteup_1/coverage/lcov.info
+          flags: todo0
+          files: todolite/coverage/lcov.info
