@@ -7,7 +7,7 @@
     "build": "nx build",
     "lint": "nx lint",
     "test": "nx test",
-    "testLcov": "nx testLcov"
+    "codecov": "nx codecov"
   },
   "private": true,
   "dependencies": {},

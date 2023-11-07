@@ -5,8 +5,8 @@ on:
       - 'todolite/**'
 
 jobs:
-  test:
-    name: test
+  codecov:
+    name: codecov
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Test
         run: |
-          yarn nx affected:testLcov
+          yarn nx affected:codecov
 
       - uses: codecov/codecov-action@v3
         env:
