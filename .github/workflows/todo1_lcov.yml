@@ -1,14 +1,15 @@
+name: todo1_lcov
+
 on:
   pull_request:
     branches: [main]
     paths:
-      - 'todoliteup_2/**'
+      - 'todoliteup_1/**'
 
 jobs:
-  codecov:
+  test:
     name: codecov
     runs-on: ubuntu-latest
-    needs: test
     defaults:
       run:
         shell: bash
@@ -42,10 +43,11 @@ jobs:
 
       - name: Run Test
         run: |
-          yarn nx affected:codecov
-        uses: codecov/codecov-action@v3
+          yarn nx affected --target=codecov
+
+      - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
-          flags: todo2
-          files: todoliteup_2/coverage/lcov.info
+          flags: todo1
+          files: todoliteup_1/coverage/lcov.info

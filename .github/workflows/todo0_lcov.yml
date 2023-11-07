@@ -1,3 +1,5 @@
+name: todo0_lcov
+
 on:
   pull_request:
     branches: [main]
@@ -5,10 +7,11 @@ on:
       - 'todolite/**'
 
 jobs:
-  codecov:
+  test:
     name: codecov
     runs-on: ubuntu-latest
-    needs: test
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'todo0')
     defaults:
       run:
         shell: bash
@@ -42,7 +45,7 @@ jobs:
 
       - name: Run Test
         run: |
-          yarn nx affected:codecov
+          yarn nx affected --target=codecov
 
       - uses: codecov/codecov-action@v3
         env:
