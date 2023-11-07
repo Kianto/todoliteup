@@ -1,0 +1,315 @@
+{
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "todoliteup_1/src",
+  "projectType": "application",
+  "targets": {
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter clean",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dart format .",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildRunner": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "flutter pub get && flutter packages pub run build_runner build --delete-conflicting-outputs",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_1"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter test --coverage && genhtml -o coverage coverage/lcov.info",
+        "cwd": "todoliteup_1"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze && dart format . --set-exit-if-changed",
+        "cwd": "todoliteup_1"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "dartCodeMetricsAnalyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dcm analyze lib --reporter=github --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
+        "cwd": "todoliteup_1"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "dartCodeMetricsCheckUnusedFiles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dcm check-unused-files lib --monorepo --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
+        "cwd": "todoliteup_1"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "assemble": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter assemble",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "attach": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter attach",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "drive": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter drive",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "genL10n": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter gen-l10n",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter install",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter run",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildAar": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build aar",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build {args.artifactType} --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} {args.extraOpts}",
+        "buildNumber": "1",
+        "cwd": "todoliteup_1"
+      },
+      "configurations": {
+        "development": {
+          "flavor": "development",
+          "artifactType": "apk",
+          "extraOpts": "--no-tree-shake-icons"
+        },
+        "production": {
+          "flavor": "production",
+          "artifactType": "appbundle",
+          "extraOpts": ""
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "buildBundle": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build bundle",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildIosFramework": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios-framework",
+        "cwd": "todoliteup_1"
+      }
+    },
+    "buildIpa": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ipa --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} --export-options-plist=ios/Runner/{args.flavor}/ExportOptions.plist {args.extraOpts}",
+        "buildNumber": "1",
+        "cwd": "todoliteup_1",
+        "forwardAllArgs": false
+      },
+      "configurations": {
+        "development": {
+          "flavor": "development",
+          "extraOpts": "--no-tree-shake-icons"
+        },
+        "production": {
+          "flavor": "production",
+          "extraOpts": ""
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        },
+        {
+          "target": "syncCodeSigning",
+          "projects": "self"
+        }
+      ]
+    },
+    "deployAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane android deploy_to_firebase",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_1/android"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      },
+      "dependsOn": [
+        {
+          "target": "buildAndroid",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "deployAndroidToStore": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane android deploy_to_store",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_1/android"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      },
+      "dependsOn": [
+        {
+          "target": "buildAndroid",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "deployIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane deploy api_key_path:{args.apiKeyPath} ipa:'{args.ipa}' app_identifier:{args.appIdentifier}",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_1/ios",
+        "apiKeyPath": "${APPLE_STORE_CONNECT_API_KEY}"
+      },
+      "configurations": {
+        "development": {
+          "ipa": "../build/ios/ipa/EDI [D].ipa",
+          "appIdentifier": "jp.andpad.ios.develop.edi"
+        },
+        "production": {
+          "ipa": "../build/ios/ipa/EDI.ipa",
+          "appIdentifier": "jp.andpad.ios.production.edi"
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildIpa",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "syncCodeSigning": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane my_match type:{args.type}",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_1/ios",
+        "type": "development"
+      },
+      "configurations": {
+        "development": {
+          "type": "appstore"
+        },
+        "production": {
+          "type": "appstore"
+        }
+      }
+    }
+  },
+  "tags": []
+}

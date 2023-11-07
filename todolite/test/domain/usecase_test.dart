@@ -146,19 +146,19 @@ void main() {
       },
     );
 
-    // test(
-    //   '''function called get error''',
-    //   () async {
-    //     // arrange
-    //     when(local.getDetail(10))
-    //         .thenAnswer((_) async => throw CacheException());
-    //     // act
-    //     final val = await domain.sl<GetTaskDetail>().call(10);
-    //     // assert
-    //     verify(local.getDetail(10));
-    //     expect(val.isLeft(), true);
-    //   },
-    // );
+    test(
+      '''function called get error''',
+      () async {
+        // arrange
+        when(local.getDetail(10))
+            .thenAnswer((_) async => throw CacheException());
+        // act
+        final val = await domain.sl<GetTaskDetail>().call(10);
+        // assert
+        verify(local.getDetail(10));
+        expect(val.isLeft(), true);
+      },
+    );
 
     test(
       '''function called create ok''',
