@@ -83,6 +83,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           flags: todo0, todo1, todo2
+          files: todolite/coverage/lcov.info, todoliteup_1/coverage/lcov.info, todoliteup_2/coverage/lcov.info
 
   deploy-android:
     name: deploy-android
