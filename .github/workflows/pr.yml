@@ -81,6 +81,21 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo0
+          files: todolite/coverage/lcov.info
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo1
+          files: todoliteup_1/coverage/lcov.info
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo2
+          files: todoliteup_2/coverage/lcov.info
 
   deploy-android:
     name: deploy-android
