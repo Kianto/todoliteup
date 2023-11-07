@@ -10,6 +10,8 @@ jobs:
   test:
     name: codecov
     runs-on: ubuntu-latest
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'todo0')
     defaults:
       run:
         shell: bash
