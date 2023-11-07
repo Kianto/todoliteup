@@ -1,27 +1,27 @@
 {
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "todoliteup_2/src",
+  "sourceRoot": "todolite/src",
   "projectType": "application",
   "targets": {
     "analyze": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter analyze",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "clean": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter clean",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "format": {
       "executor": "nx:run-commands",
       "options": {
         "command": "dart format .",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildRunner": {
@@ -33,14 +33,14 @@
             "forwardAllArgs": false
           }
         ],
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter test --coverage",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       },
       "dependsOn": [
         {
@@ -53,7 +53,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter analyze && dart format . --set-exit-if-changed",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       },
       "dependsOn": [
         {
@@ -66,7 +66,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "dcm analyze lib --reporter=github --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       },
       "dependsOn": [
         {
@@ -79,7 +79,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "dcm check-unused-files lib --monorepo --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       },
       "dependsOn": [
         {
@@ -92,49 +92,49 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter assemble",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "attach": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter attach",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "drive": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter drive",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "genL10n": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter gen-l10n",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "install": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter install",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "run": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter run",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildAar": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter build aar",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildAndroid": {
@@ -142,7 +142,7 @@
       "options": {
         "command": "flutter build {args.artifactType} --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} {args.extraOpts}",
         "buildNumber": "1",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       },
       "configurations": {
         "development": {
@@ -167,21 +167,21 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter build bundle",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildIos": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter build ios",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildIosFramework": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter build ios-framework",
-        "cwd": "todoliteup_2"
+        "cwd": "todolite"
       }
     },
     "buildIpa": {
@@ -189,7 +189,7 @@
       "options": {
         "command": "flutter build ipa --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} --export-options-plist=ios/Runner/{args.flavor}/ExportOptions.plist {args.extraOpts}",
         "buildNumber": "1",
-        "cwd": "todoliteup_2",
+        "cwd": "todolite",
         "forwardAllArgs": false
       },
       "configurations": {
@@ -222,7 +222,7 @@
             "forwardAllArgs": false
           }
         ],
-        "cwd": "todoliteup_2/android"
+        "cwd": "todolite/android"
       },
       "configurations": {
         "development": {},
@@ -245,7 +245,7 @@
             "forwardAllArgs": false
           }
         ],
-        "cwd": "todoliteup_2/android"
+        "cwd": "todolite/android"
       },
       "configurations": {
         "development": {},
@@ -268,7 +268,7 @@
             "forwardAllArgs": false
           }
         ],
-        "cwd": "todoliteup_2/ios",
+        "cwd": "todolite/ios",
         "apiKeyPath": "${APPLE_STORE_CONNECT_API_KEY}"
       },
       "configurations": {
@@ -298,7 +298,7 @@
             "forwardAllArgs": false
           }
         ],
-        "cwd": "todoliteup_2/ios",
+        "cwd": "todolite/ios",
         "type": "development"
       },
       "configurations": {
