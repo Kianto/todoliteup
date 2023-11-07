@@ -81,6 +81,8 @@ jobs:
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo0, todo1, todo2
 
   deploy-android:
     name: deploy-android
