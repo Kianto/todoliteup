@@ -1,0 +1,52 @@
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'todolite/**'
+
+jobs:
+  codecov:
+    name: codecov
+    runs-on: ubuntu-latest
+    needs: test
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: "main"
+
+      - name: Setup github token
+        run: |
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
+
+      - name: Setup lcov environment
+        uses: ./.github/actions/setup-lcov
+
+      - name: Use yarn cache
+        uses: ./.github/actions/cache-yarn
+
+      - name: Install yarn
+        run: yarn install
+
+      - name: Run Test
+        run: |
+          yarn nx affected:codecov
+
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: todo0
+          files: todolite/coverage/lcov.info

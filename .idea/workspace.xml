@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="chores/testing_8" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +34,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_9" />
+                    <option name="lastUsedInstant" value="1699352535" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_8" />
                     <option name="lastUsedInstant" value="1699345879" />
@@ -49,10 +53,6 @@
                   <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1698948629" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="chores/testing_5" />
-                    <option name="lastUsedInstant" value="1698944883" />
                   </RecentBranch>
                 </list>
               </option>
@@ -79,18 +79,18 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/todoliteup_2/lib/screens",
+    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github/workflows",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github/workflows" />
       <recent name="$PROJECT_DIR$/todoliteup_2/lib/screens" />
       <recent name="$PROJECT_DIR$/.github/actions" />
       <recent name="$PROJECT_DIR$/todoliteup_1" />
       <recent name="$PROJECT_DIR$/todolite" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/flutter" />
