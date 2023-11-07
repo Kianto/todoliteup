@@ -52,5 +52,4 @@ app.*.map.json
 **.mocks.dart
 /assets/langs/**.json
 
-# Lcov report
-/coverage/
+/node_modules/
