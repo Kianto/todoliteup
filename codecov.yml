@@ -1,6 +1,9 @@
 # Setting coverage targets per flag
 coverage:
   status:
+    patch:
+      default:
+        target: 50%
     project:
       default:
         target: 50%
