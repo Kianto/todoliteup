@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="stateless_widget" />
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_6" />
+                    <option name="lastUsedInstant" value="1698948640" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1698948629" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_5" />
+                    <option name="lastUsedInstant" value="1698944883" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_4" />
+                    <option name="lastUsedInstant" value="1698927960" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_3" />
+                    <option name="lastUsedInstant" value="1698927794" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XHhVclM2ipHIAI5BM5snvxFKox" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github/actions",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github/actions" />
+      <recent name="$PROJECT_DIR$/todoliteup_1" />
+      <recent name="$PROJECT_DIR$/todolite" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/.github" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
+      <recent name="$PROJECT_DIR$/todoliteup_1" />
+      <recent name="$PROJECT_DIR$/todoliteup_2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter Test.tests in run_all_screen_test.dart">
+    <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/todoliteup_2/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in local_data_source_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/data/local_data_source_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in run_all_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/run_all_screen_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in task_test.dart (1)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/task_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in task_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/task_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in usecase_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/domain/usecase_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flutter.main1.dart" />
+      <item itemvalue="Flutter.main2.dart" />
+      <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
+      <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+      <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
+      <item itemvalue="Flutter Test.tests in usecase_test.dart" />
+      <item itemvalue="Flutter Test.tests in task_test.dart" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
+        <item itemvalue="Flutter Test.tests in task_test.dart" />
+        <item itemvalue="Flutter Test.tests in usecase_test.dart" />
+        <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
+        <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="" />
+      <created>1698291936715</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698291936715</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
