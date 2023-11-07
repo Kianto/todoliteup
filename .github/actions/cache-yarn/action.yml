@@ -1,0 +1,13 @@
+name: 'cache yarn'
+description: 'cache yarn'
+runs:
+  using: "composite"
+  steps:
+    - name: Use yarn cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          flutter/node_modules
+        key: ${{ runner.os }}-yarn-${{ hashFiles('flutter/**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
