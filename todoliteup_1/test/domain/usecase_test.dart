@@ -163,14 +163,14 @@ void main() {
     test(
       '''function called create ok''',
       () async {
-        // // arrange
-        // final data = MTask(title: "title", description: "description");
-        // when(local.saveData(data)).thenAnswer((_) async => 1002);
-        // // act
-        // final listAll = await domain.sl<CreateTask>().call(data);
-        // // assert
-        // verify(local.saveData(data));
-        // expect(listAll.isRight(), true);
+        // arrange
+        final data = MTask(title: "title", description: "description");
+        when(local.saveData(data)).thenAnswer((_) async => 1002);
+        // act
+        final listAll = await domain.sl<CreateTask>().call(data);
+        // assert
+        verify(local.saveData(data));
+        expect(listAll.isRight(), true);
       },
     );
 
