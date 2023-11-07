@@ -77,7 +77,6 @@ jobs:
       - name: Run Test
         run: |
           yarn nx affected:test
-          yarn nx affected:codecov
 
   codecov2:
     name: codecov
