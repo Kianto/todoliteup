@@ -11,6 +11,7 @@
           "build",
           "lint",
           "test",
+          "testCoverage",
           "e2e"
         ]
       }
