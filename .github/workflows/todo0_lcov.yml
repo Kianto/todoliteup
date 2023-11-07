@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Test
         run: |
-          yarn nx affected:codecov
+          yarn nx affected:test
 
       - uses: codecov/codecov-action@v3
         env:
