@@ -5,10 +5,9 @@ on:
       - 'todoliteup_1/**'
 
 jobs:
-  codecov:
+  test:
     name: codecov
     runs-on: ubuntu-latest
-    needs: test
     defaults:
       run:
         shell: bash
