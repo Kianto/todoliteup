@@ -79,18 +79,18 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup",
+    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/todoliteup_1",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/todoliteup_1" />
+      <recent name="$PROJECT_DIR$/todolite" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/.github" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$/todoliteup_2" />
-      <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/flutter" />
