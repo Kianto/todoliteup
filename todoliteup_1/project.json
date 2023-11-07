@@ -49,7 +49,6 @@
         }
       ]
     },
-
     "codecov": {
       "executor": "nx:run-commands",
       "options": {

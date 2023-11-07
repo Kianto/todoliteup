@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "lint": "nx lint",
-    "test": "nx test"
+    "test": "nx test",
+    "codecov": "nx codecov"
   },
   "private": true,
   "dependencies": {},
