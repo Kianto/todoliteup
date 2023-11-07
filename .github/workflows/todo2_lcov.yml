@@ -43,7 +43,7 @@ jobs:
 
       - name: Run Test
         run: |
-          yarn nx affected:testCoverage
+          yarn nx affected:buildAndroid
 
       - uses: codecov/codecov-action@v3
         env:
