@@ -51,8 +51,6 @@ There are some updates should be added on in the following versions so that the 
 |         | Delete task                                     |
 |         |                                                 |
 
-Coverage: 92.7 %
-
 ```bash
 flutter test --coverage
 genhtml -o coverage coverage/lcov.info
@@ -66,7 +64,7 @@ cd todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
 ```
 
 
----
+----------------------
 
 # Nx Flutter
 
