@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chores/testing_11" />
+        <entry key="$PROJECT_DIR$" value="chores/testing_12" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +34,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_13" />
+                    <option name="lastUsedInstant" value="1699415067" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_12" />
                     <option name="lastUsedInstant" value="1699375015" />
@@ -49,10 +53,6 @@
                   <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1699361053" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="chores/testing_9" />
-                    <option name="lastUsedInstant" value="1699352535" />
                   </RecentBranch>
                 </list>
               </option>
