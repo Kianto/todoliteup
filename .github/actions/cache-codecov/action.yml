@@ -40,9 +40,9 @@ runs:
         cp codecov "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
 
-#    - name: Cache codecov
-#      id: codecov-cache
-#      uses: actions/cache@v3
-#      with:
-#        path: ~/.local/bin/codecov
-#        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
+    - name: Cache codecov
+      id: codecov-cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.local/bin/codecov
+        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
