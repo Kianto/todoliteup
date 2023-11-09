@@ -74,19 +74,23 @@ jobs:
       - name: Install yarn
         run: yarn install
 
+      - name: Use codecov cache
+        uses: ./.github/actions/cache-codecov
+
+      - name: Install tools path
+        if: steps.codecov-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "~/.local/bin"
+          echo "~/.local/bin" >> $env:GITHUB_PATH
+          echo "~/.local/bin/codecov" >> $env:GITHUB_PATH
+
       - name: Install codecov
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          mkdir -p "~/.local/bin"
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           cp codecov "~/.local/bin/codecov"
           chmod +x "~/.local/bin/codecov"
-          echo "~/.local/bin" >> $env:GITHUB_PATH
-          echo "~/.local/bin/codecov" >> $env:GITHUB_PATH
-
-      - name: Use codecov cache
-        uses: ./.github/actions/cache-codecov
 
       - name: Run Test
         env:
