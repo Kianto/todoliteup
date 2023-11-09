@@ -3,12 +3,6 @@ description: 'cache codecov'
 runs:
   using: "composite"
   steps:
-    - name: Cached codecov uploader
-      id: codecov-cache
-      uses: actions/cache@v3
-      with:
-        path: codecov
-        key: ${{ runner.os }}-codeconv-${{ env.CODECOV_REV }}
 
     - name: Install codecov
       if: steps.codecov-cache.outputs.cache-hit != 'true'
@@ -23,3 +17,10 @@ runs:
         mkdir -p "~/.local/bin"
         cp codecov "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
+
+    - name: Cached codecov uploader
+      id: codecov-cache
+      uses: actions/cache@v3
+      with:
+        path: codecov
+        key: ${{ runner.os }}-codeconv-${{ env.CODECOV_REV }}
