@@ -40,13 +40,17 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "flutter test --coverage",
-          "genhtml -o coverage coverage/lcov.info",
-          "codecov -t ${CODECOV_TOKEN} -c -F todo0 -f coverage/lcov.info"
+          {
+            "command": "flutter test --coverage && genhtml -o coverage coverage/lcov.info",
+            "forwardAllArgs": false
+          },
+          {
+            "command": "codecov -t ${CODECOV_TOKEN} -c -F todo0 -f coverage/lcov.info",
+            "forwardAllArgs": false
+          }
         ],
         "cwd": "todolite",
         "parallel": false,
-        "forwardAllArgs": false
       },
       "dependsOn": [
         {
