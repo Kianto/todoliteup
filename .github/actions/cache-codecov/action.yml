@@ -5,7 +5,7 @@ runs:
   steps:
 
     - name: Install codecov
-      if: steps.codecov-cache.outputs.cache-hit != 'true'
+#      if: steps.codecov-cache.outputs.cache-hit != 'true'
       shell: bash
       run: |
         curl -s https://uploader.codecov.io/latest/linux/codecov
