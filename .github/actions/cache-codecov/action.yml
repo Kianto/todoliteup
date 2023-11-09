@@ -36,7 +36,9 @@ runs:
       uses: actions/cache@v3
       with:
         path: ~/.local/bin/codecov
-        key: codecov-${{ runner.os }}-${{ runner.arch }}-1
+        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
+        restore-keys: |
+          ${{ runner.os }}-codecov-
 
     - name: Install codecov
       if: steps.codecov-cache.outputs.cache-hit != 'true'
