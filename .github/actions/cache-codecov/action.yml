@@ -42,5 +42,6 @@ runs:
       if: steps.codecov-cache.outputs.cache-hit != 'true'
       shell: bash
       run: |
-        curl -Os https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
+        curl -Os https://uploader.codecov.io/latest/linux/codecov
+        cp codecov "~/.local/bin/codecov"
         chmod +x ~/.local/bin/codecov
