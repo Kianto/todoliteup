@@ -3,18 +3,22 @@ description: 'cache codecov'
 runs:
   using: "composite"
   steps:
+    - name: Cached codecov uploader
+      id: codecov-cache
+      uses: actions/cache@v2
+      with:
+        path: codecov
+        key: ${{ runner.os }}-codeconv-${{ env.CODECOV_REV }}
+
+    - name: Install codecov
+      shell: bash
+      run: |
+        curl -s https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
+
     - name: Add tools path
       shell: bash
       run: |
-        mkdir -p "~/.local/bin/codecov"
+        mkdir -p "~/.local/bin"
+        cp codecov "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
-
-    - name: Cache codecov
-      id: codecov-cache
-      uses: actions/cache@v3
-      shell: bash
-      with:
-        path: ~/.local/bin/codecov
-        key: codecov-${{ runner.os }}-${{ runner.arch }}-1
-        restore-keys: |
-          codecov-${{ runner.os }}-
