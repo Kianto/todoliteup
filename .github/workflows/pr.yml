@@ -78,10 +78,10 @@ jobs:
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          mkdir -p "$HOME/.local/bin"
-          curl -Os https://uploader.codecov.io/latest/linux/codecov --output "$HOME/.local/bin/codecov"
-          chmod +x "$HOME/.local/bin/codecov"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          mkdir -p "/home/runner/.local/bin"
+          curl -Os https://uploader.codecov.io/latest/linux/codecov --output "~/.local/bin/codecov"
+          chmod +x "~/.local/bin/codecov"
+          echo "~/.local/bin" >> $GITHUB_PATH
 
       - name: Use codecov cache
         uses: ./.github/actions/cache-codecov
