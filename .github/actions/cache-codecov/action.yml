@@ -28,7 +28,7 @@ runs:
     - name: Add tools path
       shell: bash
       run: |
-        mkdir -p "~/.local/bin/codecov"
+        mkdir -p "~/.local/bin"
         echo "~/.local/bin" >> $GITHUB_PATH
 
     - name: Install codecov
@@ -36,8 +36,8 @@ runs:
       shell: bash
       run: |
         curl -Os https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
         cp codecov "~/.local/bin/codecov"
-        chmod +x ~/.local/bin/codecov
 
 #    - name: Cache codecov
 #      id: codecov-cache
