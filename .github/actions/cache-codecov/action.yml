@@ -12,6 +12,7 @@ runs:
     - name: Cache codecov
       id: codecov-cache
       uses: actions/cache@v3
+      shell: bash
       with:
         path: ~/.local/bin/codecov
         key: codecov-${{ runner.os }}-${{ runner.arch }}-1
