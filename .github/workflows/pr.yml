@@ -85,6 +85,7 @@ jobs:
         with:
           path: ~/.local/bin/codecov
           key: codecov-${{ runner.os }}-${{ runner.arch }}-1
+
       - name: Install codecov
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
