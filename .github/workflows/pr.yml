@@ -90,7 +90,7 @@ jobs:
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          curl -s https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
+          curl -Os https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
           chmod +x ~/.local/bin/codecov
 
       - name: Run Test
