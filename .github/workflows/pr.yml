@@ -80,7 +80,7 @@ jobs:
       - name: Install codecov
         shell: bash
         run: |
-          curl -Os https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
+          curl -s https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
           chmod +x ~/.local/bin/codecov
 
       - name: Run Test

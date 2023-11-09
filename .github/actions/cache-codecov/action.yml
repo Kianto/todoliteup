@@ -6,7 +6,7 @@ runs:
     - name: Add tools path
       shell: bash
       run: |
-        mkdir -p "~/.local/bin"
+        mkdir -p "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
 
     - name: Cache codecov
