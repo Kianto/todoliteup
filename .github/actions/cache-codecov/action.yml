@@ -31,15 +31,6 @@ runs:
         mkdir -p "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
 
-    - name: Cache codecov
-      id: codecov-cache
-      uses: actions/cache@v3
-      with:
-        path: ~/.local/bin/codecov
-        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
-        restore-keys: |
-          ${{ runner.os }}-codecov-
-
     - name: Install codecov
       if: steps.codecov-cache.outputs.cache-hit != 'true'
       shell: bash
@@ -47,3 +38,10 @@ runs:
         curl -Os https://uploader.codecov.io/latest/linux/codecov
         cp codecov "~/.local/bin/codecov"
         chmod +x ~/.local/bin/codecov
+
+    - name: Cache codecov
+      id: codecov-cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.local/bin/codecov
+        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
