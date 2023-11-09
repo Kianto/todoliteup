@@ -83,6 +83,7 @@ jobs:
           cp codecov "~/.local/bin/codecov"
           chmod +x "~/.local/bin/codecov"
           echo "~/.local/bin" >> $GITHUB_PATH
+          echo "~/.local/bin/codecov" >> $GITHUB_PATH
 
       - name: Use codecov cache
         uses: ./.github/actions/cache-codecov
