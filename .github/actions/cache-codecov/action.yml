@@ -22,9 +22,10 @@ runs:
       id: codecov-cache
       uses: actions/cache@v3
       with:
-        path: codecov
-        key: codecov-${{ runner.os }}-${{ runner.arch }}-1
-
+        path: ~/.local/bin/codecov
+        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
+        restore-keys: |
+          ${{ runner.os }}-codecov-
 
 #    - name: Add tools path
 #      shell: bash
