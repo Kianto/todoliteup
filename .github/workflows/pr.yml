@@ -78,7 +78,7 @@ jobs:
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          mkdir -p "/home/runner/.local/bin"
+          mkdir -p "~/.local/bin"
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           cp codecov "~/.local/bin/codecov"
           chmod +x "~/.local/bin/codecov"
