@@ -79,7 +79,8 @@ jobs:
         shell: bash
         run: |
           mkdir -p "/home/runner/.local/bin"
-          curl -Os https://uploader.codecov.io/latest/linux/codecov --output "~/.local/bin/codecov"
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          cp codecov "~/.local/bin/codecov"
           chmod +x "~/.local/bin/codecov"
           echo "~/.local/bin" >> $GITHUB_PATH
 
