@@ -29,12 +29,12 @@ runs:
 #      shell: bash
 #      run: |
 
-    - name: Cache codecov
-      id: codecov-cache
-      uses: actions/cache@v3
-      with:
-        path: ~/.local/bin/codecov
-        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
+#    - name: Cache codecov
+#      id: codecov-cache
+#      uses: actions/cache@v3
+#      with:
+#        path: ~/.local/bin/codecov
+#        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
 
     - name: Install codecov
       if: steps.codecov-cache.outputs.cache-hit != 'true'
@@ -43,6 +43,6 @@ runs:
         curl -Os https://uploader.codecov.io/latest/linux/codecov
         chmod +x codecov
 
-        mkdir -p "~/.local/bin"
-        cp codecov "~/.local/bin/codecov"
-        echo "~/.local/bin" >> $GITHUB_PATH
+#        mkdir -p "~/.local/bin"
+#        cp codecov "~/.local/bin/codecov"
+#        echo "~/.local/bin" >> $GITHUB_PATH
