@@ -15,11 +15,11 @@ runs:
       shell: bash
       run: |
         curl -s https://uploader.codecov.io/latest/linux/codecov
-        chmod +x codecov
 
     - name: Add tools path
       shell: bash
       run: |
+        chmod +x codecov
         mkdir -p "~/.local/bin"
         cp codecov "~/.local/bin/codecov"
         echo "~/.local/bin" >> $GITHUB_PATH
