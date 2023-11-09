@@ -42,7 +42,7 @@
         "commands": [
           "flutter test --coverage",
           "genhtml -o coverage coverage/lcov.info",
-          "../codecov -t ${CODECOV_TOKEN} -c -F todo1 -f coverage/lcov.info"
+          "codecov -t ${CODECOV_TOKEN} -c -F todo1 -f coverage/lcov.info"
         ],
         "cwd": "todoliteup_1",
         "parallel": false,
