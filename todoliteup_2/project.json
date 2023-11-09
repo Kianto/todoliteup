@@ -40,9 +40,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "flutter test --coverage;",
-          "genhtml -o coverage coverage/lcov.info;",
-          "codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info;"
+          "flutter test --coverage",
+          "genhtml -o coverage coverage/lcov.info",
+          "codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info"
         ],
         "cwd": "todoliteup_2"
       },
