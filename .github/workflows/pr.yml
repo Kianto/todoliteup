@@ -77,6 +77,12 @@ jobs:
       - name: Use codecov cache
         uses: ./.github/actions/cache-codecov
 
+      - name: Install codecov
+        shell: bash
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
+          chmod +x ~/.local/bin/codecov
+
       - name: Run Test
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

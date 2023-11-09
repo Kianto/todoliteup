@@ -6,8 +6,8 @@ runs:
     - name: Add tools path
       shell: bash
       run: |
-        mkdir -p "~/.local/bin/codecov"
-        echo "~/.local/bin/codecov" >> $GITHUB_PATH
+        mkdir -p "~/.local/bin"
+        echo "~/.local/bin" >> $GITHUB_PATH
 
     - name: Cache codecov
       id: codecov-cache
@@ -15,10 +15,5 @@ runs:
       with:
         path: ~/.local/bin/codecov
         key: codecov-${{ runner.os }}-${{ runner.arch }}-1
-
-    - name: Install codecov
-      if: steps.codecov-cache.outputs.cache-hit != 'true'
-      shell: bash
-      run: |
-        curl -Os https://uploader.codecov.io/latest/linux/codecov --output ~/.local/bin/codecov
-        chmod +x ~/.local/bin/codecov
+        restore-keys: |
+          codecov-${{ runner.os }}-
