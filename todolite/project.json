@@ -45,7 +45,7 @@
             "forwardAllArgs": false
           },
           {
-            "command": "codecov -t ${CODECOV_TOKEN} -c -F todo0 -f coverage/lcov.info",
+            "command": "../codecov -t ${CODECOV_TOKEN} -c -F todo0 -f coverage/lcov.info",
             "forwardAllArgs": false
           }
         ],
