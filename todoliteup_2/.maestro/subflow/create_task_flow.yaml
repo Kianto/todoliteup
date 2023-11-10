@@ -1,8 +1,8 @@
 appId: com.dasdang.todoliteup
 name: create task test
 ---
-- launchApp
 - tapOn: "fab_add_task"
+- waitForAnimationToEnd
 - tapOn: "Tiêu đề"
 - inputText: "Công việc mới"
 - tapOn: "Mô tả"

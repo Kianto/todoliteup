@@ -1,5 +1,7 @@
 appId: com.dasdang.todoliteup
 ---
-- runFlow: "create_task_flow.yaml"
-- runFlow: "done_task_flow.yaml"
-- runFlow: "delete_task_flow.yaml"
+- launchApp:
+    clearState: true
+- runFlow: "subflow/create_task_flow.yaml"
+- runFlow: "subflow/done_task_flow.yaml"
+- runFlow: "subflow/delete_task_flow.yaml"
