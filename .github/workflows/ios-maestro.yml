@@ -47,7 +47,7 @@ jobs:
         shell: bash
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
-          echo "~/.maestro/bin" >> GITHUB_PATH
+          export PATH="$PATH":"~/.maestro/bin"
           maestro -v
 
       - name: Run build debug
