@@ -382,7 +382,7 @@
       },
       "dependsOn": [
         {
-          "target": "buildDebugAndroid",
+          "target": "buildRunner",
           "projects": "self"
         }
       ]
