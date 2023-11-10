@@ -48,7 +48,6 @@ jobs:
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
           export PATH="$PATH":"~/.maestro/bin"
-          maestro -v
 
       - name: Run build debug
         run: |

@@ -8,4 +8,4 @@ runs:
       uses: actions/cache@v3
       with:
         path: codecov
-        key: ${{ runner.os }}-codecov-${{ runner.arch }}-1
+        key: codecov-${{ runner.os }}-${{ runner.arch }}-1
