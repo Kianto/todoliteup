@@ -53,5 +53,5 @@ jobs:
           MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
-          export PATH="$PATH":"~/.maestro/bin"
+          echo "~/.maestro/bin" >> $env:GITHUB_PATH
           yarn nx affected  --target=maestroIos
