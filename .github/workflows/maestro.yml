@@ -1,51 +1,12 @@
 name: Upload to Maestro
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
     paths:
       - 'todoliteup_2/**'
 
 jobs:
-  test:
-    name: test
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: .
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
-        with:
-          main-branch-name: "main"
-
-      - name: Setup github token
-        run: |
-          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
-
-      - name: Setup flutter environment
-        uses: ./.github/actions/setup-flutter
-
-      - name: Use yarn cache
-        uses: ./.github/actions/cache-yarn
-
-      - name: Install yarn
-        run: yarn install
-
-      - name: Run Test
-        env:
-        run: |
-          yarn nx affected:test
-
   upload:
     name: upload
     runs-on: ubuntu-latest
