@@ -63,7 +63,6 @@ open coverage/index.html
 cd todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
 ```
 
-
 ----------------------
 
 # Nx Flutter
