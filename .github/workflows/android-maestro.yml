@@ -40,10 +40,6 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Run build debug
-        run: |
-          yarn nx affected --target=buildDebugAndroid
-
       - name: Use maestro cache
         uses: ./.github/actions/cache-maestro
 
@@ -53,6 +49,11 @@ jobs:
           mkdir -p "~/.local/bin"
           echo "~/.local/bin" >> $env:GITHUB_PATH
           curl -Ls "https://get.maestro.mobile.dev" --output ~/.local/bin/maestro
+          maestro -v
+
+      - name: Run build debug
+        run: |
+          yarn nx affected --target=buildDebugAndroid
 
       - name: Run Upload to Maestro
         env:

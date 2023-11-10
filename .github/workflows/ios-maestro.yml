@@ -40,10 +40,6 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Run build debug
-        run: |
-          yarn nx affected --target=buildDebugIos
-
       - name: Use maestro cache
         uses: ./.github/actions/cache-maestro
 
@@ -51,6 +47,11 @@ jobs:
         shell: bash
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
+          maestro -v
+
+      - name: Run build debug
+        run: |
+          yarn nx affected --target=buildDebugIos
 
       - name: Run Upload to Maestro
         env:
