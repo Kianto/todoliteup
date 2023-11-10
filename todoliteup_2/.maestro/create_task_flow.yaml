@@ -1,4 +1,5 @@
 appId: com.dasdang.todoliteup
+name: create task test
 ---
 - launchApp
 - tapOn: "fab_add_task"
