@@ -4,8 +4,10 @@ name: create task test
 - tapOn: "fab_add_task"
 - waitForAnimationToEnd
 - tapOn: "Tiêu đề"
+- waitForAnimationToEnd
 - inputText: "Công việc mới"
 - tapOn: "Mô tả"
+- waitForAnimationToEnd
 - inputText: "Cần hoàn thành trước cuối tháng"
 - tapOn: "OK"
 - waitForAnimationToEnd:
