@@ -33,10 +33,13 @@ class HomePage extends GetWidget<HomeController> {
       ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomBar(),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _addTask(context),
-        icon: const Icon(Icons.add, semanticLabel: 'fab_add_task'),
-        label: const Text(StringRes.add),
+      floatingActionButton: Semantics(
+        label: 'fab_add_task',
+        child: FloatingActionButton.extended(
+          onPressed: () => _addTask(context),
+          icon: const Icon(Icons.add),
+          label: const Text(StringRes.add),
+        ),
       ),
     );
   }
