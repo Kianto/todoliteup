@@ -70,20 +70,24 @@ class HomePage extends GetWidget<HomeController> {
     final itemList = [
       const BottomNavigationBarItem(
         icon: Icon(
-          key: Key('bottom_all_tab'),Icons.assignment_outlined,),
+          key: Key('bottom_all_tab'),
+          Icons.assignment_outlined,
+        ),
         label: StringRes.all,
       ),
       const BottomNavigationBarItem(
         icon: Icon(
-      semanticLabel: 'bottom_doing_tab',
+          semanticLabel: 'bottom_doing_tab',
           key: Key('bottom_doing_tab'),
-            Icons.assignment_late_outlined,
+          Icons.assignment_late_outlined,
         ),
         label: StringRes.doing,
       ),
       const BottomNavigationBarItem(
         icon: Icon(
-            key: Key('bottom_done_tab'),Icons.assignment_turned_in_outlined,),
+          key: Key('bottom_done_tab'),
+          Icons.assignment_turned_in_outlined,
+        ),
         label: StringRes.done,
       ),
     ];
