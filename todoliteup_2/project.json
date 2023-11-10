@@ -374,8 +374,6 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "curl -Ls \"https://get.maestro.mobile.dev\" | bash",
-          "export PATH=\"$PATH\":\"~/.maestro/bin\"",
           "maestro -v",
           "maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/app/outputs/flutter-apk/app-debug.apk .maestro/"
         ],
