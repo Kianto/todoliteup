@@ -66,5 +66,5 @@ jobs:
           MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
         run: |
           echo "~/.maestro/bin" >> $GITHUB_PATH
-          export PATH="$PATH":"~/.maestro/bin"
+          export PATH="$PATH":"$HOME/.maestro/bin"
           yarn nx affected  --target=maestroAndroid
