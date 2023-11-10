@@ -50,8 +50,9 @@ jobs:
       - name: Install maestro
         shell: bash
         run: |
-          curl -Ls "https://get.maestro.mobile.dev"
-          export PATH=\"\$PATH\":\"$MAESTRO_BIN_DIR_RAW\""
+          mkdir -p "~/.local/bin"
+          echo "~/.local/bin" >> $env:GITHUB_PATH
+          curl -Ls "https://get.maestro.mobile.dev" --output ~/.local/bin/maestro
 
       - name: Run Upload to Maestro
         env:
