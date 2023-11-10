@@ -44,7 +44,12 @@ jobs:
         run: |
           yarn nx affected --target=buildDebugIos
 
-      - uses: mobile-dev-inc/action-maestro-cloud@v1
-        with:
-          api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
-          app-file: todoliteup_2/build/ios/iphonesimulator/Runner.app # replace `Runner` with your app name
+      - name: Install maestro
+        shell: bash
+        run: curl -Ls "https://get.maestro.mobile.dev"
+
+      - name: Run Upload to Maestro
+        env:
+          MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+        run: |
+          yarn nx affected  --target=maestroIos

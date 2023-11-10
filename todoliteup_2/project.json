@@ -148,32 +148,6 @@
         "cwd": "todoliteup_2"
       }
     },
-    "buildDebugAndroid": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "flutter build apk --debug",
-        "cwd": "todoliteup_2"
-      },
-      "dependsOn": [
-        {
-          "target": "buildRunner",
-          "projects": "self"
-        }
-      ]
-    },
-    "buildDebugIos": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "flutter build ios --debug --simulator",
-        "cwd": "todoliteup_2"
-      },
-      "dependsOn": [
-        {
-          "target": "buildRunner",
-          "projects": "self"
-        }
-      ]
-    },
     "buildAar": {
       "executor": "nx:run-commands",
       "options": {
@@ -353,6 +327,58 @@
           "type": "appstore"
         }
       }
+    },
+    "buildDebugAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build apk --debug",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "buildDebugIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios --debug --simulator",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/ios/iphonesimulator/Runner.app .maestro/",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/app/outputs/flutter-apk/app-debug.apk .maestro/",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
     }
   },
   "tags": []
