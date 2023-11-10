@@ -81,8 +81,8 @@ jobs:
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p "~/.local/bin"
+          export PATH="$PATH":"~/.local/bin"
           echo "~/.local/bin" >> $env:GITHUB_PATH
-          echo "~/.local/bin/codecov" >> $env:GITHUB_PATH
 
       - name: Install codecov
         if: steps.codecov-cache.outputs.cache-hit != 'true'

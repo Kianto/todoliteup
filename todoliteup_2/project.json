@@ -42,7 +42,7 @@
         "commands": [
           "if [ {args.coverage} != 1 ]; then flutter test; fi",
           "if [ {args.coverage} = 1 ]; then flutter test --coverage && genhtml -o coverage coverage/lcov.info; fi",
-          "if [ {args.coverage} = 1 ]; then ../codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info; fi"
+          "if [ {args.coverage} = 1 ]; then codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info; fi"
         ],
         "cwd": "todoliteup_2",
         "parallel": false
