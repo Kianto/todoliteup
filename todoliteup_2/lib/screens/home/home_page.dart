@@ -68,7 +68,7 @@ class HomePage extends GetWidget<HomeController> {
 
   Widget _buildBottomBar() {
     final itemList = [
-       BottomNavigationBarItem(
+      BottomNavigationBarItem(
         icon: Semantics(
           label: 'bottom_all_tab',
           child: const Icon(
@@ -77,7 +77,7 @@ class HomePage extends GetWidget<HomeController> {
         ),
         label: StringRes.all,
       ),
-       BottomNavigationBarItem(
+      BottomNavigationBarItem(
         icon: Semantics(
           label: 'bottom_doing_tab',
           child: const Icon(
@@ -86,7 +86,7 @@ class HomePage extends GetWidget<HomeController> {
         ),
         label: StringRes.doing,
       ),
-       BottomNavigationBarItem(
+      BottomNavigationBarItem(
         icon: Semantics(
           label: 'bottom_done_tab',
           child: const Icon(
