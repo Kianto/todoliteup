@@ -48,7 +48,7 @@ jobs:
         shell: bash
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
-          export PATH="$PATH":"~/.maestro/bin"
+          export PATH="$PATH":"$HOME/.maestro/bin"
           maestro -v
 
       - name: Install maestro
