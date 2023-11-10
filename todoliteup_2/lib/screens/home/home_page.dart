@@ -33,9 +33,10 @@ class HomePage extends GetWidget<HomeController> {
       ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomBar(),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _addTask(context),
-        child: const Icon(Icons.add),
+        icon: const Icon(Icons.add),
+        label: const Text(StringRes.add),
       ),
     );
   }
@@ -68,15 +69,21 @@ class HomePage extends GetWidget<HomeController> {
   Widget _buildBottomBar() {
     final itemList = [
       const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_outlined),
+        icon: Icon(
+          key: Key('bottom_all_tab'),Icons.assignment_outlined,),
         label: StringRes.all,
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_late_outlined),
+        icon: Icon(
+      semanticLabel: 'bottom_doing_tab',
+          key: Key('bottom_doing_tab'),
+            Icons.assignment_late_outlined,
+        ),
         label: StringRes.doing,
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_turned_in_outlined),
+        icon: Icon(
+            key: Key('bottom_done_tab'),Icons.assignment_turned_in_outlined,),
         label: StringRes.done,
       ),
     ];

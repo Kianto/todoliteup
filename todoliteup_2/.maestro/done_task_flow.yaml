@@ -1,0 +1,9 @@
+appId: com.dasdang.todoliteup
+---
+- tapOn:
+    point: 50%,95%
+- tapOn: "Công việc mới"
+- tapOn: "Hoàn tất"
+- waitForAnimationToEnd:
+    timeout: 1000
+- assertNotVisible: "Công việc mới"

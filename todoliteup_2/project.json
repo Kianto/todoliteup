@@ -148,6 +148,20 @@
         "cwd": "todoliteup_2"
       }
     },
+    "buildDebugAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build apk --debug",
+        "cwd": "todoliteup_2"
+      }
+    },
+    "buildDebugIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios --debug --simulator",
+        "cwd": "todoliteup_2"
+      }
+    },
     "buildAar": {
       "executor": "nx:run-commands",
       "options": {

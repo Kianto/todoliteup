@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoliteup_2/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/res/strings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/res/strings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/screens/account/account_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/screens/account/account_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/project.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,18 +85,18 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github/actions",
+    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/todoliteup_2/.maestro",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.github/actions" />
+      <recent name="$PROJECT_DIR$/todoliteup_2/.maestro" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
+      <recent name="$PROJECT_DIR$/.github/actions" />
       <recent name="$PROJECT_DIR$/todoliteup_2/lib/screens" />
       <recent name="$PROJECT_DIR$/todoliteup_1" />
-      <recent name="$PROJECT_DIR$/todolite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -104,7 +106,7 @@
       <recent name="$PROJECT_DIR$/todoliteup_1" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in run_all_screen_test.dart">
+  <component name="RunManager" selected="Flutter.main2.dart">
     <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
       <method v="2" />
