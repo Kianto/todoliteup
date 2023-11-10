@@ -46,9 +46,8 @@ jobs:
       - name: Install maestro
         shell: bash
         run: |
-          mkdir -p "~/.local/bin"
-          echo "~/.local/bin" >> $env:GITHUB_PATH
-          curl -Ls "https://get.maestro.mobile.dev" --output ~/.local/bin/maestro
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          export PATH="$PATH":"$HOME/.maestro/bin"
           maestro -v
 
       - name: Run build debug
