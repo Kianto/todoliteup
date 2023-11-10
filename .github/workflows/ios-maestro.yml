@@ -43,8 +43,15 @@ jobs:
       - name: Use maestro cache
         uses: ./.github/actions/cache-maestro
 
+      - name: Install maestro
+        shell: bash
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "~/.maestro/bin" >> GITHUB_PATH
+
       - name: Run build debug
         run: |
+          maestro -v
           yarn nx affected --target=buildDebugIos
 
       - name: Run Upload to Maestro
@@ -52,6 +59,4 @@ jobs:
         env:
           MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
         run: |
-          curl -Ls "https://get.maestro.mobile.dev" | bash
-          echo "~/.maestro/bin" >> $env:GITHUB_PATH
           yarn nx affected  --target=maestroIos
