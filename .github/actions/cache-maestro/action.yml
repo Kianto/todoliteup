@@ -7,5 +7,5 @@ runs:
       id: maestro-cache
       uses: actions/cache@v3
       with:
-        path: ~/.maestro
+        path: ~/.maestro/bin
         key: maestro-${{ runner.os }}-${{ runner.arch }}-1
