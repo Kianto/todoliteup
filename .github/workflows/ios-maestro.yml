@@ -44,6 +44,7 @@ jobs:
         uses: ./.github/actions/cache-maestro
 
       - name: Install maestro
+        if: steps.cache-maestro.outputs.cache-hit != 'true'
         shell: bash
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash

@@ -7,5 +7,5 @@ runs:
       id: codecov-cache
       uses: actions/cache@v3
       with:
-        path: codecov
-        key: codecov-${{ runner.os }}-${{ runner.arch }}-1
+        path: ~./local/bin/codecov
+        key: ${{ runner.os }}-codecov
