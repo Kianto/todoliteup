@@ -54,6 +54,7 @@ jobs:
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
           export PATH="$PATH":"~/.maestro/bin"
+          maestro -v
           yarn nx affected  --target=maestroAndroid
 
       - name: Run check
