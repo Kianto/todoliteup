@@ -51,6 +51,13 @@ jobs:
           export PATH="$PATH":"~/.maestro/bin"
           maestro -v
 
+      - name: Install maestro
+        if: steps.cache-maestro.outputs.cache-hit == 'true'
+        shell: bash
+        run: |
+          echo "dummy...."
+          maestro -v
+
       - name: Run build debug
         run: |
           yarn nx affected --target=buildDebugIos

@@ -57,7 +57,7 @@ jobs:
 
       - name: Run build debug
         run: |
-          maestro -v
+          ~/.maestro/bin/maestro -v
           yarn nx affected --target=buildDebugAndroid
 
       - name: Run Upload to Maestro
