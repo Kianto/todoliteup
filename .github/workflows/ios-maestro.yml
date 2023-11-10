@@ -40,6 +40,12 @@ jobs:
       - name: Install yarn
         run: yarn install
 
+      - name: Install maestro
+        if: steps.cache-yarn.outputs.cache-hit == 'true'
+        shell: bash
+        run: |
+          echo "dummy...."
+
       - name: Use maestro cache
         uses: ./.github/actions/cache-maestro
 
