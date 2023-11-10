@@ -357,7 +357,7 @@
     "maestroIos": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "../maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/ios/iphonesimulator/Runner.app .maestro/",
+        "command": "maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/ios/iphonesimulator/Runner.app .maestro/",
         "cwd": "todoliteup_2"
       },
       "dependsOn": [
@@ -370,7 +370,7 @@
     "maestroAndroid": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "../maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/app/outputs/flutter-apk/app-debug.apk .maestro/",
+        "command": "maestro cloud --apiKey MAESTRO_CLOUD_API_KEY build/app/outputs/flutter-apk/app-debug.apk .maestro/",
         "cwd": "todoliteup_2"
       },
       "dependsOn": [

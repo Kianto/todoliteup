@@ -1,0 +1,11 @@
+name: 'cache maestro'
+description: 'cache maestro'
+runs:
+  using: "composite"
+  steps:
+    - name: Cache maestro
+      id: maestro-cache
+      uses: actions/cache@v3
+      with:
+        path: maestro
+        key: ${{ runner.os }}-maestro-${{ runner.arch }}-1
