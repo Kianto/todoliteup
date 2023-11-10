@@ -33,6 +33,10 @@ jobs:
       - name: Install yarn
         run: yarn install
 
+      - name: Run build debug
+        run: |
+          yarn nx affected --target=buildDebugAndroid
+
       - uses: mobile-dev-inc/action-maestro-cloud@v1
         with:
           api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
