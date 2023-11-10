@@ -58,7 +58,6 @@ jobs:
 
       - name: Run build debug
         run: |
-          ~/.maestro/bin/maestro -v
           yarn nx affected --target=buildDebugAndroid
 
       - name: Run Upload to Maestro
@@ -66,6 +65,6 @@ jobs:
         env:
           MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
         run: |
-          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "~/.maestro/bin" >> $GITHUB_PATH
           export PATH="$PATH":"~/.maestro/bin"
           yarn nx affected  --target=maestroAndroid

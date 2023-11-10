@@ -73,7 +73,6 @@ jobs:
         env:
           MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
         run: |
-          curl -Ls "https://get.maestro.mobile.dev" | bash
           export PATH="$PATH":"~/.maestro/bin"
           maestro -v
           yarn nx affected  --target=maestroIos
