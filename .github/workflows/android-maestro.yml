@@ -40,8 +40,12 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Use maestro cache
-        uses: ./.github/actions/cache-maestro
+      - name: Cache maestro
+        id: cache-maestro
+        uses: actions/cache@v3
+        with:
+          path: ~/.maestro/bin/maestro
+          key: ${{ runner.os }}-maestro
 
       - name: Install maestro
         if: steps.cache-maestro.outputs.cache-hit != 'true'
