@@ -63,6 +63,13 @@ open coverage/index.html
 cd todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
 ```
 
+## Maestro
+
+Run example
+```
+maestro test todoliteup_2/.maestro/main.yaml
+```
+
 ----------------------
 
 # Nx Flutter

@@ -12,6 +12,10 @@ on:
 jobs:
   ios:
     runs-on: macos-13
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
     steps:
       - uses: actions/checkout@v3
 

@@ -1,7 +1,7 @@
 appId: com.dasdang.todoliteup
 ---
 - launchApp
-- tapOn: "Thêm mới"
+- tapOn: "fab_add_task"
 - tapOn: "Tiêu đề"
 - inputText: "Công việc mới"
 - tapOn: "Mô tả"

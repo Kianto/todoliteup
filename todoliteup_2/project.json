@@ -153,14 +153,26 @@
       "options": {
         "command": "flutter build apk --debug",
         "cwd": "todoliteup_2"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
     },
     "buildDebugIos": {
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter build ios --debug --simulator",
         "cwd": "todoliteup_2"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
     },
     "buildAar": {
       "executor": "nx:run-commands",
