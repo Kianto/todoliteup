@@ -1,4 +1,4 @@
-name: Build and upload to Maestro Cloud (Flutter iOS)
+name: Build and upload to Maestro (iOS)
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
       - 'todoliteup_2/**'
 
 jobs:
-  ios:
+  ios-maestro:
     runs-on: macos-13
     defaults:
       run:
