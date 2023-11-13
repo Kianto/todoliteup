@@ -2,11 +2,10 @@ appId: com.dasdang.todoliteup
 name: delete task test
 ---
 - tapOn:
-    point: 90%,95%
+    point: 90%,90%
 - waitForAnimationToEnd
-- tapOn: "Công việc mới"
+- tapOn: "New task to do"
 - assertNotVisible: "Hoàn tất"
 - tapOn: "Xoá"
-- waitForAnimationToEnd:
-    timeout: 1000
-- assertNotVisible: "Công việc mới"
+- waitForAnimationToEnd
+- assertNotVisible: "New task to do"

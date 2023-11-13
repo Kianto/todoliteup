@@ -36,6 +36,7 @@ class HomePage extends GetWidget<HomeController> {
       floatingActionButton: Semantics(
         label: 'fab_add_task',
         child: FloatingActionButton.extended(
+          key: const Key('fab_add_task'),
           onPressed: () => _addTask(context),
           icon: const Icon(Icons.add),
           label: const Text(StringRes.add),
@@ -123,7 +124,6 @@ class HomePage extends GetWidget<HomeController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextFormField(
-                key: const ValueKey(0),
                 decoration: const InputDecoration(
                   labelText: StringRes.title,
                 ),
@@ -134,7 +134,6 @@ class HomePage extends GetWidget<HomeController> {
                 validator: _validateRequired,
               ),
               TextFormField(
-                key: const ValueKey(1),
                 decoration: const InputDecoration(
                   labelText: StringRes.description,
                 ),

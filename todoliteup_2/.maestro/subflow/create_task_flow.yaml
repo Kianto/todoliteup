@@ -2,14 +2,11 @@ appId: com.dasdang.todoliteup
 name: create task test
 ---
 - tapOn: "fab_add_task"
-- waitForAnimationToEnd
 - tapOn: "Tiêu đề"
-- waitForAnimationToEnd
-- inputText: "Công việc mới"
+- inputText: "New task to do"
 - tapOn: "Mô tả"
 - waitForAnimationToEnd
-- inputText: "Cần hoàn thành trước cuối tháng"
+- inputText: "Need to do before weekend"
 - tapOn: "OK"
-- waitForAnimationToEnd:
-    timeout: 1000
-- assertVisible: "Công việc mới"
+- waitForAnimationToEnd
+- assertVisible: "New task to do"
