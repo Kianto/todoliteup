@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoliteup_2/test/screens/run_all_screen_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/test/screens/run_all_screen_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chores/testing_14" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +37,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="chores/testing_16" />
+                    <option name="lastUsedInstant" value="1699854999" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_15" />
                     <option name="lastUsedInstant" value="1699416700" />
@@ -54,10 +56,6 @@
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_12" />
                     <option name="lastUsedInstant" value="1699375015" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="chores/testing_11" />
-                    <option name="lastUsedInstant" value="1699374380" />
                   </RecentBranch>
                 </list>
               </option>
@@ -109,7 +107,7 @@
       <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main2.dart">
+  <component name="RunManager" selected="Flutter Test.UI create task testing">
     <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
       <method v="2" />
@@ -118,18 +116,26 @@
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_2/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in local_data_source_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/data/local_data_source_test.dart" />
-      <option name="useRegexp" value="false" />
+    <configuration name="Home page changing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Home page changing" />
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
+      <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in run_all_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/run_all_screen_test.dart" />
-      <option name="useRegexp" value="false" />
+    <configuration name="UI create task testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="UI create task testing" />
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
+      <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in task_test.dart (1)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/task_test.dart" />
+    <configuration name="UI delete task testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="UI delete task testing" />
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
+      <option name="useRegexp" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in home_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
@@ -138,27 +144,22 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in usecase_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/domain/usecase_test.dart" />
-      <option name="useRegexp" value="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Flutter.main1.dart" />
       <item itemvalue="Flutter.main2.dart" />
-      <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
-      <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
-      <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
-      <item itemvalue="Flutter Test.tests in usecase_test.dart" />
+      <item itemvalue="Flutter Test.Home page changing" />
+      <item itemvalue="Flutter Test.UI create task testing" />
+      <item itemvalue="Flutter Test.UI delete task testing" />
+      <item itemvalue="Flutter Test.tests in home_test.dart" />
       <item itemvalue="Flutter Test.tests in task_test.dart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.UI create task testing" />
+        <item itemvalue="Flutter Test.Home page changing" />
+        <item itemvalue="Flutter Test.UI delete task testing" />
+        <item itemvalue="Flutter Test.tests in home_test.dart" />
         <item itemvalue="Flutter Test.tests in task_test.dart" />
-        <item itemvalue="Flutter Test.tests in usecase_test.dart" />
-        <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
-        <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
-        <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
       </list>
     </recent_temporary>
   </component>
