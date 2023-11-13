@@ -1,8 +1,7 @@
 appId: com.dasdang.todoliteup
 name: done task test
 ---
-- tapOn:
-    point: 50%,90%
+- tapOn: "Cần làm"
 - waitForAnimationToEnd
 - tapOn: "New task to do"
 - tapOn: "Hoàn tất"

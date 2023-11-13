@@ -31,8 +31,8 @@ class HomePage extends GetWidget<HomeController> {
           ),
         ],
       ),
-      body: _buildBody(),
-      bottomNavigationBar: _buildBottomBar(),
+      body: _buildBody(context),
+      bottomNavigationBar: _buildBottomBar(context),
       floatingActionButton: Semantics(
         label: 'fab_add_task',
         child: FloatingActionButton.extended(
@@ -44,7 +44,7 @@ class HomePage extends GetWidget<HomeController> {
     );
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     final page = [
       _getPage(const TaskListTab.all()),
       _getPage(const TaskListTab.doing()),
@@ -69,43 +69,65 @@ class HomePage extends GetWidget<HomeController> {
     });
   }
 
-  Widget _buildBottomBar() {
-    final itemList = [
-      BottomNavigationBarItem(
-        icon: Semantics(
-          label: 'bottom_all_tab',
-          child: const Icon(
-            Icons.assignment_outlined,
-          ),
-        ),
-        label: StringRes.all,
-      ),
-      BottomNavigationBarItem(
-        icon: Semantics(
-          label: 'bottom_doing_tab',
-          child: const Icon(
-            Icons.assignment_late_outlined,
-          ),
-        ),
-        label: StringRes.doing,
-      ),
-      BottomNavigationBarItem(
-        icon: Semantics(
-          label: 'bottom_done_tab',
-          child: const Icon(
-            Icons.assignment_turned_in_outlined,
-          ),
-        ),
-        label: StringRes.done,
-      ),
-    ];
-
+  Widget _buildBottomBar(BuildContext context) {
+    final itemList = {
+      StringRes.all: Icons.assignment_outlined,
+      StringRes.doing: Icons.assignment_late_outlined,
+      StringRes.done: Icons.assignment_turned_in_outlined,
+    };
     return Obx(
-      () => BottomNavigationBar(
-        currentIndex: controller.currentIndex,
-        onTap: controller.pageChange,
-        items: itemList,
-        landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+      () => SizedBox(
+        height: kBottomNavigationBarHeight,
+        child: Row(
+          children: [
+            for (int i = 0; i < itemList.length; i++)
+              Expanded(
+                child: _buildBottomItem(
+                  context,
+                  Icon(itemList.values.elementAt(i)),
+                  itemList.keys.elementAt(i),
+                  isSelected: controller.currentIndex == i,
+                  onTap: () => controller.pageChange(i),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBottomItem(
+    BuildContext context,
+    Widget icon,
+    String label, {
+    bool isSelected = false,
+    VoidCallback? onTap,
+  }) {
+    return InkResponse(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconTheme(
+            data: IconThemeData(
+              color: isSelected
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).unselectedWidgetColor,
+            ),
+            child: icon,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 2.0),
+            child: Text(
+              label,
+              style: TextStyle(
+                color: isSelected
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).unselectedWidgetColor,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

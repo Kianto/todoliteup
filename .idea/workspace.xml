@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/delete_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/delete_task_flow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/done_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/done_task_flow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/screens/home/home_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +110,7 @@
       <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.UI create task testing">
+  <component name="RunManager" selected="Flutter.main2.dart">
     <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
       <method v="2" />

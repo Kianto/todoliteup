@@ -6,7 +6,7 @@ name: create task test
 - inputText: "New task to do"
 - tapOn: "Mô tả"
 - waitForAnimationToEnd
-- inputText: "Need to do before weekend"
+- inputRandomText
 - tapOn: "OK"
 - waitForAnimationToEnd
 - assertVisible: "New task to do"
