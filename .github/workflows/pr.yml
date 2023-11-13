@@ -65,15 +65,32 @@ jobs:
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 
-      - name: Setup lcov environment
-        uses: ./.github/actions/setup-lcov
-
       - name: Use yarn cache
         uses: ./.github/actions/cache-yarn
 
       - name: Install yarn
         run: yarn install
 
-      - name: Run Test
+      - name: Use codecov cache
+        uses: ./.github/actions/cache-codecov
+
+      - name: Install tools path
+        if: steps.codecov-cache.outputs.cache-hit != 'true'
         run: |
-          yarn nx affected:test
+          mkdir -p "~/.local/bin"
+          export PATH="$PATH":"~/.local/bin"
+          echo "~/.local/bin" >> GITHUB_PATH
+
+      - name: Install codecov
+        if: steps.codecov-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          cp codecov "~/.local/bin/codecov"
+
+      - name: Run Test
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          yarn nx affected:test --args='--coverage=1'

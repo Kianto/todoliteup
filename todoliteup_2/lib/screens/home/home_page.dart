@@ -33,9 +33,13 @@ class HomePage extends GetWidget<HomeController> {
       ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _addTask(context),
-        child: const Icon(Icons.add),
+      floatingActionButton: Semantics(
+        label: 'fab_add_task',
+        child: FloatingActionButton.extended(
+          onPressed: () => _addTask(context),
+          icon: const Icon(Icons.add),
+          label: const Text(StringRes.add),
+        ),
       ),
     );
   }
@@ -67,16 +71,31 @@ class HomePage extends GetWidget<HomeController> {
 
   Widget _buildBottomBar() {
     final itemList = [
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_outlined),
+      BottomNavigationBarItem(
+        icon: Semantics(
+          label: 'bottom_all_tab',
+          child: const Icon(
+            Icons.assignment_outlined,
+          ),
+        ),
         label: StringRes.all,
       ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_late_outlined),
+      BottomNavigationBarItem(
+        icon: Semantics(
+          label: 'bottom_doing_tab',
+          child: const Icon(
+            Icons.assignment_late_outlined,
+          ),
+        ),
         label: StringRes.doing,
       ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.assignment_turned_in_outlined),
+      BottomNavigationBarItem(
+        icon: Semantics(
+          label: 'bottom_done_tab',
+          child: const Icon(
+            Icons.assignment_turned_in_outlined,
+          ),
+        ),
         label: StringRes.done,
       ),
     ];
@@ -86,6 +105,7 @@ class HomePage extends GetWidget<HomeController> {
         currentIndex: controller.currentIndex,
         onTap: controller.pageChange,
         items: itemList,
+        landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
       ),
     );
   }

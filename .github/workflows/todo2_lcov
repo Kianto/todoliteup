@@ -10,6 +10,7 @@ jobs:
   test:
     name: todo2_codecov
     runs-on: ubuntu-latest
+    needs: test
     defaults:
       run:
         shell: bash
@@ -41,7 +42,7 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Run Test
+      - name: Run Codecov
         run: |
           yarn nx affected --target=codecov
 

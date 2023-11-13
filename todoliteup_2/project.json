@@ -39,8 +39,13 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "flutter test",
-        "cwd": "todoliteup_2"
+        "commands": [
+          "if [ {args.coverage} != 1 ]; then flutter test; fi",
+          "if [ {args.coverage} = 1 ]; then flutter test --coverage; fi",
+          "if [ {args.coverage} = 1 ]; then ../codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info; fi"
+        ],
+        "cwd": "todoliteup_2",
+        "parallel": false
       },
       "dependsOn": [
         {
@@ -52,7 +57,7 @@
     "codecov": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "flutter test --coverage && genhtml -o coverage coverage/lcov.info",
+        "command": "flutter test --coverage",
         "cwd": "todoliteup_2"
       },
       "dependsOn": [
@@ -322,6 +327,65 @@
           "type": "appstore"
         }
       }
+    },
+    "buildDebugAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build apk --debug",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "buildDebugIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios --debug --simulator",
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "maestro -v",
+          "maestro cloud --apiKey ${MAESTRO_CLOUD_API_KEY} build/ios/iphonesimulator/Runner.app .maestro/"
+        ],
+        "cwd": "todoliteup_2"
+      },
+      "dependsOn": [
+        {
+          "target": "buildDebugIos",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "maestro -v",
+          "maestro cloud --apiKey ${MAESTRO_CLOUD_API_KEY} build/app/outputs/flutter-apk/app-debug.apk .maestro/"
+        ],
+        "cwd": "todoliteup_2",
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
     }
   },
   "tags": []

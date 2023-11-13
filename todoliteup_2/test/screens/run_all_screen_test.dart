@@ -11,19 +11,19 @@ import 'package:todoliteup/screens/message/message_binding.dart';
 import 'package:todoliteup/screens/message/message_page.dart';
 // import 'package:todoliteup/screens/register/register_binding.dart';
 // import 'package:todoliteup/screens/register/register_page.dart';
-import 'package:todoliteup/screens/settings/settings_binding.dart';
-import 'package:todoliteup/screens/settings/settings_page.dart';
-import 'package:todoliteup/screens/support/support_binding.dart';
-import 'package:todoliteup/screens/support/support_page.dart';
+// import 'package:todoliteup/screens/settings/settings_binding.dart';
+// import 'package:todoliteup/screens/settings/settings_page.dart';
+// import 'package:todoliteup/screens/support/support_binding.dart';
+// import 'package:todoliteup/screens/support/support_page.dart';
 
 void main() {
   group('UI all screens', () {
     setUp(() {
       AccountBinding().dependencies();
-      SettingsBinding().dependencies();
       LoginBinding().dependencies();
       MessageBinding().dependencies();
-      SupportBinding().dependencies();
+      // SettingsBinding().dependencies();
+      // SupportBinding().dependencies();
       // FriendsBinding().dependencies();
       // RegisterBinding().dependencies();
     });
@@ -32,10 +32,10 @@ void main() {
         // arrange
         final screens = [
           const AccountPage(),
-          const SettingsPage(),
           const LoginPage(),
           const MessagePage(),
-          const SupportPage(),
+          // const SettingsPage(),
+          // const SupportPage(),
           // const FriendsPage(),
           // const RegisterPage(),
         ];

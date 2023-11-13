@@ -7,6 +7,7 @@ abstract class StringRes {
   static const save = "Lưu";
   static const delete = "Xoá";
   static const edit = "Thay đổi";
+  static const add = "Thêm mới";
   static const update = "Cập nhật";
   static const failed = "Thất bại";
   static const success = "Thành công";

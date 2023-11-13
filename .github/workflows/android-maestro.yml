@@ -1,0 +1,70 @@
+name: Build and upload to Maestro (Android)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'todoliteup_2/**'
+
+jobs:
+  android-maestro:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: "main"
+
+      - name: Setup github token
+        run: |
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
+
+      - name: Use yarn cache
+        uses: ./.github/actions/cache-yarn
+
+      - name: Install yarn
+        run: yarn install
+
+      - name: Cache maestro
+        id: cache-maestro
+        uses: actions/cache@v3
+        with:
+          path: ~/.maestro/bin/maestro
+          key: ${{ runner.os }}-maestro
+
+      - name: Install maestro
+        if: steps.cache-maestro.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "~/.maestro/bin" >> $GITHUB_PATH
+          export PATH="$PATH":"$HOME/.maestro/bin"
+          maestro -v
+
+      - name: Run build debug
+        run: |
+          yarn nx affected --target=buildDebugAndroid
+
+      - name: Run Upload to Maestro
+        shell: bash
+        env:
+          MAESTRO_CLOUD_API_KEY: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+        run: |
+          echo "~/.maestro/bin" >> $GITHUB_PATH
+          export PATH="$PATH":"$HOME/.maestro/bin"
+          yarn nx affected  --target=maestroAndroid
