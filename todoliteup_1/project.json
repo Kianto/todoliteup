@@ -41,7 +41,7 @@
       "options": {
         "commands": [
           {
-            "command": "flutter test -- coverage",
+            "command": "flutter test --coverage",
             "forwardAllArgs": false
           }
         ],

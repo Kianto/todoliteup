@@ -65,9 +65,6 @@ jobs:
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 
-      - name: Setup lcov environment
-        uses: ./.github/actions/setup-lcov
-
       - name: Use yarn cache
         uses: ./.github/actions/cache-yarn
 

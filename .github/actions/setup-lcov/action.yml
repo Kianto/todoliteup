@@ -1,7 +1,0 @@
-name: 'lcov environment'
-description: 'lcov environment'
-runs:
-  using: 'composite'
-  steps:
-    - name: Setup lcov environment
-      uses: hrishikesh-kadam/setup-lcov@v1
