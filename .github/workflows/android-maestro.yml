@@ -41,14 +41,14 @@ jobs:
         run: yarn install
 
       - name: Cache maestro
-        id: cache-maestro
+        id: cache-maestro-android
         uses: actions/cache@v3
         with:
           path: ~/.maestro/bin/maestro
           key: ${{ runner.os }}-maestro
 
       - name: Install maestro
-        if: steps.cache-maestro.outputs.cache-hit != 'true'
+        if: steps.cache-maestro-android.outputs.cache-hit != 'true'
         shell: bash
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
