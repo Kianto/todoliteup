@@ -1,4 +1,8 @@
 appId: com.dasdang.todoliteup
+env:
+  USERNAME: test@gmail.com
+  PASSWORD: 123456
+  TASKNAME: "New task to do"
 ---
 - launchApp:
     clearState: true

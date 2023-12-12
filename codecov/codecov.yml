@@ -11,14 +11,14 @@ coverage:
         target: 80%
         flags:
           - todo0
-      todo1:
+      todo-1:
         target: 70%
         flags:
-          - todo1
-      todo2:
+          - todo-1
+      todo-2:
         target: 50%
         flags:
-          - todo2
+          - todo-2
 
 comment:
   behavior: default
@@ -32,10 +32,10 @@ flags:
   todo0:
     paths:
       - todolite/
-  todo1:
+  todo-1:
     paths:
       - todoliteup_1/
-  todo2:
+  todo-2:
     paths:
       - todoliteup_2/
 

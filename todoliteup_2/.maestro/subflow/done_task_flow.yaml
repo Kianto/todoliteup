@@ -1,11 +1,9 @@
 appId: com.dasdang.todoliteup
 name: done task test
 ---
-- tapOn:
-    point: 50%,95%
+- tapOn: "Cần làm"
 - waitForAnimationToEnd
-- tapOn: "Công việc mới"
+- tapOn: ${TASKNAME}
 - tapOn: "Hoàn tất"
-- waitForAnimationToEnd:
-    timeout: 1000
-- assertNotVisible: "Công việc mới"
+- waitForAnimationToEnd
+- assertNotVisible: ${TASKNAME}

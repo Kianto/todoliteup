@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 import 'package:todoliteup/screens/account/account_binding.dart';
 import 'package:todoliteup/screens/account/account_page.dart';
-// import 'package:todoliteup/screens/friends/friends_binding.dart';
-// import 'package:todoliteup/screens/friends/friends_page.dart';
+import 'package:todoliteup/screens/friends/friends_binding.dart';
+import 'package:todoliteup/screens/friends/friends_page.dart';
 import 'package:todoliteup/screens/login/login_binding.dart';
 import 'package:todoliteup/screens/login/login_page.dart';
 import 'package:todoliteup/screens/message/message_binding.dart';
@@ -24,7 +24,7 @@ void main() {
       MessageBinding().dependencies();
       // SettingsBinding().dependencies();
       // SupportBinding().dependencies();
-      // FriendsBinding().dependencies();
+      FriendsBinding().dependencies();
       // RegisterBinding().dependencies();
     });
     testWidgets('Run all screens', (tester) async {
@@ -36,7 +36,7 @@ void main() {
           const MessagePage(),
           // const SettingsPage(),
           // const SupportPage(),
-          // const FriendsPage(),
+          const FriendsPage(),
           // const RegisterPage(),
         ];
         for (final screen in screens) {
