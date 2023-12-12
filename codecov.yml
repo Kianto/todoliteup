@@ -1,0 +1,92 @@
+# Setting coverage targets per flag
+coverage:
+  status:
+    patch:
+      default:
+        target: 0%
+    project:
+      default:
+        target: 0%
+      todo0:
+        target: 80%
+        flags:
+          - todo0
+      todo-1:
+        target: 70%
+        flags:
+          - todo-1
+      todo-2:
+        target: 50%
+        flags:
+          - todo-2
+
+comment:
+  behavior: default
+  hide_project_coverage: true   # [true :: only show coverage on the git diff]
+  layout: ' diff, flags'
+  require_base: true            # [true :: must have a base report to post]
+  require_changes: true         # if true: only post the comment if coverage changes
+  require_head: true            # [true :: must have a head report to post]
+
+flags:
+  todo0:
+    paths:
+      - todolite/
+  todo-1:
+    paths:
+      - todoliteup_1/
+  todo-2:
+    paths:
+      - todoliteup_2/
+
+#component_management:
+#  default_rules: # default rules that will be inherited by all components
+#    statuses:
+#      - type: project # in this case every component that doens't have a status defined will have a project type one
+#        target: auto
+#        branches:
+#          - "!main"
+#  individual_components:
+#    - component_id: todo-1
+#      name: todo-c-1
+#      paths:
+#        - todoliteup_1/**
+#      statuses:
+#        - type: project
+#          target: auto
+#    - component_id: todo-2
+#      name: todo-c-2
+#      paths:
+#        - todoliteup_2/**
+#      statuses:
+#        - type: project
+#          target: auto
+
+#flag_management:
+#  default_rules:
+#    carryforward: true
+#    statuses:
+#      - type: project
+#        target: auto
+#        threshold: 1%
+#      - type: patch
+#        target: 70%
+#  individual_flags:
+#    - name: todo_1
+#      paths:
+#        - todoliteup_1/
+#      carryforward: true
+#      statuses:
+#        - type: project
+#          target: 80%
+#        - type: patch
+#          target: 100%
+#    - name: todo_2
+#      paths:
+#        - todoliteup_2/
+#      carryforward: true
+#      statuses:
+#        - type: project
+#          target: 40%
+#        - type: patch
+#          target: 100%
