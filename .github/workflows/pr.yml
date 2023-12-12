@@ -75,7 +75,7 @@ jobs:
         uses: ./.github/actions/cache-codecov
 
       - name: Install tools path
-        if: steps.codecov-cache.outputs.cache-hit != 'true'
+#        if: steps.codecov-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p "~/.local/bin"
           export PATH="$PATH":"~/.local/bin"
