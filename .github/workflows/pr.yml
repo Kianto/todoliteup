@@ -85,9 +85,10 @@ jobs:
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
+          sudo apt-get install curl
           curl -Os https://uploader.codecov.io/latest/linux/codecov
-#          chmod +x codecov
-#          cp codecov "~/.local/bin/codecov"
+          chmod +x codecov
+          cp codecov "~/.local/bin/codecov"
 
       - name: Run Test
         env:
