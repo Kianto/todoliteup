@@ -40,9 +40,10 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "if [ {args.coverage} != 1 ]; then flutter test; fi",
-          "if [ {args.coverage} = 1 ]; then flutter test --coverage; fi",
-          "if [ {args.coverage} = 1 ]; then ../codecov -t ${CODECOV_TOKEN} -c -F todo-1 -f coverage/lcov.info; fi"
+          {
+            "command": "flutter test --coverage",
+            "forwardAllArgs": false
+          }
         ],
         "cwd": "todoliteup_1",
         "parallel": false
