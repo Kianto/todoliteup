@@ -3,10 +3,10 @@ name: create task test
 ---
 - tapOn: "fab_add_task"
 - tapOn: "Tiêu đề"
-- inputText: "New task to do"
+- inputText: ${TASKNAME}
 - tapOn: "Mô tả"
 - waitForAnimationToEnd
 - inputRandomText
 - tapOn: "OK"
 - waitForAnimationToEnd
-- assertVisible: "New task to do"
+- assertVisible: ${TASKNAME}

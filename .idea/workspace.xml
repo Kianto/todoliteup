@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/main.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/main.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/create_task_flow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/delete_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/delete_task_flow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/done_task_flow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/.maestro/subflow/done_task_flow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="stateless_widget" />
         <option value="Dart File" />
+        <option value="stateless_widget" />
       </list>
     </option>
   </component>

@@ -3,7 +3,7 @@ name: delete task test
 ---
 - tapOn: "Hoàn tất"
 - waitForAnimationToEnd
-- tapOn: "New task to do"
+- tapOn: ${TASKNAME}
 - tapOn: "Xoá"
 - waitForAnimationToEnd
-- assertNotVisible: "New task to do"
+- assertNotVisible: ${TASKNAME}

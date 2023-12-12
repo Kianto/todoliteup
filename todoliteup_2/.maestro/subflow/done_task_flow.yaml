@@ -3,7 +3,7 @@ name: done task test
 ---
 - tapOn: "Cần làm"
 - waitForAnimationToEnd
-- tapOn: "New task to do"
+- tapOn: ${TASKNAME}
 - tapOn: "Hoàn tất"
 - waitForAnimationToEnd
-- assertNotVisible: "New task to do"
+- assertNotVisible: ${TASKNAME}
