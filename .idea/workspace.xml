@@ -108,7 +108,7 @@
       <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in task_test.dart (1)">
+  <component name="RunManager" selected="Flutter Test.tests in local_data_source_test.dart">
     <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
       <method v="2" />
@@ -117,26 +117,24 @@
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_2/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="Home page changing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="Home page changing" />
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
-      <option name="useRegexp" value="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="UI create task testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="UI create task testing" />
       <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
       <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="UI delete task testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="UI delete task testing" />
-      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
-      <option name="useRegexp" value="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="tests in home_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/home_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in local_data_source_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/data/local_data_source_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in run_all_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/todoliteup_2/test/screens/run_all_screen_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
@@ -148,19 +146,19 @@
     <list>
       <item itemvalue="Flutter.main1.dart" />
       <item itemvalue="Flutter.main2.dart" />
+      <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+      <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
       <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
-      <item itemvalue="Flutter Test.Home page changing" />
       <item itemvalue="Flutter Test.UI create task testing" />
-      <item itemvalue="Flutter Test.UI delete task testing" />
       <item itemvalue="Flutter Test.tests in home_test.dart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+        <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
+        <item itemvalue="Flutter Test.tests in home_test.dart" />
         <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
         <item itemvalue="Flutter Test.UI create task testing" />
-        <item itemvalue="Flutter Test.Home page changing" />
-        <item itemvalue="Flutter Test.UI delete task testing" />
-        <item itemvalue="Flutter Test.tests in home_test.dart" />
       </list>
     </recent_temporary>
   </component>
