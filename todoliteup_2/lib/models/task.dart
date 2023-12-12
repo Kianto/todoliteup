@@ -16,12 +16,12 @@ class MTask extends Entity {
   });
 
   @override
-  MTask.fromJson(Map<String, dynamic> json)
+  MTask.fromJson(super.json)
       : title = json['title'] ?? "",
         description = json['description'] ?? "",
         image = json['image'],
         status = json['status'] ?? stDoing,
-        super.fromJson(json);
+        super.fromJson();
 
   final String title;
   final String description;
