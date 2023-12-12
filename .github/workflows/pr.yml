@@ -86,7 +86,7 @@ jobs:
         shell: bash
         run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
+#          chmod +x codecov
 #          cp codecov "~/.local/bin/codecov"
 
       - name: Run Test
