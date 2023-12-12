@@ -74,17 +74,12 @@ jobs:
       - name: Use codecov cache
         uses: ./.github/actions/cache-codecov
 
-      - name: Install tools path
+      - name: Install tools path and codecov
         if: steps.codecov-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p "~/.local/bin"
           export PATH="$PATH":"~/.local/bin"
           echo "~/.local/bin" >> GITHUB_PATH
-
-      - name: Install codecov
-        if: steps.codecov-cache.outputs.cache-hit != 'true'
-        shell: bash
-        run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
           cp codecov "~/.local/bin/codecov"
