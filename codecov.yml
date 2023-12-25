@@ -1,3 +1,7 @@
+# Turn off annotation warns
+github_checks:
+  annotations: false
+
 # Setting coverage targets per flag
 coverage:
   status:
