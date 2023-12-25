@@ -4,7 +4,11 @@ coverage:
     patch:
       default:
         target: 0%
-      threshold: 10%
+        threshold: 10%
+        flags:
+          - "todo0"
+          - "todo1"
+          - "todo2"
     project:
       default:
         target: 0%
