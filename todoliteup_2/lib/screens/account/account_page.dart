@@ -80,6 +80,15 @@ class AccountPage extends GetWidget<AccountController> {
                   ),
                 ),
               ),
+              OutlinedButton(
+                onPressed: () => controller.feedback(),
+                child: Text(
+                  'Phản hồi',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
+              ),
               const Divider(),
               TextButton(
                 onPressed: () => controller.logout(),

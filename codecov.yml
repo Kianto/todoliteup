@@ -1,12 +1,16 @@
+# Turn off annotation warns
+github_checks:
+  annotations: false
+
 # Setting coverage targets per flag
 coverage:
   status:
     patch:
       default:
-        target: 0%
+        target: 10%
     project:
       default:
-        target: 0%
+        target: 30%
       todo0:
         target: 80%
         flags:

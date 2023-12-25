@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:todoliteup/screens/home/home_binding.dart';
 import 'package:todoliteup/screens/home/home_page.dart';
 
-class SettingsController extends GetxController {
+class FeedbackController extends GetxController {
   final randNum = 20.obs;
-
-  final lightOn = true.obs;
 
   int getRandomNumber() {
     final number = Random().nextInt(20) + 10;

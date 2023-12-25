@@ -51,6 +51,8 @@ There are some updates should be added on in the following versions so that the 
 |         | Delete task                                     |
 |         |                                                 |
 
+----------------------
+
 ```bash
 flutter test --coverage
 genhtml -o coverage coverage/lcov.info
