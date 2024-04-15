@@ -7,18 +7,16 @@ runs:
       shell: bash
       run: |
         yarn nx affected --target=fixFlutterVersion
-    - name: Set default flutter version
+    - name: Set default flutter version if no config
       shell: bash
       run: |
-        echo "FLUTTER_VERSION _____ ${FLUTTER_VERSION}."
-        echo "FLUTTER_VERSION _____ ${{ env.FLUTTER_VERSION }}."
         if [[ -z "${FLUTTER_VERSION}" ]]; then
-          echo "FLUTTER_VERSION=3.16.0" >> $GITHUB_ENV
+          echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
         fi
     - name: Setup flutter environment
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: ${{ env.FLUTTER_VERSION }}
+        flutter-version: ${FLUTTER_VERSION}
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:'
