@@ -8,7 +8,7 @@ runs:
       run: |
         yarn nx affected --target=fixFlutterVersion
         if [[ -z "${{ env.FLUTTER_VERSION }}" ]]; then
-          echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
+          echo "FLUTTER_VERSION=3.10.6" >> $GITHUB_ENV
         else
           echo "FLUTTER_VERSION is already set to ${FLUTTER_VERSION}."
         fi
