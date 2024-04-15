@@ -7,7 +7,8 @@ runs:
       shell: bash
       run: |
         yarn nx affected --target=fixFlutterVersion
-        if [[ -z "$FLUTTER_VERSION" ]]; then
+        echo "FLUTTER_VERSION _____ ${FLUTTER_VERSION}."
+        if [[ -z "${FLUTTER_VERSION}" ]]; then
           echo "FLUTTER_VERSION=3.16.0" >> $GITHUB_ENV
         else
           echo "FLUTTER_VERSION is already set to ${FLUTTER_VERSION}."
