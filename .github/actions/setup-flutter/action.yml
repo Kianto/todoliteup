@@ -3,17 +3,17 @@ description: 'flutter environment'
 runs:
   using: 'composite'
   steps:
-    - name: Fix flutter version
+    - name: Set flutter version
       shell: bash
       run: |
         yarn nx affected --target=fixFlutterVersion
-        echo "FLUTTER_VERSION=3.10.6" >> $GITHUB_ENV
+    - name: Set default flutter version
+      shell: bash
+      run: |
         echo "FLUTTER_VERSION _____ ${FLUTTER_VERSION}."
         echo "FLUTTER_VERSION _____ ${{ env.FLUTTER_VERSION }}."
         if [[ -z "${FLUTTER_VERSION}" ]]; then
           echo "FLUTTER_VERSION=3.16.0" >> $GITHUB_ENV
-        else
-          echo "FLUTTER_VERSION is already set to ${FLUTTER_VERSION}."
         fi
     - name: Setup flutter environment
       uses: subosito/flutter-action@v2
