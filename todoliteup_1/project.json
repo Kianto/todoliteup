@@ -315,13 +315,13 @@
           "type": "appstore"
         }
       }
-    }
-  },
-  "fixFlutterVersion": {
-    "executor": "nx:run-commands",
-    "options": {
-      "command": "echo 'FLUTTER_VERSION=3.x' >> $GITHUB_ENV",
-      "cwd": "apps/edi"
+    },
+    "fixFlutterVersion": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'FLUTTER_VERSION=3.x' >> $GITHUB_ENV",
+        "cwd": "apps/edi"
+      }
     }
   },
   "tags": []
