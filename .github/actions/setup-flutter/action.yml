@@ -3,10 +3,19 @@ description: 'flutter environment'
 runs:
   using: 'composite'
   steps:
+    - name: Fix flutter version
+      shell: bash
+      run: |
+        yarn nx affected --target=fixFlutterVersion
+        if [[ -z "${FLUTTER_VERSION}" ]]; then
+          echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
+        else
+          echo "FLUTTER_VERSION is already set to ${FLUTTER_VERSION}."
+        fi
     - name: Setup flutter environment
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.x'
+        flutter-version: ${{ env.FLUTTER_VERSION }}
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:'
