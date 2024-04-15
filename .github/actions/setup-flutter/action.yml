@@ -15,7 +15,7 @@ runs:
     - name: Setup flutter environment
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: ${{env.FLUTTER_VERSION}}
+        flutter-version: ${{ env.FLUTTER_VERSION }}
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:'
