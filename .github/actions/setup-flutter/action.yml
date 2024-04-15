@@ -10,7 +10,7 @@ runs:
         if [[ -z "${FLUTTER_VERSION}" ]]; then
           echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
         else
-          echo "FLUTTER_VERSION is already set to ${FLUTTER_VERSION}."
+          echo "FLUTTER_VERSION is already set to ${env.FLUTTER_VERSION}."
         fi
     - name: Setup flutter environment
       uses: subosito/flutter-action@v2
