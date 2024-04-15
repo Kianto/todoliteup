@@ -390,7 +390,7 @@
     "fixFlutterVersion": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo 'FLUTTER_VERSION=3.10.6' >> $GITHUB_ENV",
+        "command": "echo 'FLUTTER_VERSION=3.x' >> $GITHUB_ENV",
         "cwd": "todoliteup_2"
       }
     }
