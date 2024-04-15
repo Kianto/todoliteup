@@ -31,14 +31,14 @@ jobs:
           git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
           git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
 
-      - name: Setup flutter environment
-        uses: ./.github/actions/setup-flutter
-
       - name: Use yarn cache
         uses: ./.github/actions/cache-yarn
 
       - name: Install yarn
         run: yarn install
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
 
       - name: Install maestro
         if: steps.cache-yarn.outputs.cache-hit == 'true'
