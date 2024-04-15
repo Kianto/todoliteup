@@ -7,6 +7,9 @@ runs:
       shell: bash
       run: |
         yarn nx affected --target=fixFlutterVersion
+      artifacts:
+        reports:
+          dotenv: .env
     - name: Set default flutter version if no config
       shell: bash
       run: |
