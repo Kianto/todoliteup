@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/actions/setup-flutter/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/setup-flutter/action.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolite/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/todolite/project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoliteup_2/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +40,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -85,22 +94,23 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHOW_ALL_PROCESSES": "true",
+    "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "features/testing__18",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/todoliteup_2/lib/screens",
+    "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/todolite",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/todolite" />
       <recent name="$PROJECT_DIR$/todoliteup_2/lib/screens" />
       <recent name="$PROJECT_DIR$/.github/actions" />
       <recent name="$PROJECT_DIR$/todoliteup_2/.maestro" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$/todoliteup_1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -147,11 +157,11 @@
     <list>
       <item itemvalue="Flutter.main1.dart" />
       <item itemvalue="Flutter.main2.dart" />
-      <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
       <item itemvalue="Flutter Test.tests in local_data_source_test.dart" />
+      <item itemvalue="Flutter Test.tests in run_all_screen_test.dart" />
       <item itemvalue="Flutter Test.tests in task_test.dart (1)" />
-      <item itemvalue="Flutter Test.tests in usecase_test.dart" />
       <item itemvalue="Flutter Test.tests in task_test.dart" />
+      <item itemvalue="Flutter Test.tests in usecase_test.dart" />
     </list>
     <recent_temporary>
       <list>

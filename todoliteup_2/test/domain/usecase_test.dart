@@ -29,75 +29,75 @@ void main() {
   });
 
   group('usecases get testing', () {
-    // test(
-    //   '''function called ok''',
-    //   () async {
-    //     // arrange
-    //     when(local.getList()).thenAnswer(
-    //       (_) async => [
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 1,
-    //         ),
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 1,
-    //         ),
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 0,
-    //         ),
-    //       ],
-    //     );
-    //     // act
-    //     final listAll = await domain.sl<GetTasks>().call(null);
-    //     // assert
-    //     verify(local.getList());
-    //     expect(listAll.isRight(), true);
-    //
-    //     // arrange
-    //     when(local.getListBy("status", MTask.stDone)).thenAnswer(
-    //       (_) async => [
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 1,
-    //         ),
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 1,
-    //         ),
-    //       ],
-    //     );
-    //     // act
-    //     final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
-    //     // assert
-    //     verify(local.getListBy("status", MTask.stDone));
-    //     expect(listDone.isRight(), true);
-    //     expect(listDone.fold((l) => null, (r) => r)?.length, 2);
-    //
-    //     // arrange
-    //     when(local.getListBy("status", MTask.stDoing)).thenAnswer(
-    //       (_) async => [
-    //         const MTask(
-    //           title: "title",
-    //           description: "description",
-    //           status: 0,
-    //         ),
-    //       ],
-    //     );
-    //     // act
-    //     final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
-    //     // assert
-    //     verify(local.getListBy("status", MTask.stDoing));
-    //     expect(listDoing.isRight(), true);
-    //     expect(listDoing.fold((l) => null, (r) => r)?.length, 1);
-    //   },
-    // );
+    test(
+      '''function called ok''',
+      () async {
+        // arrange
+        when(local.getList()).thenAnswer(
+          (_) async => [
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 1,
+            ),
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 1,
+            ),
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 0,
+            ),
+          ],
+        );
+        // act
+        final listAll = await domain.sl<GetTasks>().call(null);
+        // assert
+        verify(local.getList());
+        expect(listAll.isRight(), true);
+
+        // arrange
+        when(local.getListBy("status", MTask.stDone)).thenAnswer(
+          (_) async => [
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 1,
+            ),
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 1,
+            ),
+          ],
+        );
+        // act
+        final listDone = await domain.sl<GetTasks>().call(MTask.stDone);
+        // assert
+        verify(local.getListBy("status", MTask.stDone));
+        expect(listDone.isRight(), true);
+        expect(listDone.fold((l) => null, (r) => r)?.length, 2);
+
+        // arrange
+        when(local.getListBy("status", MTask.stDoing)).thenAnswer(
+          (_) async => [
+            const MTask(
+              title: "title",
+              description: "description",
+              status: 0,
+            ),
+          ],
+        );
+        // act
+        final listDoing = await domain.sl<GetTasks>().call(MTask.stDoing);
+        // assert
+        verify(local.getListBy("status", MTask.stDoing));
+        expect(listDoing.isRight(), true);
+        expect(listDoing.fold((l) => null, (r) => r)?.length, 1);
+      },
+    );
 
     test(
       '''function called error''',
