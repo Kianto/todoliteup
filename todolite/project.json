@@ -324,7 +324,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "echo 'FLUTTER_VERSION=3.10.6' >> $GITHUB_ENV",
-        "cwd": "apps/edi"
+        "cwd": "todolite"
       }
     }
   },
