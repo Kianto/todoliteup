@@ -315,13 +315,6 @@
           "type": "appstore"
         }
       }
-    },
-    "fixFlutterVersion": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "echo 'FLUTTER_VERSION=3.x' >> $GITHUB_ENV",
-        "cwd": "todoliteup_1"
-      }
     }
   },
   "tags": []
