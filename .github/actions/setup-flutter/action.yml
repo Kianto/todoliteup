@@ -6,7 +6,7 @@ runs:
     - name: Fix flutter version
       shell: bash
       run: |
-        yarn nx affected --target=fixFlutterVersion --base=origin/main --head=HEAD
+        yarn nx affected --target=fixFlutterVersion
         if [[ -z "${FLUTTER_VERSION}" ]]; then
           echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
         else
