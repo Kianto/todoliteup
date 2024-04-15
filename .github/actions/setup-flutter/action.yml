@@ -6,6 +6,7 @@ runs:
     - name: Fix flutter version
       shell: bash
       run: |
+        echo "FLUTTER_VERSION=3.10.6" >> $GITHUB_ENV
         yarn nx affected --target=fixFlutterVersion
         echo "FLUTTER_VERSION _____ ${FLUTTER_VERSION}."
         if [[ -z "${FLUTTER_VERSION}" ]]; then
