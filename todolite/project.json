@@ -324,7 +324,7 @@
       "executor": "nx:run-commands",
       "inputs": [
         {
-          "runtime": "cat .env.local"
+          "runtime": "cat .env"
         }
       ],
       "options": {
