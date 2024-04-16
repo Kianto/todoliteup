@@ -328,7 +328,7 @@
         }
       ],
       "options": {
-        "command": "echo 'FLUTTER_VERSION=:{ env.FLUTTER_VERSION }' >> $GITHUB_ENV",
+        "command": "echo \"FLUTTER_VERSION={env.FLUTTER_VERSION}\" >> $GITHUB_ENV",
         "cwd": "todolite"
       }
     }
