@@ -322,8 +322,13 @@
     },
     "fixFlutterVersion": {
       "executor": "nx:run-commands",
+      "inputs": [
+        {
+          "runtime": "cat .env.local"
+        }
+      ],
       "options": {
-        "command": "echo 'FLUTTER_VERSION=3.16.0' >> $GITHUB_ENV",
+        "command": "echo 'FLUTTER_VERSION={env.FLUTTER_VERSION}' >> $GITHUB_ENV",
         "cwd": "todolite"
       }
     }
