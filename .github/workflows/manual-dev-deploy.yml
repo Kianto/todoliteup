@@ -87,19 +87,19 @@ jobs:
       - name: bundle install
         run: bundle install --jobs 4 --retry 3
 
-      - name: Install Firebase tools
-        run: curl -Lo ./firebase_bin https://firebase.tools/bin/linux/v12.9.1
+#      - name: Install Firebase tools
+#        run: curl -Lo ./firebase_bin https://firebase.tools/bin/linux/v12.9.1
 
-      - name: Deploy App
-        env:
-          KEYSTORE_PASSWORD: develop
-          KEY_ALIAS: develop
-          KEY_ALIAS_PASSWORD: develop
-          GCLOUD_SERVICE_KEY_DEV: ${{ secrets.GCLOUD_SERVICE_KEY_DEV }}
-        run: |
-          echo $GCLOUD_SERVICE_KEY_DEV > `pwd`/gcloud-service-key.json
-          export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/gcloud-service-key.json
-          yarn nx deployAndroid ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
+#      - name: Deploy App
+#        env:
+#          KEYSTORE_PASSWORD: develop
+#          KEY_ALIAS: develop
+#          KEY_ALIAS_PASSWORD: develop
+#          GCLOUD_SERVICE_KEY_DEV: ${{ secrets.GCLOUD_SERVICE_KEY_DEV }}
+#        run: |
+#          echo $GCLOUD_SERVICE_KEY_DEV > `pwd`/gcloud-service-key.json
+#          export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/gcloud-service-key.json
+#          yarn nx deployAndroid ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
 
   deploy-ios:
     name: deploy-ios
@@ -141,15 +141,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: bundle install
-        run: bundle install --jobs 4 --retry 3
+#      - name: bundle install
+#        run: bundle install --jobs 4 --retry 3
 
-      - name: Deploy App
-        env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-          APPLE_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APPLE_STORE_CONNECT_API_KEY }}
-        run: |
-          echo $APPLE_STORE_CONNECT_API_KEY_CONTENT > `pwd`/api_key.json
-          export APPLE_STORE_CONNECT_API_KEY=`pwd`/api_key.json
-          export MATCH_GIT_BASIC_AUTHORIZATION=`echo -n reform-88:${{ secrets.READONLY_GITHUB_TOKEN }} | base64`
-          yarn nx deployIos ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
+#      - name: Deploy App
+#        env:
+#          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+#          APPLE_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APPLE_STORE_CONNECT_API_KEY }}
+#        run: |
+#          echo $APPLE_STORE_CONNECT_API_KEY_CONTENT > `pwd`/api_key.json
+#          export APPLE_STORE_CONNECT_API_KEY=`pwd`/api_key.json
+#          export MATCH_GIT_BASIC_AUTHORIZATION=`echo -n reform-88:${{ secrets.READONLY_GITHUB_TOKEN }} | base64`
+#          yarn nx deployIos ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
