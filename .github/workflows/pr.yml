@@ -33,6 +33,10 @@ jobs:
       - name: Install yarn
         run: yarn install
 
+      - name: Print
+        run: |
+          echo ${{ github.event.inputs.target }}
+
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 

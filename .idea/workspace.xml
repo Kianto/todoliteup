@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoliteup_2/lib/models/entity_factory.dart" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/lib/models/entity_factory.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="features/testing_18" />
+        <entry key="$PROJECT_DIR$" value="features/FV-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +40,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="features/FV-testing" />
+                    <option name="lastUsedInstant" value="1713180659" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/setup-fv" />
                     <option name="lastUsedInstant" value="1713167976" />
@@ -56,10 +59,6 @@
                   <RecentBranch>
                     <option name="branchName" value="chores/testing_14" />
                     <option name="lastUsedInstant" value="1699415519" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="chores/testing_13" />
-                    <option name="lastUsedInstant" value="1699415067" />
                   </RecentBranch>
                 </list>
               </option>
@@ -90,7 +89,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;chores/setup-fv&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;features/FV-testing&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/kiet.to/Workspaces/kianto_git/todoliteup/todolite&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,

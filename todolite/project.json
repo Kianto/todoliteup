@@ -323,7 +323,15 @@
     "fixFlutterVersion": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo 'FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}' >> $GITHUB_ENV",
+        "commands":[
+          {
+            "command": "flutter_version=$(grep 'FLUTTER_VERSION' .env | cut -d '=' -f2) && echo \"FLUTTER_VERSION=$flutter_version\" >> $GITHUB_ENV",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "echo $flutter_version"
+          }
+        ],
         "cwd": "todolite"
       }
     }
