@@ -386,13 +386,6 @@
           "projects": "self"
         }
       ]
-    },
-    "fixFlutterVersion": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "echo do nothing",
-        "cwd": "todoliteup_2"
-      }
     }
   },
   "tags": []
