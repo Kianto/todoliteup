@@ -328,16 +328,16 @@
         }
       ],
       "options": {
+        "executor": "nx:run-commands",
         "commands":[
           {
             "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env | cut -d '=' -f2)",
-            "cwd": "todolite"
           },
           {
             "command": "echo 'FLUTTER_VERSION=$flutter_version' >> $GITHUB_ENV",
-            "cwd": "todolite"
           }
-        ]
+        ],
+        "cwd": "todolite"
       }
     }
   },
