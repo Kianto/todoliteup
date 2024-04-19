@@ -325,10 +325,10 @@
       "options": {
         "commands":[
           {
-            "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env | cut -d'=' -f2)"
+            "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env"
           },
           {
-            "command": "flutter_ver=12"
+            "command": "flutter_ver=$(12)"
           },
           {
             "command": "echo ${flutter_ver}"
