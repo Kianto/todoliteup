@@ -329,7 +329,7 @@
             "forwardAllArgs": true
           },
           {
-            "command": "echo $flutter_version"
+            "command": "echo Fixed $flutter_version"
           }
         ],
         "cwd": "todolite"
