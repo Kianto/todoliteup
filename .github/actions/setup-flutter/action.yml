@@ -5,7 +5,6 @@ runs:
   steps:
     - name: Set flutter version
       shell: bash
-      continue-on-error: true
       run: |
         if ["${{ github.event.inputs.target }}" === ""]; then
           yarn nx fixFlutterVersion
