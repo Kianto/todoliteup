@@ -5,6 +5,7 @@ runs:
   steps:
     - name: Set flutter version
       shell: bash
+      continue-on-error: true
       run: |
         if ["${{ github.event.inputs.target }}" === ""]; then
           yarn nx fixFlutterVersion
@@ -14,7 +15,6 @@ runs:
 
     - name: Set default flutter version if no config
       shell: bash
-      continue-on-error: true
       run: |
         if [[ -z "${FLUTTER_VERSION}" ]]; then
           echo "FLUTTER_VERSION=3.x" >> $GITHUB_ENV
