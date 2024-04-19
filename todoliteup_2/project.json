@@ -390,7 +390,7 @@
     "fixFlutterVersion": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "",
+        "command": "echo do nothing",
         "cwd": "todoliteup_2"
       }
     }
