@@ -328,16 +328,7 @@
             "command": "flutter_version=$(grep 'FLUTTER_VERSION' .env | cut -d '=' -f2)"
           },
           {
-            "command": "flutter_ver='12'"
-          },
-          {
-            "command": "echo ${flutter_ver}"
-          },
-          {
             "command": "echo ${flutter_version}"
-          },
-          {
-            "command": "echo flutter_version"
           },
           {
             "command": "echo $flutter_version"
@@ -346,7 +337,7 @@
             "command": "echo 'Alpha.........'"
           },
           {
-            "command": "echo 'FLUTTER_VERSION=$(grep \"FLUTTER_VERSION=\" .env | cut -d'=' -f2)' >> $GITHUB_ENV"
+            "command": "echo 'FLUTTER_VERSION=$flutter_version' >> $GITHUB_ENV"
           }
         ],
         "cwd": "todolite"
