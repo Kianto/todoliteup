@@ -3,15 +3,6 @@ description: 'flutter environment'
 runs:
   using: 'composite'
   steps:
-    - name: Set flutter version
-      shell: bash
-      run: |
-        if ["${{ github.event.inputs.target }}" != ""]; then
-          yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
-        else
-          yarn nx affected --target=fixFlutterVersion
-        fi
-
     - name: Set default flutter version if no config
       shell: bash
       run: |
