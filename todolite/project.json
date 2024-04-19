@@ -337,10 +337,7 @@
             "command": "echo $flutter_version"
           },
           {
-            "command": "echo ${{flutter_version}}"
-          },
-          {
-            "command": "echo 'FLUTTER_VERSION={flutter_version}' >> $GITHUB_ENV"
+            "command": "echo 'FLUTTER_VERSION=${flutter_version}' >> $GITHUB_ENV"
           }
         ],
         "cwd": "todolite"
