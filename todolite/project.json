@@ -320,7 +320,7 @@
         }
       }
     },
-    "_fixFlutterVersion": {
+    "fixFlutterVersion": {
       "executor": "nx:run-commands",
       "options": {
         "commands":[
