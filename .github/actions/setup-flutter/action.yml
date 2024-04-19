@@ -7,9 +7,9 @@ runs:
       shell: bash
       run: |
         if ["${{ github.event.inputs.target }}" === ""]; then
-          yarn nx affected --target=fixFlutterVersion
+          echo "Please provide target project name."
         else
-          yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
+          echo "Fixing flutter version for ${{ github.event.inputs.target }}..."
         fi
 
     - name: Set default flutter version if no config
