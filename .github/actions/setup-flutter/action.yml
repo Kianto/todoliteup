@@ -7,7 +7,7 @@ runs:
       shell: bash
       run: |
         if ${{ github.event.inputs.target }} != ""; then
-          yarn nx fixFlutterVersion
+          yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
         else
           yarn nx affected --target=fixFlutterVersion
         fi
