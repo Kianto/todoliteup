@@ -6,10 +6,10 @@ runs:
     - name: Set flutter version
       shell: bash
       run: |
-        if ["${{ github.event.inputs.target }}" === ""]; then
-          echo "Please provide target project name."
+        if ["${{ github.event.inputs.target }}" !== ""]; then
+          yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
         else
-          echo "Fixing flutter version for ${{ github.event.inputs.target }}..."
+          yarn nx affected --target=fixFlutterVersion
         fi
 
     - name: Set default flutter version if no config

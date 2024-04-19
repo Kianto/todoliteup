@@ -32,10 +32,6 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Set flutter version
-        run: |
-          yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
-
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 

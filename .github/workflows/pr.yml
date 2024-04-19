@@ -33,10 +33,6 @@ jobs:
       - name: Install yarn
         run: yarn install
 
-      - name: Set flutter version
-        run: |
-          yarn nx affected --target=fixFlutterVersion
-
       - name: Setup flutter environment
         uses: ./.github/actions/setup-flutter
 
