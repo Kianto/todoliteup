@@ -7,8 +7,7 @@ runs:
       shell: bash
       run: |
         yarn nx affected --target=fixFlutterVersion --base=${{ github.event.inputs.target }}
-      with:
-        target: ${{ github.event.inputs.target }}
+
     - name: Set default flutter version if no config
       shell: bash
       run: |
