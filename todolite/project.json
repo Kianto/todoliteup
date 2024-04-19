@@ -325,10 +325,11 @@
       "options": {
         "commands":[
           {
-            "command": "flutter_version=$(grep 'FLUTTER_VERSION' .env | cut -d '=' -f2) && echo \"FLUTTER_VERSION=$flutter_version\" >> $GITHUB_ENV"
+            "command": "flutter_version=$(grep 'FLUTTER_VERSION' .env | cut -d '=' -f2) && echo \"FLUTTER_VERSION=$flutter_version\" >> $GITHUB_ENV",
+            "forwardAllArgs": true
           },
           {
-            "command": ""
+            "command": "echo $flutter_version"
           }
         ],
         "cwd": "todolite"
