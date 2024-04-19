@@ -11,6 +11,7 @@ runs:
         else
           yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
         fi
+      continue-on-error: true
 
     - name: Set default flutter version if no config
       shell: bash
