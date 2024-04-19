@@ -328,6 +328,18 @@
             "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env | cut -d '=' -f2)"
           },
           {
+            "command": "echo {flutter_version}"
+          },
+          {
+            "command": "echo ${flutter_version}"
+          },
+          {
+            "command": "echo $flutter_version"
+          },
+          {
+            "command": "echo ${{flutter_version}}"
+          },
+          {
             "command": "echo 'FLUTTER_VERSION={flutter_version}' >> $GITHUB_ENV"
           }
         ],
