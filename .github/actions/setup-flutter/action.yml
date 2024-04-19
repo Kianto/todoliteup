@@ -6,7 +6,7 @@ runs:
     - name: Set flutter version
       shell: bash
       run: |
-        if ne("${{ github.event.inputs.target }}" , ""); then
+        if ["${{ github.event.inputs.target }}" != ""]; then
           yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
         else
           yarn nx affected --target=fixFlutterVersion
