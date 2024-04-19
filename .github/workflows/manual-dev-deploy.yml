@@ -1,0 +1,155 @@
+name: manual-dev-deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Project name to deploy"
+        required: true
+        type: string
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup github token
+        run: |
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
+
+      - name: Use yarn cache
+        uses: ./.github/actions/cache-yarn
+
+      - name: Install yarn
+        run: yarn install
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
+
+      - name: Run Test
+        run: |
+          yarn nx test ${{ github.event.inputs.target }}
+
+  deploy-android:
+    name: deploy-android
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: flutter
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
+
+      - name: Setup github token
+        run: |
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
+
+      - name: Use yarn cache
+        uses: ./.github/actions/cache-yarn
+
+      - name: Install yarn
+        run: yarn install
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
+
+      - uses: ruby/setup-ruby@5f19ec79cedfadb78ab837f95b87734d0003c899
+        with:
+          ruby-version: "3.3"
+
+      - name: Use bundle cache
+        uses: actions/cache@v3
+        with:
+          path: flutter/vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('flutter/**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: bundle install
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Install Firebase tools
+        run: curl -Lo ./firebase_bin https://firebase.tools/bin/linux/v12.9.1
+
+      - name: Deploy App
+        env:
+          KEYSTORE_PASSWORD: develop
+          KEY_ALIAS: develop
+          KEY_ALIAS_PASSWORD: develop
+          GCLOUD_SERVICE_KEY_DEV: ${{ secrets.GCLOUD_SERVICE_KEY_DEV }}
+        run: |
+          echo $GCLOUD_SERVICE_KEY_DEV > `pwd`/gcloud-service-key.json
+          export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/gcloud-service-key.json
+          yarn nx deployAndroid ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
+
+  deploy-ios:
+    name: deploy-ios
+    timeout-minutes: 90
+    needs: test
+    runs-on: macos-latest-large
+    defaults:
+      run:
+        shell: bash
+        working-directory: flutter
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup github token
+        run: |
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
+
+      - name: Use yarn cache
+        uses: ./.github/actions/cache-yarn
+
+      - name: Install yarn
+        run: yarn install
+
+      - name: Setup flutter environment
+        uses: ./.github/actions/setup-flutter
+
+      - uses: ruby/setup-ruby@5f19ec79cedfadb78ab837f95b87734d0003c899
+        with:
+          ruby-version: "3.3"
+
+      - name: Use bundle cache
+        uses: actions/cache@v3
+        with:
+          path: flutter/vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('flutter/**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: bundle install
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Deploy App
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          APPLE_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APPLE_STORE_CONNECT_API_KEY }}
+        run: |
+          echo $APPLE_STORE_CONNECT_API_KEY_CONTENT > `pwd`/api_key.json
+          export APPLE_STORE_CONNECT_API_KEY=`pwd`/api_key.json
+          export MATCH_GIT_BASIC_AUTHORIZATION=`echo -n reform-88:${{ secrets.READONLY_GITHUB_TOKEN }} | base64`
+          yarn nx deployIos ${{ github.event.inputs.target }} --configuration=development --buildNumber=${{ github.run_number }}
