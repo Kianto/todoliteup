@@ -322,19 +322,13 @@
     },
     "fixFlutterVersion": {
       "executor": "nx:run-commands",
-      "inputs": [
-        {
-          "runtime": "cat .env"
-        }
-      ],
       "options": {
-        "executor": "nx:run-commands",
         "commands":[
           {
-            "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env | cut -d '=' -f2)",
+            "command": "flutter_version=$(grep \"FLUTTER_VERSION=\" .env | cut -d '=' -f2)"
           },
           {
-            "command": "echo 'FLUTTER_VERSION=$flutter_version' >> $GITHUB_ENV",
+            "command": "echo 'FLUTTER_VERSION=$flutter_version' >> $GITHUB_ENV"
           }
         ],
         "cwd": "todolite"
