@@ -8,7 +8,7 @@ runs:
       continue-on-error: true
       run: |
         if ["${{ github.event.inputs.target }}" === ""]; then
-          yarn nx affected --target=fixFlutterVersion
+          yarn nx fixFlutterVersion
         else
           yarn nx fixFlutterVersion ${{ github.event.inputs.target }}
         fi
