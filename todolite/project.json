@@ -334,13 +334,16 @@
             "command": "echo ${flutter_version}"
           },
           {
-            "command": "echo '$flutter_version'"
+            "command": "echo flutter_version"
+          },
+          {
+            "command": "echo `$flutter_version`"
           },
           {
             "command": "echo 'Alpha.........'"
           },
           {
-            "command": "echo 'FLUTTER_VERSION=${flutter_version}' >> $GITHUB_ENV"
+            "command": "echo 'FLUTTER_VERSION=$(grep \"FLUTTER_VERSION=\" .env | cut -d'=' -f2)' >> $GITHUB_ENV"
           }
         ],
         "cwd": "todolite"
