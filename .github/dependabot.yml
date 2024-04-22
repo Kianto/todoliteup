@@ -1,0 +1,36 @@
+version: 2
+enable-beta-ecosystems: true
+
+updates:
+  # Apps
+  - package-ecosystem: "pub"
+    directory: "/todolite"
+    schedule:
+      interval: "daily"
+      time: "20:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    open-pull-requests-limit: 10
+    labels:
+      - "todolite"
+
+  - package-ecosystem: "pub"
+    directory: "/todoliteup_1"
+    schedule:
+      interval: "daily"
+      time: "20:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    open-pull-requests-limit: 10
+    labels:
+      - "todoliteup_1"
+
+  - package-ecosystem: "pub"
+    directory: "/todoliteup_2"
+    registries:
+      - github-andpad
+    schedule:
+      interval: "daily"
+      time: "20:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    open-pull-requests-limit: 10
+    labels:
+      - "todoliteup_2"
