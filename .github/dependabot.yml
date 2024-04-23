@@ -14,8 +14,10 @@ updates:
     directory: "/todolite"
     schedule:
       interval: "daily"
-      time: "10:00"
+      time: "10:20"
       timezone: "Asia/Ho_Chi_Minh"
+    registries:
+      - github-internal
     open-pull-requests-limit: 10
     labels:
       - "todolite"
@@ -24,10 +26,8 @@ updates:
     directory: "/todoliteup_1"
     schedule:
       interval: "daily"
-      time: "10:00"
+      time: "10:20"
       timezone: "Asia/Ho_Chi_Minh"
-    registries:
-      - github-internal
     open-pull-requests-limit: 10
     labels:
       - "todoliteup_1"
@@ -36,7 +36,7 @@ updates:
     directory: "/todoliteup_2"
     schedule:
       interval: "daily"
-      time: "10:00"
+      time: "10:20"
       timezone: "Asia/Ho_Chi_Minh"
     open-pull-requests-limit: 10
     labels:
