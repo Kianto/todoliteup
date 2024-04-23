@@ -1,14 +1,23 @@
 version: 2
 enable-beta-ecosystems: true
 
+registries:
+  github-internal:
+    type: git
+    url: https://github.com
+    username: x-access-token
+    password: ${{secrets.READONLY_GITHUB_TOKEN}}
+
 updates:
   # Apps
   - package-ecosystem: "pub"
     directory: "/todolite"
     schedule:
       interval: "daily"
-      time: "21:20"
+      time: "09:15"
       timezone: "Asia/Ho_Chi_Minh"
+    registries:
+      - github-internal
     open-pull-requests-limit: 10
     labels:
       - "todolite"
@@ -17,8 +26,10 @@ updates:
     directory: "/todoliteup_1"
     schedule:
       interval: "daily"
-      time: "21:20"
+      time: "09:15"
       timezone: "Asia/Ho_Chi_Minh"
+    registries:
+      - github-internal
     open-pull-requests-limit: 10
     labels:
       - "todoliteup_1"
@@ -27,8 +38,10 @@ updates:
     directory: "/todoliteup_2"
     schedule:
       interval: "daily"
-      time: "21:20"
+      time: "09:15"
       timezone: "Asia/Ho_Chi_Minh"
+    registries:
+      - github-internal
     open-pull-requests-limit: 10
     labels:
       - "todoliteup_2"
