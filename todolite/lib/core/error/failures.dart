@@ -1,6 +1,6 @@
 import 'package:fast_equatable/fast_equatable.dart';
 
-abstract class Failure with FastEquatable {
+sealed class Failure with FastEquatable {
   @override
   bool get cacheHash => true;
 
@@ -9,25 +9,97 @@ abstract class Failure with FastEquatable {
 }
 
 // General failures
-class ServerFailure extends Failure {}
+class ServerFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // Unauthorized failures
-class UnauthorizedFailure extends Failure {}
+class UnauthorizedFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // General failures
-class BadRequestFailure extends Failure {}
+class BadRequestFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // General failures
-class NotFoundFailure extends Failure {}
+class NotFoundFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // Cache failures
-class CacheFailure extends Failure {}
+class CacheFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // Duplicated failures (Unofficial)
-class DuplicatedFailure extends Failure {}
+class DuplicatedFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // Invalid data failures (Unofficial)
-class InvalidDataFailure extends Failure {}
+class InvalidDataFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}
 
 // Create data over limit (Unofficial)
-class OverLimitFailure extends Failure {}
+class OverLimitFailure extends Failure {
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters {
+    super.hashParameters;
+    return [];
+  }
+}

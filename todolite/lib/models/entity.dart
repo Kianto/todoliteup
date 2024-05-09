@@ -25,4 +25,10 @@ abstract class Entity with FastEquatable {
         "created": created,
         "updated": updated,
       };
+
+  @override
+  bool get cacheHash => true;
+
+  @override
+  List<Object?> get hashParameters => [];
 }
