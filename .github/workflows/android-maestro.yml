@@ -26,6 +26,12 @@ jobs:
         with:
           main-branch-name: "main"
 
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
+
       - name: Setup github token
         run: |
           git config --global url."https://${{ secrets.READONLY_GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
