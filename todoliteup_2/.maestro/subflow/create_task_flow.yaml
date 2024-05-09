@@ -5,10 +5,28 @@ name: create task test
 - waitForAnimationToEnd
 - tapOn: "Tiêu đề"
 - waitForAnimationToEnd
-- inputText: "Công việc mới"
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+        - inputText: "Công việc mới"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+        - inputText: "New task"
 - tapOn: "Mô tả"
 - waitForAnimationToEnd
-- inputText: "Cần hoàn thành trước cuối tháng"
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+        - inputText: "Cần hoàn thành trước cuối tháng"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+        - inputText: "Maestro keyboard: Unicode not supported"
 - tapOn: "OK"
 - waitForAnimationToEnd:
     timeout: 1000
