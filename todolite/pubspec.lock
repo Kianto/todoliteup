@@ -205,10 +205,10 @@ packages:
     dependency: "direct main"
     description:
       name: fast_equatable
-      sha256: dbcff670e85714a3522048d5bd716eba3b9417776bda3e3f9d0efd6017c22e47
+      sha256: "2d73c8a33200411df6c9c625f9a71b49f0c4a3740869f9efac7952b3fa8fe1b1"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0"
   ffi:
     dependency: transitive
     description:
@@ -431,10 +431,10 @@ packages:
     dependency: "direct dev"
     description:
       name: mockito
-      sha256: "7d5b53bcd556c1bc7ffbe4e4d5a19c3e112b7e925e9e172dd7c6ad0630812616"
+      sha256: "6841eed20a7befac0ce07df8116c8b8233ed1f4486a7647c7fc5a02ae6163917"
       url: "https://pub.dev"
     source: hosted
-    version: "5.4.2"
+    version: "5.4.4"
   package_config:
     dependency: transitive
     description:
