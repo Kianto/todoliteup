@@ -6,7 +6,7 @@ registries:
     type: git
     url: https://github.com
     username: x-access-token
-    password: ${{secrets.READONLY_GITHUB_TOKEN}}
+    password: ${{secrets.DEPENDABOT_PASSWORD}}
 
 updates:
   # Apps
@@ -14,7 +14,7 @@ updates:
     directory: "/todolite"
     schedule:
       interval: "daily"
-      time: "11:35"
+      time: "11:55"
       timezone: "Asia/Ho_Chi_Minh"
     registries:
       - github-internal
@@ -26,7 +26,7 @@ updates:
     directory: "/todoliteup_1"
     schedule:
       interval: "daily"
-      time: "11:35"
+      time: "11:55"
       timezone: "Asia/Ho_Chi_Minh"
     open-pull-requests-limit: 2
     labels:
@@ -36,7 +36,7 @@ updates:
     directory: "/todoliteup_2"
     schedule:
       interval: "daily"
-      time: "11:35"
+      time: "11:55"
       timezone: "Asia/Ho_Chi_Minh"
     registries:
       - github-internal
