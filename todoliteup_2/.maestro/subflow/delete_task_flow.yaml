@@ -18,9 +18,9 @@ name: delete task test
     when:
       platform: Android
     commands:
-      - tapOn: "New task"
-      - assertNotVisible: "Hoàn tất"
-      - tapOn: "Xoá"
-      - waitForAnimationToEnd:
-          timeout: 1000
-      - assertNotVisible: "New task"
+        - tapOn: "New task"
+        - assertNotVisible: "Hoàn tất"
+        - tapOn: "Xoá"
+        - waitForAnimationToEnd:
+            timeout: 1000
+        - assertNotVisible: "New task"
