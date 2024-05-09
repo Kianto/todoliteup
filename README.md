@@ -62,7 +62,13 @@ open coverage/index.html
 ### Clean format
 
 ```bash
-cd todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
+cd todolite && dart format . && cd ../todoliteup_1 && dart format . && cd ../todoliteup_2 && dart format . && cd ..
+```
+
+### Test all
+
+```bash
+cd todolite && flutter test . && cd ../todoliteup_1 && flutter test . && cd ../todoliteup_2 && flutter test . && cd ..
 ```
 
 ## Maestro

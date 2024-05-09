@@ -16,12 +16,12 @@ class MTask extends Entity {
   });
 
   @override
-  MTask.fromJson(Map<String, dynamic> json)
+  MTask.fromJson(super.json)
       : title = json['title'] ?? "",
         description = json['description'] ?? "",
         image = json['image'],
         status = json['status'] ?? stDoing,
-        super.fromJson(json);
+        super.fromJson();
 
   final String title;
   final String description;
@@ -55,5 +55,7 @@ class MTask extends Entity {
   bool get cacheHash => true;
 
   @override
-  List<Object?> get hashParameters => [id, title, status];
+  List<Object?> get hashParameters {
+    return [...super.hashParameters, id, title, status];
+  }
 }

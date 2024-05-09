@@ -20,7 +20,7 @@ dependencies:
 
   get: ^4.6.6
 
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.6
   expandable: ^5.0.1
 
 dev_dependencies:

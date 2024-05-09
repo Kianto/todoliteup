@@ -9,7 +9,7 @@ import 'controllers/todo_controller.dart';
 import 'controllers/task_controller.dart';
 
 class HomePage extends GetWidget<TodoController> {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
