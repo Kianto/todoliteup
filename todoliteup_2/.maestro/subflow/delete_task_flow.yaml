@@ -4,9 +4,23 @@ name: delete task test
 - tapOn:
     point: 90%,95%
 - waitForAnimationToEnd
-- tapOn: "Công việc mới"
-- assertNotVisible: "Hoàn tất"
-- tapOn: "Xoá"
-- waitForAnimationToEnd:
-    timeout: 1000
-- assertNotVisible: "Công việc mới"
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+        - tapOn: "Công việc mới"
+        - assertNotVisible: "Hoàn tất"
+        - tapOn: "Xoá"
+        - waitForAnimationToEnd:
+            timeout: 1000
+        - assertNotVisible: "Công việc mới"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - tapOn: "New task"
+      - assertNotVisible: "Hoàn tất"
+      - tapOn: "Xoá"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - assertNotVisible: "New task"

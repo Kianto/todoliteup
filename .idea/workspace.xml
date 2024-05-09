@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="chores/fix_lint" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +40,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1715264820" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/fix_lint" />
                     <option name="lastUsedInstant" value="1715225947" />
@@ -55,10 +59,6 @@
                   <RecentBranch>
                     <option name="branchName" value="features/FV-testing" />
                     <option name="lastUsedInstant" value="1713180659" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="features/testing_18" />
-                    <option name="lastUsedInstant" value="1703477805" />
                   </RecentBranch>
                 </list>
               </option>
@@ -92,7 +92,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "chores/fix__lint",
+    "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/kiet.to/Workspaces/kianto_git/todoliteup/.github",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -149,6 +149,15 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.tests in usecase_test.dart (1)" />
+        <item itemvalue="Flutter Test.tests in task_test.dart (2)" />
+        <item itemvalue="Flutter Test.tests in task_test.dart" />
+        <item itemvalue="Flutter Test.tests in home_test.dart (1)" />
+        <item itemvalue="Flutter Test.tests in home_test.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SwiftWorkspaceSettings">
