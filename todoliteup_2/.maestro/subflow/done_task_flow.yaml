@@ -1,8 +1,7 @@
 appId: com.dasdang.todoliteup
 name: done task test
 ---
-- tapOn:
-    point: 50%,95%
+- tapOn: .*Cần làm.*
 - waitForAnimationToEnd
 - runFlow:
     when:

@@ -1,8 +1,7 @@
 appId: com.dasdang.todoliteup
 name: delete task test
 ---
-- tapOn:
-    point: 90%,95%
+- tapOn: .*Hoàn tất.*
 - waitForAnimationToEnd
 - runFlow:
     when:
