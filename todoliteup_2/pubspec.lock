@@ -415,8 +415,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v0.0.1"
-      resolved-ref: abd489569244f93ea5c3f384783cd4ec748a1d04
+      ref: "v0.0.2"
+      resolved-ref: "0dc2e73a9175712b9dbd7b9bd5851f8ca553ff3a"
       url: "git@github.com:Kianto/KovidOverlook.git"
     source: git
     version: "1.0.0+1"

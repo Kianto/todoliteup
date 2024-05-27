@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6391dad5-373d-44db-b426-6e246a2c7849" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoliteup_2/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todoliteup_2/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chores/fix_lint" />
+        <entry key="$PROJECT_DIR$" value="features/import_internal" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +42,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1715264820" />
+                    <option name="lastUsedInstant" value="1716783066" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="features/import_internal" />
+                    <option name="lastUsedInstant" value="1716783055" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="chores/fix_lint" />
@@ -56,10 +59,6 @@
                   <RecentBranch>
                     <option name="branchName" value="chores/cicd-config" />
                     <option name="lastUsedInstant" value="1713789428" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="features/FV-testing" />
-                    <option name="lastUsedInstant" value="1713180659" />
                   </RecentBranch>
                 </list>
               </option>
@@ -116,7 +115,7 @@
       <recent name="$PROJECT_DIR$/todoliteup_1/lib/screens/splash" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main1.dart">
+  <component name="RunManager" selected="Flutter.main2.dart">
     <configuration name="main1.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/todoliteup_1/lib/main.dart" />
       <method v="2" />
@@ -153,10 +152,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Flutter Test.tests in usecase_test.dart (1)" />
-        <item itemvalue="Flutter Test.tests in task_test.dart" />
         <item itemvalue="Flutter Test.tests in task_test.dart (2)" />
-        <item itemvalue="Flutter Test.tests in home_test.dart" />
+        <item itemvalue="Flutter Test.tests in task_test.dart" />
         <item itemvalue="Flutter Test.tests in home_test.dart (1)" />
+        <item itemvalue="Flutter Test.tests in home_test.dart" />
       </list>
     </recent_temporary>
   </component>
