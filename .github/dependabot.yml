@@ -14,7 +14,7 @@ updates:
     directory: "/todolite"
     schedule:
       interval: "daily"
-      time: "12:00"
+      time: "05:00"
       timezone: "Asia/Ho_Chi_Minh"
     registries:
       - github-internal
@@ -22,23 +22,25 @@ updates:
     versioning-strategy: increase
     labels:
       - "todolite"
+      - dependencies
 
   - package-ecosystem: "pub"
     directory: "/todoliteup_1"
     schedule:
       interval: "daily"
-      time: "12:00"
+      time: "07:00"
       timezone: "Asia/Ho_Chi_Minh"
     open-pull-requests-limit: 2
     versioning-strategy: increase
     labels:
       - "todoliteup_1"
+      - dependencies
 
   - package-ecosystem: "pub"
     directory: "/todoliteup_2"
     schedule:
       interval: "daily"
-      time: "12:00"
+      time: "09:00"
       timezone: "Asia/Ho_Chi_Minh"
     registries:
       - github-internal
@@ -46,3 +48,18 @@ updates:
     versioning-strategy: increase
     labels:
       - "todoliteup_2"
+      - dependencies
+
+  - package-ecosystem: "pub"
+    directory: "/todoliteup_3"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    registries:
+      - github-internal
+    open-pull-requests-limit: 2
+    versioning-strategy: increase
+    labels:
+      - "todoliteup_3"
+      - dependencies
