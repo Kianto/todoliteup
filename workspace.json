@@ -3,7 +3,8 @@
   "projects": {
     "todolite": "todolite",
     "todoliteup_1": "todoliteup_1",
-    "todoliteup_2": "todoliteup_2"
+    "todoliteup_2": "todoliteup_2",
+    "todoliteup_3": "todoliteup_3"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

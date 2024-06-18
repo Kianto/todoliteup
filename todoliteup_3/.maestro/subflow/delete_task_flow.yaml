@@ -1,0 +1,25 @@
+appId: com.dasdang.todoliteup
+name: delete task test
+---
+- tapOn: .*Hoàn tất.*
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+        - tapOn: "Công việc mới"
+        - assertNotVisible: "Hoàn tất"
+        - tapOn: "Xoá"
+        - waitForAnimationToEnd:
+            timeout: 1000
+        - assertNotVisible: "Công việc mới"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+        - tapOn: "New task"
+        - assertNotVisible: "Hoàn tất"
+        - tapOn: "Xoá"
+        - waitForAnimationToEnd:
+            timeout: 1000
+        - assertNotVisible: "New task"

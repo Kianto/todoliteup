@@ -1,0 +1,399 @@
+{
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "todoliteup_3/src",
+  "projectType": "application",
+  "targets": {
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter clean",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dart format .",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildRunner": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "flutter pub get && flutter packages pub run build_runner build --delete-conflicting-outputs",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_3"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "if [ {args.coverage} != 1 ]; then flutter test; fi",
+          "if [ {args.coverage} = 1 ]; then flutter test --coverage; fi",
+          "if [ {args.coverage} = 1 ]; then ../codecov -t ${CODECOV_TOKEN} -c -F todo2 -f coverage/lcov.info; fi"
+        ],
+        "cwd": "todoliteup_3",
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "codecov": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter test --coverage",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze && dart format . --set-exit-if-changed",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "dartCodeMetricsAnalyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dcm analyze lib --reporter=github --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "dartCodeMetricsCheckUnusedFiles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dcm check-unused-files lib --monorepo --ci-key={args.dcmCiKey} --email={args.dcmLicenseEmail}",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "assemble": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter assemble",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "attach": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter attach",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "drive": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter drive",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "genL10n": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter gen-l10n",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter install",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter run",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildAar": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build aar",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build {args.artifactType} --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} {args.extraOpts}",
+        "buildNumber": "1",
+        "cwd": "todoliteup_3"
+      },
+      "configurations": {
+        "development": {
+          "flavor": "development",
+          "artifactType": "apk",
+          "extraOpts": "--no-tree-shake-icons"
+        },
+        "production": {
+          "flavor": "production",
+          "artifactType": "appbundle",
+          "extraOpts": ""
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "buildBundle": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build bundle",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildIosFramework": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios-framework",
+        "cwd": "todoliteup_3"
+      }
+    },
+    "buildIpa": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ipa --flavor={args.flavor} --target=lib/main_{args.flavor}.dart --build-number={args.buildNumber} --export-options-plist=ios/Runner/{args.flavor}/ExportOptions.plist {args.extraOpts}",
+        "buildNumber": "1",
+        "cwd": "todoliteup_3",
+        "forwardAllArgs": false
+      },
+      "configurations": {
+        "development": {
+          "flavor": "development",
+          "extraOpts": "--no-tree-shake-icons"
+        },
+        "production": {
+          "flavor": "production",
+          "extraOpts": ""
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        },
+        {
+          "target": "syncCodeSigning",
+          "projects": "self"
+        }
+      ]
+    },
+    "deployAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane android deploy_to_firebase",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_3/android"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      },
+      "dependsOn": [
+        {
+          "target": "buildAndroid",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "deployAndroidToStore": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane android deploy_to_store",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_3/android"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      },
+      "dependsOn": [
+        {
+          "target": "buildAndroid",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "deployIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane deploy api_key_path:{args.apiKeyPath} ipa:'{args.ipa}' app_identifier:{args.appIdentifier}",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_3/ios",
+        "apiKeyPath": "${APPLE_STORE_CONNECT_API_KEY}"
+      },
+      "configurations": {
+        "development": {
+          "ipa": "../build/ios/ipa/TodoLite [D].ipa",
+          "appIdentifier": "com.ios.develop.todoliteup"
+        },
+        "production": {
+          "ipa": "../build/ios/ipa/TodoLite.ipa",
+          "appIdentifier": "com.ios.production.todoliteup"
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "buildIpa",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
+    },
+    "syncCodeSigning": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "bundle exec fastlane my_match type:{args.type}",
+            "forwardAllArgs": false
+          }
+        ],
+        "cwd": "todoliteup_3/ios",
+        "type": "development"
+      },
+      "configurations": {
+        "development": {
+          "type": "appstore"
+        },
+        "production": {
+          "type": "appstore"
+        }
+      }
+    },
+    "buildDebugAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build apk --debug",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "buildDebugIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter build ios --debug --simulator",
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroIos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "maestro -v",
+          "maestro cloud --apiKey ${MAESTRO_CLOUD_API_KEY} build/ios/iphonesimulator/Runner.app .maestro/"
+        ],
+        "cwd": "todoliteup_3"
+      },
+      "dependsOn": [
+        {
+          "target": "buildDebugIos",
+          "projects": "self"
+        }
+      ]
+    },
+    "maestroAndroid": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "maestro -v",
+          "maestro cloud --apiKey ${MAESTRO_CLOUD_API_KEY} build/app/outputs/flutter-apk/app-debug.apk .maestro/"
+        ],
+        "cwd": "todoliteup_3",
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "buildRunner",
+          "projects": "self"
+        }
+      ]
+    },
+    "fixFlutterVersion": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'FLUTTER_VERSION=3.x' >> $GITHUB_ENV",
+        "cwd": "todoliteup_3"
+      }
+    }
+  },
+  "tags": []
+}

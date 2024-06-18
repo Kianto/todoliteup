@@ -1,0 +1,23 @@
+appId: com.dasdang.todoliteup
+name: done task test
+---
+- tapOn: .*Cần làm.*
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - tapOn: "Công việc mới"
+      - tapOn: "Hoàn tất"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - assertNotVisible: "Công việc mới"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+        - tapOn: "New task"
+        - tapOn: "Hoàn tất"
+        - waitForAnimationToEnd:
+            timeout: 1000
+        - assertNotVisible: "New task"
