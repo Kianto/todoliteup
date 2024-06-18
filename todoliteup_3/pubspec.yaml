@@ -1,0 +1,50 @@
+name: todoliteup
+description: A new todo project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  hive: ^2.2.3
+  dartz: ^0.10.1
+
+  nylo_framework: ^5.28.2
+  flutter_riverpod: ^2.5.1
+
+  cupertino_icons: ^1.0.6
+  expandable: ^5.0.1
+
+  sensors_plus: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+  # dart run build_runner build
+  build_runner: ^2.4.10
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/desserts/
+
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Rubik-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Rubik-Light.ttf
+          weight: 300
