@@ -23,6 +23,10 @@ coverage:
         target: 50%
         flags:
           - todo2
+      todo3:
+        target: 0%
+        flags:
+          - todo3
 
 comment:
   behavior: default
@@ -42,6 +46,9 @@ flags:
   todo2:
     paths:
       - todoliteup_2/
+  todo3:
+    paths:
+      - todoliteup_3/
 
 #component_management:
 #  default_rules: # default rules that will be inherited by all components
