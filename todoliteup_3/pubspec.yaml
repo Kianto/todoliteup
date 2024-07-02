@@ -14,7 +14,7 @@ dependencies:
   hive: ^2.2.3
   dartz: ^0.10.1
 
-  nylo_framework: ^5.28.2
+  nylo_framework: ^5.31.0
   flutter_riverpod: ^2.5.1
 
   cupertino_icons: ^1.0.8
