@@ -41,6 +41,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  base58check:
+    dependency: transitive
+    description:
+      name: base58check
+      sha256: "6c300dfc33e598d2fe26319e13f6243fea81eaf8204cb4c6b69ef20a625319a5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  bech32:
+    dependency: transitive
+    description:
+      name: bech32
+      sha256: "156cbace936f7720c79a79d16a03efad343b1ef17106716e04b8b8e39f99f7f7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -201,6 +217,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.10.1"
+  date_field:
+    dependency: transitive
+    description:
+      name: date_field
+      sha256: "8643c8e5f2ee55b4b389fc567ee27186c5a63570f545b291d61f02ab6ca7981d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.1"
   dio:
     dependency: transitive
     description:
@@ -221,10 +245,10 @@ packages:
     dependency: transitive
     description:
       name: error_stack
-      sha256: "76fea2b3cbf7470ca2f87de851591f910d3b007a5be78824a92e988dbd431c87"
+      sha256: "4a42065d1b3e82e60754ce2e4c462a558d376d6c584c45a7f56c5ab88c896ec9"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.0"
+    version: "1.7.3"
   expandable:
     dependency: "direct main"
     description:
@@ -291,6 +315,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_multi_formatter:
+    dependency: transitive
+    description:
+      name: flutter_multi_formatter
+      sha256: "3495dc0056c96e467039a05bd184a5285c271a0efb2024a7030c7e84ba828994"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.12.8"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -537,18 +569,18 @@ packages:
     dependency: "direct main"
     description:
       name: nylo_framework
-      sha256: "43e5c1a722cc19f28480fa36abf06d9f3aba1a4723f35008e28ea5c9b93ce699"
+      sha256: b40474f43ffd3b8ea39a1a7edd056ecf14f0150ba5c1c42ac4717a92af05727c
       url: "https://pub.dev"
     source: hosted
-    version: "5.28.2"
+    version: "5.31.0"
   nylo_support:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: "386018753053a9ec44a3d185494aa28ef8bef96d19794c2e5a11beecfb775a53"
+      sha256: "8d070b707ebc12c31ee4f82b7e4c77a3eb578ffa66da4114788e83c244344444"
       url: "https://pub.dev"
     source: hosted
-    version: "5.71.0"
+    version: "5.77.0"
   package_config:
     dependency: transitive
     description:
@@ -697,10 +729,10 @@ packages:
     dependency: transitive
     description:
       name: rxdart
-      sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
+      sha256: "5c3004a4a8dbb94bd4bf5412a4def4acdaa12e12f269737a5751369e12d1a962"
       url: "https://pub.dev"
     source: hosted
-    version: "0.27.7"
+    version: "0.28.0"
   sensors_plus:
     dependency: "direct main"
     description:
